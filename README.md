@@ -1,4 +1,4 @@
-# Fred Hutch Introduction to Cromwell
+# WDL 101:  Running WDL workflows at Fred Hutch using Cromwell
 
 [![Render Bookdown and Coursera](https://github.com/jhudsl/OTTR_Template/actions/workflows/render-all.yml/badge.svg)](https://github.com/jhudsl/OTTR_Template/actions/workflows/render-all.yml)
 

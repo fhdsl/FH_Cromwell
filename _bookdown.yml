@@ -1,4 +1,4 @@
-book_filename: "Using Cromwell and WDL at the Fred Hutch"
+book_filename: "WDL 101:  Running WDL workflows at Fred Hutch using Cromwell"
 chapter_name: "Chapter "
 repo: https://github.com/fhdsl/FH_Cromwell
 rmd_files: ["index.Rmd",
