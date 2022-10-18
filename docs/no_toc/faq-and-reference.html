@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Using Cromwell and WDL at the Fred Hutch</title>
+  <title>Chapter 2 FAQ and Reference | Using Cromwell and WDL at the Fred Hutch</title>
   <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Using Cromwell and WDL at the Fred Hutch" />
+  <meta property="og:title" content="Chapter 2 FAQ and Reference | Using Cromwell and WDL at the Fred Hutch" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Using Cromwell and WDL at the Fred Hutch" />
+  <meta name="twitter:title" content="Chapter 2 FAQ and Reference | Using Cromwell and WDL at the Fred Hutch" />
   
   <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/dasl_favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="about-the-authors.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -140,22 +140,73 @@
 <div class="hero-image-container">
   <img class= "hero-image" src= "https://github.com/jhudsl/OTTR_Template/raw/main/assets/dasl_thin_main_image.png">
 </div>
-<div id="header">
-<h1 class="title">Using Cromwell and WDL at the Fred Hutch</h1>
-<p class="date"><em>October, 2022</em></p>
+<div id="faq-and-reference" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> FAQ and Reference</h1>
+<div id="test-workflows" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Test Workflows</h2>
+<ol start="8" style="list-style-type: decimal">
+<li>See our <a href="https://github.com/FredHutch/diy-cromwell-server/tree/main/testWorkflows">Test Workflow folder</a> once your server is up and run through the tests specified in the markdown there.
+&gt; NOTE: For those test workflows that use Docker containers, know that the first time you run them, you may notice that jobs aren’t being sent very quickly. That is because for our cluster, we need to convert those Docker containers to something that can be run by Singularity. The first time a Docker container is used, it must be converted, but in the future Cromwell will used the cached version of the Docker container and jobs will be submitted more quickly.</li>
+</ol>
 </div>
-<div id="about-this-course" class="section level1 unnumbered">
-<h1>About this Course</h1>
-<div id="available-course-formats" class="section level2" number="0.1">
-<h2><span class="header-section-number">0.1</span> Available course formats</h2>
-<p>This course is available in multiple formats which allows you to take it in the way that best suites your needs. You can take it for certificate which can be for free or fee.</p>
+<div id="fred-hutch-customization" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Fred Hutch Customization</h2>
+<div id="task-defaults-and-runtime-variables" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Task Defaults and Runtime Variables</h3>
+<p>For the gizmo backend, the following runtime variables are available that are customized to our configuration. What is specified below is the current default as written, you can edit these in the config file if you’d like OR you can specify these variables in your <code>runtime</code> block in each task to change only the variables you want to change from the default for that particular task.</p>
 <ul>
-<li>The material for this course can be viewed without login requirement on this <a href="LINK%20HERE">Bookdown website</a>. This format might be most appropriate for you if you rely on screen-reader technology.</li>
-<li>This course can be taken for <a href="LINK%20HERE">free certification through Leanpub</a>.</li>
-<li>This course can be taken on <a href="LINK%20HERE">Coursera for certification here</a> (but it is not available for free on Coursera).</li>
-<li>Our courses are open source, you can find the <a href="LINK%20HERE">source material for this course on GitHub</a>.</li>
+<li><code>cpu = 1</code>
+<ul>
+<li>An integer number of cpus you want for the task</li>
+</ul></li>
+<li><code>walltime = "18:00:00"</code>
+<ul>
+<li>A string of date/time that specifies how many hours/days you want to request for the task</li>
+</ul></li>
+<li><code>memory = 2000</code>
+<ul>
+<li>An integer number of MB of memory you want to use for the task</li>
+</ul></li>
+<li><code>partition = "campus-new"</code>
+<ul>
+<li>Which partition you want to use, the default is <code>campus-new</code> but whatever is in the runtime block of your WDL will overrride this.</li>
+</ul></li>
+<li><code>modules = ""</code>
+<ul>
+<li>A space-separated list of the environment modules you’d like to have loaded (in that order) prior to running the task.<br />
+</li>
+</ul></li>
+<li><code>docker = "ubuntu:latest"</code>
+<ul>
+<li>A specific Docker container to use for the task. For the custom Hutch configuration, docker containers can be specified and the necessary conversions (to Singularity) will be performed by Cromwell (not the user). Note: when docker is used, soft links cannot be used in our filesystem, so workflows using very large datasets may run slightly slower due to the need for Cromwell to copy files rather than link to them.<br />
+</li>
+</ul></li>
+<li><code>dockerSL= "ubuntu:latest"</code>
+<ul>
+<li>This is a custom configuration for the Hutch that allows users to use docker and softlinks only to specific locations in Scratch. It is helpful when working with very large files.</li>
+</ul></li>
 </ul>
+</div>
+</div>
+<div id="guidance-and-support" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Guidance and Support</h2>
+<div id="monitoring-your-workflows-at-fred-hutch" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Monitoring your workflows at Fred Hutch:</h3>
+<p>I made a shiny app you can use to monitor your own Cromwell server workflows when you have a Cromwell server running on <code>gizmo</code> that can be found <a href="https://cromwellapp.fredhutch.org/">here</a>. If you’d like to roll your own, you can find my shiny app code <a href="https://github.com/FredHutch/shiny-cromwell">here</a>.</p>
+</div>
+<div id="design-recommendations-for-wdl-workflows-at-fred-hutch" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Design Recommendations for WDL workflows at Fred Hutch</h3>
+<p>See our <a href="https://sciwiki.fredhutch.org/compdemos/Cromwell/">SciWiki page</a> on Cromwell for more about guidance for how to start structuring and building your workflows as well as how to share them with others on campus in a findable way.</p>
+</div>
+<div id="r-support" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> R support</h3>
+<p>I have a basic R package that wraps the Cromwell API allowing you to submit, monitor and kill workflow jobs on <code>gizmo</code> from R directly. The package is <a href="https://github.com/FredHutch/fh.wdlR">fh.wdlR</a>.</p>
+</div>
+<div id="other-fred-hutch-based-resources" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Other Fred Hutch based resources</h3>
+<p>While additional development is going on to make Cromwell work better in AWS (currently it works well in Google and SLURM among other backends), we are anticipating that it will be more widely available for use with AWS based computing. To support that there is a growing public data set AWS S3 bucket at <code>fh-ctr-public-reference-data</code>. Contact Amy Paguirigan if you’d like something to be added here and we can help you do that.</p>
 
+</div>
 </div>
 </div>
 <hr>
@@ -171,8 +222,8 @@
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
