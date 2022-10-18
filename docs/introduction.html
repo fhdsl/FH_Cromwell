@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction | Using Cromwell and WDL at the Fred Hutch</title>
+  <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction | Using Cromwell and WDL at the Fred Hutch" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | Using Cromwell and WDL at the Fred Hutch" />
+  
+  <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/dasl_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="index.html"/>
+<link rel="next" href="faq-and-reference.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="assets/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#available-course-formats"><i class="fa fa-check"></i><b>0.1</b> Available course formats</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.2</b> Target Audience</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#content"><i class="fa fa-check"></i><b>1.3</b> Content</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#cromwell-resources"><i class="fa fa-check"></i><b>1.4</b> Cromwell Resources</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#steps-to-prepare"><i class="fa fa-check"></i><b>1.5</b> Steps to prepare</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#rhino-access-one-time"><i class="fa fa-check"></i><b>1.5.1</b> Rhino Access (one time)</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#aws-s3-access-optional-as-of-version-1.3"><i class="fa fa-check"></i><b>1.5.2</b> AWS S3 Access (optional as of version 1.3)</a></li>
+<li class="chapter" data-level="1.5.3" data-path="introduction.html"><a href="introduction.html#database-setup-one-time"><i class="fa fa-check"></i><b>1.5.3</b> Database Setup (one time)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#server-setup-instructions"><i class="fa fa-check"></i><b>1.6</b> Server setup instructions</a></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#cromwell-server-customization"><i class="fa fa-check"></i><b>1.7</b> Cromwell Server Customization</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="faq-and-reference.html"><a href="faq-and-reference.html"><i class="fa fa-check"></i><b>2</b> FAQ and Reference</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="faq-and-reference.html"><a href="faq-and-reference.html#test-workflows"><i class="fa fa-check"></i><b>2.1</b> Test Workflows</a></li>
+<li class="chapter" data-level="2.2" data-path="faq-and-reference.html"><a href="faq-and-reference.html#fred-hutch-customization"><i class="fa fa-check"></i><b>2.2</b> Fred Hutch Customization</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="faq-and-reference.html"><a href="faq-and-reference.html#task-defaults-and-runtime-variables"><i class="fa fa-check"></i><b>2.2.1</b> Task Defaults and Runtime Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="faq-and-reference.html"><a href="faq-and-reference.html#guidance-and-support"><i class="fa fa-check"></i><b>2.3</b> Guidance and Support</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="faq-and-reference.html"><a href="faq-and-reference.html#monitoring-your-workflows-at-fred-hutch"><i class="fa fa-check"></i><b>2.3.1</b> Monitoring your workflows at Fred Hutch:</a></li>
+<li class="chapter" data-level="2.3.2" data-path="faq-and-reference.html"><a href="faq-and-reference.html#design-recommendations-for-wdl-workflows-at-fred-hutch"><i class="fa fa-check"></i><b>2.3.2</b> Design Recommendations for WDL workflows at Fred Hutch</a></li>
+<li class="chapter" data-level="2.3.3" data-path="faq-and-reference.html"><a href="faq-and-reference.html#r-support"><i class="fa fa-check"></i><b>2.3.3</b> R support</a></li>
+<li class="chapter" data-level="2.3.4" data-path="faq-and-reference.html"><a href="faq-and-reference.html#other-fred-hutch-based-resources"><i class="fa fa-check"></i><b>2.3.4</b> Other Fred Hutch based resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by:</a> </p>
+<p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Using Cromwell and WDL at the Fred Hutch</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style.css" rel="stylesheet">
+</head>
+
+
+
+<div class="hero-image-container">
+  <img class= "hero-image" src= "https://github.com/jhudsl/OTTR_Template/raw/main/assets/dasl_thin_main_image.png">
+</div>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="motivation" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Motivation</h2>
+</div>
+<div id="target-audience" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Target Audience</h2>
+<p>The course is intended for …</p>
+</div>
+<div id="content" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Content</h2>
+<p>A repo containing instructions for running a Cromwell server on <code>gizmo</code> at the Fred Hutch. These instructions were created and tested by Amy Paguirigan, so drop her a line if they don’t work for you or you need help (Fred Hutch username is <code>apaguiri</code>) or you can tag <span class="citation">(<a href="#ref-vortexing" role="doc-biblioref"><strong>vortexing?</strong></a>)</span> in Issues filed here in the GitHub repository. Note if you do this, please be sure that you do not post sensitive information in your troubleshooting information like passwords and such, but the more info you can provide about errors, the better. Alternatively, join the discussion in the Fred Hutch Bioinformatics and Computational Research Community Slack in the <a href="https://fhbig.slack.com/archives/CD3HGJHJT">#question-and-answer channel</a> using your Fred Hutch, UW, SCHARP or Sagebase email.</p>
+</div>
+<div id="cromwell-resources" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Cromwell Resources</h2>
+<p>Cromwell is a workflow manager developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API/Swagger UI interface and allows users to manage multiple workflows simultaneously. Cromwell currently uses either CWL or WDL workflow languages, and we will focus on WDL workflows for now. <a href="https://sciwiki.fredhutch.org/compdemos/Cromwell/">Learn more on the Fred Hutch wiki about using Cromwell at Fred Hutch.</a></p>
+<p>You can see what is currently available in the FredHutch GitHub institution by using <a href="https://github.com/FredHutch?utf8=%E2%9C%93&amp;q=wdl+OR+cromwell&amp;type=&amp;language=">this link to search results</a>.</p>
+<p>We have also been building other places to find information about both workflow managers being supported at the Fred Hutch via <a href="https://github.com/orgs/FredHutch/projects/8">this GitHub Project</a>.</p>
+<p>Amy also made a shiny app you can use to monitor your own Cromwell server workflows when you have a Cromwell server running on <code>gizmo</code> that can be found <a href="https://cromwellapp.fredhutch.org/">here</a>.</p>
+</div>
+<div id="steps-to-prepare" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Steps to prepare</h2>
+<p>If you have questions about these steps, feel free to contact Amy Paguirigan (<code>apaguiri</code>) or <code>scicomp</code>.</p>
+<div id="rhino-access-one-time" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Rhino Access (one time)</h3>
+<p>Currently, to run your own Cromwell server you’ll need to know how to connect to <code>rhino</code> at the Fred Hutch. If you have never used the local cluster (<code>rhino</code>/<code>gizmo</code>), you may need to file a ticket by emailing fredhutch email <code>scicomp</code> and requesting your account be set up. To do this you’ll need to specify which PI you are sponsored by/work for. You also may want to read a bit more about the use of our cluster over at <a href="https://sciwiki.fredhutch.org/">SciWiki</a> in the Scientific Computing section about Access Methods, and Technologies.</p>
+</div>
+<div id="aws-s3-access-optional-as-of-version-1.3" class="section level3" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> AWS S3 Access (optional as of version 1.3)</h3>
+<p>Prior to release 1.3, this setup required that you have a set of AWS credentials for access to an AWS S3 bucket, and specifically to the S3 bucket(s) from which you pull workflow inputs. Refer to <a href="https://sciwiki.fredhutch.org/scicomputing/compute_cloud/#get-aws-credentials">SciWiki</a> or email <code>scicomp</code> to request credentials.</p>
+<p>As of version 1.3 if you have credentials, then the Cromwell server will be configured to allow input files to directly specified using their AWS S3 url. However if you do not have AWS credentials, then the server will now successfully start up, simply without the ability to localize files from S3, thus all test workflows that use files in S3 will not work for you, but everything else should.</p>
+</div>
+<div id="database-setup-one-time" class="section level3" number="1.5.3">
+<h3><span class="header-section-number">1.5.3</span> Database Setup (one time)</h3>
+<p>These instructions let you stand up a Cromwell server for 7 days at a time. If you have workflows that run longer than that or you want to be able to get metadata for or restart jobs even after the server goes down, you’ll want an external database to keep track of your progress even if your server goes down (for whatever reason). It also will allow your future workflows to use cached copies of data when the exact task has already been done (and recorded in the database). We have found as well that by using a MySQL database for your Cromwell server, it will run faster and be better able to handle simultaneous workflows while also making all the metadata available to you during and after the run.</p>
+<p>We currently suggest you go to <a href="https://mydb.fredhutch.org/login">DB4Sci</a> and see the Wiki entry for DB4Sci <a href="https://sciwiki.fredhutch.org/scicomputing/store_databases/#db4sci--previously-mydb">here</a>. There, you will login using Fred Hutch credentials, choose <code>Create DB Container</code>, and choose the MariaDB option. The default database container values are typically fine, EXCEPT you likely need either weekly or no backups (no backups preferred) for this database. Save the <code>DB/Container Name</code>, <code>DB Username</code> and <code>DB Password</code> as you will need them for the configuration step. Once you click submit, a confirmation screen will appear (hopefully), and you’ll need to note which <code>Port</code> is specified. This is a 5 digit number currently.</p>
+<p>Once this is complete, you can file a ticket to <code>scicomp</code> to request the database to be set up in that container. In the future it might be possible to have this step be part of the DB4Sci setup process but until then, you’ll need to do this additional step. Or if you are able to get onto <code>rhino</code>, you can do the following to do this process yourself:</p>
+<pre><code>ml MariaDB/10.5.1-foss-2019b
+mysql --host mydb --port &lt;Port&gt; --user &lt;username&gt; --password</code></pre>
+<p>It will then prompt you to enter the DB password you specified during setup. Once you are are a “mysql&gt;” prompt, you can do the following.
+&gt;Note, we suggest you name the database inside the container the same as the container, but you cannot include dashes in your database name. In the future, DB4Sci may also set up the database inside the container for you, in which case you would be provided a database name as well during setup.</p>
+<pre><code>MariaDB [(none)]&gt; create database &lt;DB Name&gt;;
+# It should do it&#39;s magic
+MariaDB [(none)]&gt; exit</code></pre>
+<p>Then you’re ready to go and never have to set up the database part again and you can use this database to manage all your work over time.</p>
+</div>
+</div>
+<div id="server-setup-instructions" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Server setup instructions</h2>
+<ol style="list-style-type: decimal">
+<li><p>Decide where you want to keep your Cromwell configuration files. This must be a place where <code>rhino</code> can access them, such as in your <code>Home</code> directory, which is typically the default directory when you connect to the <code>rhinos</code>. We suggest you create a <code>cromwell-home</code> folder (or whatever you want to call it) and follow these git instructions to clone it directly.</p></li>
+<li><p>First set up the customizations per user that you’re going to want for your server(s) by making user configuration file(s) in your <code>cromwell-home</code> or wherever you find convenient. You can manage mulitple Cromwell profiles this way by just maintaining different files full of credentials and configuration variables that you want.</p></li>
+</ol>
+<p>To get started, do the following on <code>rhino</code>:</p>
+<pre><code>mkdir -p cromwell-home
+cd cromwell-home
+git clone --branch main https://github.com/FredHutch/diy-cromwell-server.git
+
+
+cp ./diy-cromwell-server/cromUserConfig.txt .
+## When you are first setting up Cromwell, you&#39;ll need to put all of your User Customizations into this `cromUserConfig.txt` which can serve as a template.  
+## After you&#39;ve done this once, you just need to keep the path to the file(s) handy for the future.  </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Tailor your <code>cromUserConfig.txt</code> file to be specific to your various directories and resources (see notes in the version of the file in this repo).</li>
+</ol>
+<blockquote>
+<p>Note: For this server, you will want multiple cores to allow it to multi-task. Memory is less important when you use an external database. If you notice issues, the particular resource request for the server job itself might be a good place to start adjusting, in conjunction with some guidance from SciComp or the Slack <a href="https://fhbig.slack.com/archives/CD3HGJHJT">Question and Answer channel</a> folks.</p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li>Kick off your Cromwell server:
+&gt; Note: for version 1.2 and later, this script, <code>cromwell.sh</code> includes the version name in it, such as <code>cromwellv1.2.sh</code>.</li>
+</ol>
+<pre><code>## You&#39;ll want to put `cromwellv1.3.sh` somewhere handy for future use, we suggest:
+cp ./diy-cromwell-server/cromwellv1.3.sh .
+chmod +x cromwellv1.3.sh
+
+# Then simply start up Cromwell:
+./cromwellv1.3.sh cromUserConfig.txt</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Much like the <code>grabnode</code> command you may have used previously, the script will run and print back to the console instructions once the resources have been provisioned for the server. You should see something like this:</li>
+</ol>
+<pre><code>Your configuration details have been found...
+Getting an updated copy of Cromwell configs from GitHub...
+Setting up all required directories...
+Detecting existence of AWS credentials...
+Credentials found, setting appropriate configuration...
+Requesting resources from SLURM for your server...
+Submitted batch job 50205062
+Your Cromwell server is attempting to start up on **node/port gizmok30:2020**.  If you encounter errors, you may want to check your server logs at /home/username/cromwell-home/server-logs to see if Cromwell was unable to start up.
+Go have fun now.</code></pre>
+<blockquote>
+<p>NOTE: Please write down the node and port it specifies here. This is the only place where you will be able to find the particular node/port for this instance of your Cromwell server, and you’ll need that to be able to send jobs to the Crowmell server. If you forget it, <code>scancel</code> the Cromwell server job and start a new one.</p>
+</blockquote>
+<ol start="6" style="list-style-type: decimal">
+<li><p>This node host and port is what you use to submit and monitor workflows with the Shiny app at <a href="https://cromwellapp.fredhutch.org/">cromwellapp.fredhutch.org</a>. After you click the “Connect to Server” button, you’ll put <code>gizmok30:20201</code> (or whatever your node:port is) where it says “Current Cromwell host:port”.</p></li>
+<li><p>While your server will normally stop after 7 days (the default), at which point if you have jobs still running you can simply restart your server and it will reconnect to existing jobs/workflows. However, if you need to take down your server for whatever reason before that point, you can go to <code>rhino</code> and do:</p></li>
+</ol>
+<pre><code># Here `username` is your Fred Hutch username
+squeue -u username
+## Or if you want to get fancy:
+squeue -o &#39;%.18i %.9P %j %.8T %.10M %.9l %.6C %R&#39; -u username
+
+## You&#39;ll see a jobname &quot;cromwellServer&quot;.  Next to that will be a JOBID. In this example the JOBID of the server is 50062886.
+
+scancel 50062886
+</code></pre>
+</div>
+<div id="cromwell-server-customization" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> Cromwell Server Customization</h2>
+<p>In <code>cromUserConfig.txt</code> there are some variables that allow users to share a similar configuration file but tailor the particular behavior of their Cromwell server to best suit them. The following text is also in this repo but these are the customizations you’ll need to decide on for your server.</p>
+<pre><code>################## WORKING DIRECTORY AND PATH CUSTOMIZATIONS ###################
+## Where do you want the working directory to be for Cromwell (note: this process will create a subdirectory here called &quot;cromwell-executions&quot;)?  
+### Suggestion: /fh/scratch/delete90/pilastname_f/username/
+SCRATCHDIR=/fh/scratch/delete90/...
+
+## Where do you want logs about individual workflows (not jobs) to be written?
+## Note: this is a default for the server and can be overwritten for a given workflow in workflow-options.
+### Suggestion: /fh/fast/pilastname_f/cromwell/workflow-logs
+WORKFLOWLOGDIR=~/cromwell-home/workflow-logs
+
+## Where do you want to save Cromwell server logs for troubleshooting Cromwell itself?
+### Suggestion: ~/home/username/cromwell-home/server-logs
+SERVERLOGDIR=~./cromwell-home/server-logs
+
+################ DATABASE CUSTOMIZATIONS #################
+## DB4Sci MariaDB details (remove &lt; and &gt;, and use unquoted text):
+
+CROMWELLDBPORT=...
+CROMWELLDBNAME=...
+CROMWELLDBUSERNAME=...
+CROMWELLDBPASSWORD=...
+
+## Number of cores for your Cromwell server itself - usually 4 is sufficient.  
+###Increase if you want to run many, complex workflows simultaneously or notice your server is slowing down.
+NCORES=4
+
+## Length of time you want the server to run for.  
+### Note: when servers go down, all jobs they&#39;d sent will continue.  When you start up a server the next time
+### using the same database, the new server will pick up whereever the previous workflows left off.  &quot;7-0&quot; is 7 days, zero hours.
+SERVERTIME=&quot;7-0&quot; </code></pre>
+<p>Contact Amy Paguirigan about these issues for some advice or file an issue on this repo.</p>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="faq-and-reference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
