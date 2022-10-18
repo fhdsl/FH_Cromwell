@@ -1,5 +1,5 @@
 ---
-title: "Using Cromwell and WDL at the Fred Hutch"
+title: "WDL 101:  Running WDL workflows at Fred Hutch using Cromwell"
 date: "October, 2022"
 site: bookdown::bookdown_site
 documentclass: book
