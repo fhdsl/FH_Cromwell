@@ -44,3 +44,21 @@ There is a basic R package that wraps the Cromwell API allowing you to submit, m
 ### Effective Computing User Group
 This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time.  Find current events by checking out the FH-Data Slack workspace [here](https://fhdata.slack.com).
 
+
+
+## Running Workflows
+
+
+### Workflow options
+
+
+### Modules vs Docker
+- cloud will require docker but working locally does not
+- docker requires copying of inputs (does not allow for softlinks) so when using big data inputs this can be slower than using modules/softlinks
+
+### Managing Results
+Best practices include:
+- using Scratch for all work in progress
+- copy only required, final, archivable workflow outputs to Fast or AWS S3 using workflow options
+- copy WDL, and any input json or workflow options files to same directory as archived results for a "complete" data package
+- commit code to GitHub and consider versioning/creating a release to more thoroughly document and share code associated with the above data package. 
