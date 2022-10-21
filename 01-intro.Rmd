@@ -3,7 +3,7 @@
 ottrpal::set_knitr_image_path()
 ```
 
-# Introduction to WDL 101
+# Introduction
 WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time.
 
 
