@@ -1,4 +1,8 @@
-]# FAQ and Reference
+
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+# Testing Cromwell and the Fred Hutch Custom Configuration
 
 ## Test Workflows
 
@@ -32,15 +36,6 @@ For the gizmo backend, the following runtime variables are available that are cu
 
 
 ## Guidance and Support
-### Monitoring your workflows at Fred Hutch:
-We have a shiny app you can use to monitor your own Cromwell server workflows when you have a Cromwell server running on `gizmo` that can be found [here](https://cromwellapp.fredhutch.org/).  
-
-### Design Recommendations for WDL workflows at Fred Hutch
-See our [SciWiki page](https://sciwiki.fredhutch.org/compdemos/Cromwell/) on Cromwell for more about guidance for how to start structuring and building your workflows as well as how to share them with others on campus in a findable way.  
-
-### R support
-There is a basic R package that wraps the Cromwell API allowing you to submit, monitor and kill workflow jobs on `gizmo` from R directly. The package is [fh.wdlR](https://github.com/FredHutch/fh.wdlR).  
-
 ### Effective Computing User Group
 This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time.  Find current events by checking out the FH-Data Slack workspace [here](https://fhdata.slack.com).
 

@@ -1,9 +1,11 @@
-book_filename: "WDL 101"
+book_filename: "WDL 101: Running WDLs using Cromwell"
 chapter_name: "Chapter "
-repo: https://github.com/fhdsl/FH_Cromwell
+repo: https://github.com/fhdsl/FH_WDL101_Cromwell
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
             "02-workflows-config.Rmd",
+            "03-using-Shiny.Rmd",
+            "04-using-fh.wdlR.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes
