@@ -4,8 +4,10 @@ ottrpal::set_knitr_image_path()
 ```
 
 # Introduction
-WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time.
-
+WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. 
+WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.
+At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. 
+This allows us to simplify our workflow testing and design, leverage this tool for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  
 
 ## Pre-Requisites
 Either you need to have gotten access to use the Fred Hutch SLURM cluster prior OR have taken our "Cluster 101" course.  
