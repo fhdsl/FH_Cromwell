@@ -1,3 +1,4 @@
+available-course-formats
 introduction
 pre-requisites
 rhino-access
