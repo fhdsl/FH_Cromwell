@@ -8,7 +8,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-       <a href="https://hutchdatascience.org/" target="_blank"><img src="assets/FHDaSL_SQ-funfetti.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
+       <a href="https://hutchdatascience.org/" target="_blank"><img src="assets/Fred-Hutch-Logo-Stacked-Full-Color-RGB.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
       after: |
        <p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
        <p style="text-align:center;"> <a href="https://hutchdatascience.org/"> The Fred Hutch Data Science Lab </a></p>
