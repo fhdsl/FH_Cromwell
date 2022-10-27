@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 References | WDL 101: Running WDL workflows at Fred Hutch using Cromwell</title>
+  <title>Chapter 5 References | WDL 101: Running WDL workflows at Fred Hutch using Cromwell</title>
   <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 References | WDL 101: Running WDL workflows at Fred Hutch using Cromwell" />
+  <meta property="og:title" content="Chapter 5 References | WDL 101: Running WDL workflows at Fred Hutch using Cromwell" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 References | WDL 101: Running WDL workflows at Fred Hutch using Cromwell" />
+  <meta name="twitter:title" content="Chapter 5 References | WDL 101: Running WDL workflows at Fred Hutch using Cromwell" />
   
   <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster." />
   
@@ -68,7 +68,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<a href="https://hutchdatascience.org/" target="_blank"><img src="assets/FHDaSL_SQ-funfetti.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
+<a href="https://hutchdatascience.org/" target="_blank"><img src="assets/Fred-Hutch-Logo-Stacked-Full-Color-RGB.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a>
@@ -77,36 +77,44 @@
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.2</b> Target Audience</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#content"><i class="fa fa-check"></i><b>1.3</b> Content</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#cromwell-resources"><i class="fa fa-check"></i><b>1.4</b> Cromwell Resources</a></li>
-<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#steps-to-prepare"><i class="fa fa-check"></i><b>1.5</b> Steps to prepare</a>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#pre-requisites"><i class="fa fa-check"></i><b>1.1</b> Pre-Requisites</a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="introduction.html"><a href="introduction.html#rhino-access-one-time"><i class="fa fa-check"></i><b>1.5.1</b> Rhino Access (one time)</a></li>
-<li class="chapter" data-level="1.5.2" data-path="introduction.html"><a href="introduction.html#aws-s3-access-optional-as-of-version-1.3"><i class="fa fa-check"></i><b>1.5.2</b> AWS S3 Access (optional as of version 1.3)</a></li>
-<li class="chapter" data-level="1.5.3" data-path="introduction.html"><a href="introduction.html#database-setup-one-time"><i class="fa fa-check"></i><b>1.5.3</b> Database Setup (one time)</a></li>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#rhino-access"><i class="fa fa-check"></i><b>1.1.1</b> <code>rhino</code> Access</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#aws-credentials"><i class="fa fa-check"></i><b>1.1.2</b> AWS Credentials</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#server-setup-instructions"><i class="fa fa-check"></i><b>1.6</b> Server setup instructions</a></li>
-<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#cromwell-server-customization"><i class="fa fa-check"></i><b>1.7</b> Cromwell Server Customization</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="faq-and-reference.html"><a href="faq-and-reference.html"><i class="fa fa-check"></i><b>2</b> FAQ and Reference</a>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-cromwell"><i class="fa fa-check"></i><b>1.2</b> What is Cromwell?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#getting-started-with-cromwell"><i class="fa fa-check"></i><b>1.3</b> Getting Started with Cromwell</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="faq-and-reference.html"><a href="faq-and-reference.html#test-workflows"><i class="fa fa-check"></i><b>2.1</b> Test Workflows</a></li>
-<li class="chapter" data-level="2.2" data-path="faq-and-reference.html"><a href="faq-and-reference.html#fred-hutch-customization"><i class="fa fa-check"></i><b>2.2</b> Fred Hutch Customization</a>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#database-setup"><i class="fa fa-check"></i><b>1.3.1</b> Database Setup</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#start-up-a-cromwell-server"><i class="fa fa-check"></i><b>1.3.2</b> Start up a Cromwell server</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html"><i class="fa fa-check"></i><b>2</b> Using Shiny to Manage Workflows</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="faq-and-reference.html"><a href="faq-and-reference.html#task-defaults-and-runtime-variables"><i class="fa fa-check"></i><b>2.2.1</b> Task Defaults and Runtime Variables</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="faq-and-reference.html"><a href="faq-and-reference.html#guidance-and-support"><i class="fa fa-check"></i><b>2.3</b> Guidance and Support</a>
+<li class="chapter" data-level="2.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#cromwell-app"><i class="fa fa-check"></i><b>2.1</b> Cromwell app</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="faq-and-reference.html"><a href="faq-and-reference.html#monitoring-your-workflows-at-fred-hutch"><i class="fa fa-check"></i><b>2.3.1</b> Monitoring your workflows at Fred Hutch:</a></li>
-<li class="chapter" data-level="2.3.2" data-path="faq-and-reference.html"><a href="faq-and-reference.html#design-recommendations-for-wdl-workflows-at-fred-hutch"><i class="fa fa-check"></i><b>2.3.2</b> Design Recommendations for WDL workflows at Fred Hutch</a></li>
-<li class="chapter" data-level="2.3.3" data-path="faq-and-reference.html"><a href="faq-and-reference.html#r-support"><i class="fa fa-check"></i><b>2.3.3</b> R support</a></li>
-<li class="chapter" data-level="2.3.4" data-path="faq-and-reference.html"><a href="faq-and-reference.html#other-fred-hutch-based-resources"><i class="fa fa-check"></i><b>2.3.4</b> Other Fred Hutch based resources</a></li>
+<li class="chapter" data-level="2.1.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#login"><i class="fa fa-check"></i><b>2.1.1</b> Login</a></li>
+<li class="chapter" data-level="2.1.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-jobs-tab"><i class="fa fa-check"></i><b>2.1.2</b> Submit Jobs Tab</a></li>
+<li class="chapter" data-level="2.1.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>2.1.3</b> Track Jobs Tab</a></li>
+<li class="chapter" data-level="2.1.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>2.1.4</b> Run Test Workflows</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html"><i class="fa fa-check"></i><b>3</b> Cromwell at the Fred Hutch</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#standard-runtime-variables"><i class="fa fa-check"></i><b>3.1</b> Standard Runtime Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#fred-hutch-custom-runtime-variables"><i class="fa fa-check"></i><b>3.2</b> Fred Hutch Custom Runtime Variables</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#software-environments"><i class="fa fa-check"></i><b>3.2.1</b> Software environments</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#guidance-and-support"><i class="fa fa-check"></i><b>3.3</b> Guidance and Support</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#effective-computing-user-group"><i class="fa fa-check"></i><b>3.3.1</b> Effective Computing User Group</a></li>
+<li class="chapter" data-level="3.3.2" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#slack-workflow-managers"><i class="fa fa-check"></i><b>3.3.2</b> Slack Workflow Managers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html"><i class="fa fa-check"></i><b>4</b> Using the <code>fh.wdlR</code> Package</a></li>
 <li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
-<li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
 <li class="divider"></li>
 <p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
 <p style="text-align:center;"> <a href="https://hutchdatascience.org/"> The Fred Hutch Data Science Lab </a></p>
@@ -141,8 +149,8 @@
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/dasl_thin_main_image.png">
 </div>
-<div id="references" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> References</h1>
+<div id="references" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> References</h1>
 
 </div>
 <hr>
