@@ -6,7 +6,7 @@ documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
-description: "An introduction to using the workflow manager software Cromwell to run WDL based workflows using the Fred Hutch HPC cluster."
+description: "An introduction to using the workflow manager software Cromwell to run WDL workflows using the Fred Hutch HPC cluster."
 favicon: assets/favicon.ico
 output:
     bookdown::word_document2:
