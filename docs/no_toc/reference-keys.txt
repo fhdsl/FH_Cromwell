@@ -31,4 +31,10 @@ guidance-and-support
 effective-computing-user-group
 slack-workflow-managers
 using-the-fh.wdlr-package
+install-from-github
+example-workflow-process
+validate-your-workflow-using-womtool
+submit-workflows
+track-workflows
+look-under-the-hood
 references
