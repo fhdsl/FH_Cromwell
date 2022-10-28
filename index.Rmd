@@ -16,3 +16,5 @@ output:
 # About this Course {-}
 
 This course is intended to be an introduction for users at the Fred Hutch to using our pre-configured Cromwell resources to run WDL workflows using our SLURM cluster.
+
+<img src="assets/course-logo/wdl-101-navy.png" title="WDL 101 course logo" alt="course logo" style="display: block; margin: auto;" />
