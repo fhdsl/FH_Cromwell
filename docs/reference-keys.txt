@@ -9,7 +9,6 @@ start-up-a-cromwell-server
 customize-your-configuration
 kick-off-your-cromwell-server
 using-shiny-to-manage-workflows
-cromwell-app
 login
 submit-jobs-tab
 validate-a-workflow
