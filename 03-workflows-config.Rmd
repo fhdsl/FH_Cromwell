@@ -6,7 +6,7 @@ ottrpal::set_knitr_image_path()
 
 Cromwell can help run WDL workflows on a variety of computing resources such as SLURM clusters, as well as AWS, Google and Azure cloud computing systems. 
 Using WDL workflows allows users to focus on their workflow contents rather than the intricacies of the particular computing platforms they are using.  
-However, there are always optimizations of how those workflows run taht may be somewhat specific to the various computing tools you may be using.  
+However, there are always optimizations of how those workflows run that may be somewhat specific to the various computing tools you may be using.  
 We'll discuss some of the available customizations to help you run WDLs on our cluster in a simple way that still allows those workflows to be portable to other computing platforms.  
 
 
@@ -29,7 +29,7 @@ What is specified below is the current default as written, you can edit these in
 - `walltime: "18:00:00"`
   - A string of date/time that specifies how many hours/days you want to request for the task
 - `partition:  "campus-new"`
-  - Which partition you want to use, the default is `campus-new` but whatever is in the runtime block of your WDL will overrride this. Other options currently include `restart` or `short` but check [SciWiki](https://sciwiki.fredhutch.org/scicomputing/) for more updated information. 
+  - Which partition you want to use, the default is `campus-new` but whatever is in the runtime block of your WDL will override this. Other options currently include `restart` or `short` but check [SciWiki](https://sciwiki.fredhutch.org/scicomputing/) for more updated information. 
 - `modules: ""`
   - A space-separated list of the environment modules you'd like to have loaded (in that order) prior to running the task.  
 - `dockerSL: "ubuntu:latest"`
@@ -50,7 +50,7 @@ runtime {
 }
 ```
 
-In this example, the GATK module will be loaded first, followed by the SAMtools modiule.   In this example you'll note the "toolchain" used to build both modules are the same ("GCC-11.2.0").  It is important to ensure when you load modules together for a single task that they are compatible with each other.  
+In this example, the GATK module will be loaded first, followed by the SAMtools module.   In this example you'll note the "toolchain" used to build both modules are the same ("GCC-11.2.0").  It is important to ensure when you load modules together for a single task that they are compatible with each other.  
 
 #### Docker
 However, if you want to move your WDL workflow to the cloud in the future, you'll want to leverage Cromwell's pre-configured ability to run your tasks on `gizmo` in Docker containers.  This configuration allows users to specify docker containers in their runtime blocks, allows Cromwell to maintain a local cache of previously used containers, and facilitates the pull of Docker containers and conversion for use.  This behavior allows us to evade rate-limiting by DockerHub and improves speed of your workflows. 

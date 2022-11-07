@@ -9,7 +9,7 @@ WDL workflows can be run using an engine, which is software that interprets and 
 At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. 
 This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  
 
-## Pre-Requisites
+## Prerequisites
 ### `rhino` Access
 Either you need to have gotten access to use the Fred Hutch SLURM cluster prior OR have taken our "Cluster 101" course.  You can find this **free** course [here](https://leanpub.com/courses/fredhutch/fredhutchcluster101).
 To follow this course, you'll need to know how to get onto the `rhino` nodes.  If this is not something you are familiar with, you also may want to read a bit more about the use of our cluster over at [SciWiki](https://sciwiki.fredhutch.org/) in the Scientific Computing section about Access Methods, and Technologies.
@@ -82,11 +82,11 @@ Now you're ready to go and never have to set up the database part again and you 
 ### Start up your first Cromwell server
 
 #### Customize Your Configuration
-To start up your first Crowmell server job, you first need to decide where you want to keep your Cromwell configuration files.  This must be a place where `rhino` can access them, such as in your `Home` directory, which is typically the default directory when you connect to the `rhinos`.  We suggest you create a `cromwell-home` folder (or whatever you want to call it) and follow these git instructions to clone it directly.
+To start up your first Cromwell server job, you first need to decide where you want to keep your Cromwell configuration files.  This must be a place where `rhino` can access them, such as in your `Home` directory, which is typically the default directory when you connect to the `rhinos`.  We suggest you create a `cromwell-home` folder (or whatever you want to call it) and follow these git instructions to clone it directly.
 
 Then you will set up the customizations that you're going to want for your server(s) by making user configuration file(s) in your `cromwell-home` or wherever you find convenient.  
 
-You can manage mulitple Cromwell profiles this way by just maintaining different files full of credentials and configuration variables that you want.  
+You can manage multiple Cromwell profiles this way by just maintaining different files full of credentials and configuration variables that you want.  
 
 To get started, do the following on `rhino`:
 ```
@@ -149,7 +149,7 @@ SERVERTIME="7-0"
 
 #### Kick off your Cromwell server
 
-Now that you've configured your future Cromwell servers, you can kick off your first Cromwell server job.  Go to `rhino` to your "cromwell-home" anddo the following:
+Now that you've configured your future Cromwell servers, you can kick off your first Cromwell server job.  Go to `rhino` to your "cromwell-home" and do the following:
 ```
 ## You'll want to put `cromwell.sh` somewhere handy for future use, we suggest:
 cp ./diy-cromwell-server/cromwell.sh .
@@ -176,7 +176,7 @@ Submitted batch job 2733799
 Your Cromwell server is attempting to start up on **node/port gizmok30:****.  If you encounter errors, you may want to check your server logs at /home/username/cromwell-home/server-logs to see if Cromwell was unable to start up.
 Go have fun now.
 ```
-> NOTE:  Please write down the node and port it specifies here.  This is the only place where you will be able to find the particular node/port for this instance of your Cromwell server, and you'll need that to be able to send jobs to the Crowmell server.  If you forget it, `scancel` the Cromwell server job and start a new one.  
+> NOTE:  Please write down the node and port it specifies here.  This is the only place where you will be able to find the particular node/port for this instance of your Cromwell server, and you'll need that to be able to send jobs to the Cromwell server.  If you forget it, `scancel` the Cromwell server job and start a new one.  
 
 
 While your server will normally stop after 7 days (the default), at which point if you have jobs still running you can simply restart your server and it will reconnect to existing jobs/workflows.  However, if you need to take down your server for whatever reason before that point, you can go to `rhino` and do:
