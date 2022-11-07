@@ -35,7 +35,7 @@ Once you've connected your server to the Shiny app, you can start by using the "
 Here you'll see a series of sections that will allow you to do several things. 
 
 ### Validate a workflow
-This checks the format of your workflow files to make sure you have a valid file in a known format that Cromwell can iterpret.  It does not perform a "dry run" or check to see if any of your inputs are actually available, only that it can interpret what you told it. 
+This checks the format of your workflow files to make sure you have a valid file in a known format that Cromwell can interpret.  It does not perform a "dry run" or check to see if any of your inputs are actually available, only that it can interpret what you told it. 
 <img src="assets/cromwell/validate.png" title="Validate a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 ### Submit a workflow
@@ -48,7 +48,7 @@ Sometimes you realize you might just want to kill a workflow.  Using the workflo
 <img src="assets/cromwell/abort.png" title="Abort a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 ### Troubleshoot a workflow
-Especially in the beginning if you have catastrophic workflow failures and you can't even figure out what's going on, you can come back to this Troubleshoot box to retreive the entire, unformatted JSON output of all metadata Cromwell has about your workflow here.  You probably are better served by the next tab in the app for checking up on how your workflow is going, but if there's nothing there that's helpful, then this box is where you'll want to go.  
+Especially in the beginning if you have catastrophic workflow failures and you can't even figure out what's going on, you can come back to this Troubleshoot box to retrieve the entire, unformatted JSON output of all metadata Cromwell has about your workflow here.  You probably are better served by the next tab in the app for checking up on how your workflow is going, but if there's nothing there that's helpful, then this box is where you'll want to go.  
 > Note: this is not for the faint of heart, but it will give you hints once you get used to understanding what Cromwell is telling you.  
 <img src="assets/cromwell/validate.png" title="Troubleshoot a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
@@ -58,7 +58,7 @@ Especially in the beginning if you have catastrophic workflow failures and you c
 Once you've submitted a workflow, you'll want to track how it's going in the Track Jobs tab. 
 
 ### Workflows of History
-Here you'll see that you can query for as many days of history worth of workflows that you'd like, filter that result (for instance if you have submitted a LOT of workflows and the app is slow) for workflows with a specific name or with specific status(es) (such as failed, suceeded, etc). 
+Here you'll see that you can query for as many days of history worth of workflows that you'd like, filter that result (for instance if you have submitted a LOT of workflows and the app is slow) for workflows with a specific name or with specific status(es) (such as failed, succeeded, etc). 
 
 <img src="assets/cromwell/cromwell-app.png" title="Top of the Track Jobs tab" alt="Crowmell app" style="display: block; margin: auto;" />
 
@@ -81,12 +81,12 @@ Then there is a table of all of those calls in which you can find a variety of u
 
 
 
-Then you can use the Job Failures nad Call Caching tables to retreive information relevant to those processes by clicking the "Get/Refresh ... Metadata" buttons (sometimes these can be quite large, and thus they do not load until you want them).   
+Then you can use the Job Failures and Call Caching tables to retrieve information relevant to those processes by clicking the "Get/Refresh ... Metadata" buttons (sometimes these can be quite large, and thus they do not load until you want them).   
 <img src="assets/cromwell/failures-caching.png" title="Job failures and call caching" alt="Crowmell app" style="display: block; margin: auto;" />
 
 
 
-Finally, once a workflow suceeds, Cromwell can tell you (and this Shiny app can help you download) a table of all the outputs to the workflow itself (note this is not every file created, only the ones you specify as the "results" of the workflow overall).  This is useful to go find those results and interact with them, archive them, or otherwise copy them to longer term storage for use.  
+Finally, once a workflow succeeds, Cromwell can tell you (and this Shiny app can help you download) a table of all the outputs to the workflow itself (note this is not every file created, only the ones you specify as the "results" of the workflow overall).  This is useful to go find those results and interact with them, archive them, or otherwise copy them to longer term storage for use.  
 <img src="assets/cromwell/workflow-outputs.png" title="Workflow outputs" alt="Crowmell app" style="display: block; margin: auto;" />
 
 
