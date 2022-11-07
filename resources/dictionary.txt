@@ -3,6 +3,7 @@ BIPOC
 Bloomberg
 Bookdown
 Coursera
+Cromwell
 css
 Datatrail
 DataTrail
@@ -26,6 +27,7 @@ NCI
 NHGRI
 ottrpal
 Pandoc
+SciWiki
 UE
 UE5
 reproducibility

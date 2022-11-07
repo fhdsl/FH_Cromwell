@@ -64,7 +64,7 @@ If you're unfamiliar with resources for using Docker or to learn more about usin
 
 ## Guidance and Support
 
-There are a variety of resources on campus from the [SciWiki](https://sciwiki.fredutch.org) to SciComp office hours (found in the Research Data Support Teams team) to asking questions in the [FH Data Slack #question-and-answer channel](https://fhdata.slack.com/archives/CD3HGJHJT) to coming to the [Effective Computing Drop in hours held by Fred Hutch DaSL](https://fhdata.slack.com/archives/C03T4QPNDA9).
+There are a variety of resources on campus from the [SciWiki](https://sciwiki.fredhutch.org) to SciComp office hours (found in the Research Data Support Teams team) to asking questions in the [FH Data Slack #question-and-answer channel](https://fhdata.slack.com/archives/CD3HGJHJT) to coming to the [Effective Computing Drop in hours held by Fred Hutch DaSL](https://fhdata.slack.com/archives/C03T4QPNDA9).
 
 ### Effective Computing User Group
 This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time.  Find current events by checking out the FH Data Slack workspace [here](https://fhdata.slack.com).
