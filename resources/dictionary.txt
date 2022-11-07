@@ -18,7 +18,6 @@ GH
 impactful
 ITCR
 itcrtraining
-ITN
 fyi
 Leanpub
 Markua
