@@ -36,6 +36,7 @@ Thus for each user, we suggest setting up a database which only needs to be done
 
 1.  Go to [DB4Sci](https://mydb.fredhutch.org/login) and see the Wiki entry for DB4Sci [here](https://sciwiki.fredhutch.org/scicomputing/store_databases/#db4sci--previously-mydb).  
 1.  Login using your Fred Hutch credentials
+<img src="assets/cromwell/db4sciLogin.png" title="DB4Sci Login" alt="db4scilong" style="display: block; margin: auto;" />
 1.  Choose `Create DB Container`, and choose the MariaDB (MySQL) option.  
 <img src="assets/cromwell/db4sci.png" title="DB4Sci interface" alt="db4sci" style="display: block; margin: auto;" />
 1.  Use the following:
@@ -78,7 +79,7 @@ MariaDB [(none)]> exit
 
 Now you're ready to go and never have to set up the database part again and you can use this database to manage all your work over time!
 
-### Start up a Cromwell server
+### Start up your first Cromwell server
 
 #### Customize Your Configuration
 To start up your first Crowmell server job, you first need to decide where you want to keep your Cromwell configuration files.  This must be a place where `rhino` can access them, such as in your `Home` directory, which is typically the default directory when you connect to the `rhinos`.  We suggest you create a `cromwell-home` folder (or whatever you want to call it) and follow these git instructions to clone it directly.
@@ -92,8 +93,17 @@ To get started, do the following on `rhino`:
 mkdir -p cromwell-home
 cd cromwell-home
 git clone --branch main https://github.com/FredHutch/diy-cromwell-server.git
+```
+
+This will look like this:
+<img src="assets/cromwell/mk-cromwell-home.png" title="Cloning scripts from GitHub" alt="cloneFromGithub" style="display: block; margin: auto;" />
 
 
+
+Next you'll want to move the cromUserConfig.txt template file you just downloaded into your main `cromwell-home` directory for customization and keeping in the future. 
+
+
+```
 cp ./diy-cromwell-server/cromUserConfig.txt .
 ## When you are first setting up Cromwell, you'll need to put all of your User Customizations into this `cromUserConfig.txt` which can serve as a template.  
 ## After you've done this once, you just need to keep the path to the file(s) handy for the future.  
@@ -162,8 +172,8 @@ Setting up all required directories...
 Detecting existence of AWS credentials...
 Credentials found, setting appropriate configuration...
 Requesting resources from SLURM for your server...
-Submitted batch job 50205062
-Your Cromwell server is attempting to start up on **node/port gizmok30:2020**.  If you encounter errors, you may want to check your server logs at /home/username/cromwell-home/server-logs to see if Cromwell was unable to start up.
+Submitted batch job 2733799
+Your Cromwell server is attempting to start up on **node/port gizmok30:****.  If you encounter errors, you may want to check your server logs at /home/username/cromwell-home/server-logs to see if Cromwell was unable to start up.
 Go have fun now.
 ```
 > NOTE:  Please write down the node and port it specifies here.  This is the only place where you will be able to find the particular node/port for this instance of your Cromwell server, and you'll need that to be able to send jobs to the Crowmell server.  If you forget it, `scancel` the Cromwell server job and start a new one.  
@@ -172,15 +182,29 @@ Go have fun now.
 While your server will normally stop after 7 days (the default), at which point if you have jobs still running you can simply restart your server and it will reconnect to existing jobs/workflows.  However, if you need to take down your server for whatever reason before that point, you can go to `rhino` and do:
 
 ```
-# Here `username` is your Fred Hutch username
+## Here `username` is your Fred Hutch username
 squeue -u username
 ## Or if you want to get fancy:
 squeue -o '%.18i %.9P %j %.8T %.10M %.9l %.6C %R' -u username
+```
 
-## You'll see a jobname "cromwellServer".  Next to that will be a JOBID. In this example the JOBID of the server is 50062886.
+You'll see a jobname "cromwellServer".  Next to that will be a JOBID. In this example the JOBID of the server is 2733799.
 
-scancel 50062886
+<img src="assets/cromwell/squeue.png" title="Your Cromwell server running on Gizmo" alt="squeue results" style="display: block; margin: auto;" />
+
+If you ever want to shut down your server before the 7 day default run time, you can always go to Rhino in your Terminal and end the server by doing:
 
 ```
+scancel 2733799
+
+```
+
+## Starting up your server in the future
+These instructions are a one time event!  In the future, when you want to start up a Cromwell server to do some computing work, all you'll have to do is:
+1.  Get onto Rhino in Terminal
+2. Change to the `cromwell-home` directory
+3.  
+
+
 
 Congrats you've started your first Cromwell server!!  Now on to how to submit a WDL workflow to it.
