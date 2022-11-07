@@ -17,4 +17,4 @@ output:
 
 This course is intended to be an introduction for users at the Fred Hutch to using our pre-configured Cromwell resources to run WDL workflows using the Fred Hutch computing cluster.
 
-<img src="assets/course-logo/wdl-101-navy.png" title="WDL 101 course logo" alt="course logo" style="display: block; margin: auto;" />
+<img src="assets/course-logo/wdl-101-navy.png" title="WDL 101 course logo" alt="course logo" style="display: block; margin: auto;" max-width: 200px/>
