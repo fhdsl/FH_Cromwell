@@ -1,4 +1,0 @@
-
-# References 
-
-We borrowed content with permission from the OpenWDL group's ongoing work to creating documentation in their GitHub repository https://github.com/openwdl/wdl-docs.  
