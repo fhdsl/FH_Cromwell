@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction | WDL 101: Running WDLs using Cromwell</title>
-  <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows using the Fred Hutch computing cluster." />
+  <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction | WDL 101: Running WDLs using Cromwell" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows using the Fred Hutch computing cluster." />
+  <meta property="og:description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 1 Introduction | WDL 101: Running WDLs using Cromwell" />
   
-  <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows using the Fred Hutch computing cluster." />
+  <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   
 
 
@@ -30,7 +30,7 @@
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="index.html"/>
-<link rel="next" href="using-shiny-to-manage-workflows.html"/>
+<link rel="next" href="getting-started-with-cromwell.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -134,64 +134,74 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <a href="https://hutchdatascience.org/" target="_blank"><img src="assets/big-dasl-stacked.png" style="width: 80%; padding-left: 15px; padding-top: 8px;"</a>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Guide</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#pre-requisites"><i class="fa fa-check"></i><b>1.1</b> Pre-Requisites</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#rhino-access"><i class="fa fa-check"></i><b>1.1.1</b> <code>rhino</code> Access</a></li>
-<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#aws-credentials"><i class="fa fa-check"></i><b>1.1.2</b> AWS Credentials</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-cromwell"><i class="fa fa-check"></i><b>1.1</b> What is Cromwell?</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-cromwell"><i class="fa fa-check"></i><b>1.2</b> What is Cromwell?</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#getting-started-with-cromwell"><i class="fa fa-check"></i><b>1.3</b> Getting Started with Cromwell</a>
+<li class="chapter" data-level="2" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html"><i class="fa fa-check"></i><b>2</b> Getting Started with Cromwell</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#database-setup"><i class="fa fa-check"></i><b>1.3.1</b> Database Setup</a></li>
-<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#start-up-a-cromwell-server"><i class="fa fa-check"></i><b>1.3.2</b> Start up a Cromwell server</a></li>
+<li class="chapter" data-level="2.1" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#prerequisites"><i class="fa fa-check"></i><b>2.1</b> Prerequisites</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#rhino-access"><i class="fa fa-check"></i><b>2.1.1</b> <code>rhino</code> Access</a></li>
+<li class="chapter" data-level="2.1.2" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#optional-aws-credentials"><i class="fa fa-check"></i><b>2.1.2</b> (Optional) AWS Credentials</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#database-setup"><i class="fa fa-check"></i><b>2.2</b> Database Setup</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#get-your-database-container"><i class="fa fa-check"></i><b>2.2.1</b> Get Your Database Container</a></li>
+<li class="chapter" data-level="2.2.2" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#make-your-empty-database"><i class="fa fa-check"></i><b>2.2.2</b> Make Your Empty Database</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#start-up-your-first-cromwell-server"><i class="fa fa-check"></i><b>2.3</b> Start up your first Cromwell server</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#customize-your-configuration"><i class="fa fa-check"></i><b>2.3.1</b> Customize Your Configuration</a></li>
+<li class="chapter" data-level="2.3.2" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#kick-off-your-cromwell-server"><i class="fa fa-check"></i><b>2.3.2</b> Kick off your Cromwell server</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#starting-up-your-server-in-the-future"><i class="fa fa-check"></i><b>2.4</b> Starting up your server in the future</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html"><i class="fa fa-check"></i><b>3</b> Using Shiny to Manage Workflows</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#login"><i class="fa fa-check"></i><b>3.1</b> Login</a></li>
+<li class="chapter" data-level="3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-jobs-tab"><i class="fa fa-check"></i><b>3.2</b> Submit Jobs Tab</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#validate-a-workflow"><i class="fa fa-check"></i><b>3.2.1</b> Validate a workflow</a></li>
+<li class="chapter" data-level="3.2.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-a-workflow"><i class="fa fa-check"></i><b>3.2.2</b> Submit a workflow</a></li>
+<li class="chapter" data-level="3.2.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#abort-a-workflow"><i class="fa fa-check"></i><b>3.2.3</b> Abort a workflow</a></li>
+<li class="chapter" data-level="3.2.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-a-workflow"><i class="fa fa-check"></i><b>3.2.4</b> Troubleshoot a workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>3.3</b> Track Jobs Tab</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#workflows-of-history"><i class="fa fa-check"></i><b>3.3.1</b> Workflows of History</a></li>
+<li class="chapter" data-level="3.3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#diving-into-a-workflow"><i class="fa fa-check"></i><b>3.3.2</b> Diving into a Workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>3.4</b> Run Test Workflows</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html"><i class="fa fa-check"></i><b>4</b> Fred Hutch Customizations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#standard-runtime-variables"><i class="fa fa-check"></i><b>4.1</b> Standard Runtime Variables</a></li>
+<li class="chapter" data-level="4.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#fred-hutch-custom-runtime-variables"><i class="fa fa-check"></i><b>4.2</b> Fred Hutch Custom Runtime Variables</a></li>
+<li class="chapter" data-level="4.3" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#software-environments"><i class="fa fa-check"></i><b>4.3</b> Software environments</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#modules"><i class="fa fa-check"></i><b>4.3.1</b> Modules</a></li>
+<li class="chapter" data-level="4.3.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#docker"><i class="fa fa-check"></i><b>4.3.2</b> Docker</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#guidance-and-support"><i class="fa fa-check"></i><b>4.4</b> Guidance and Support</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#effective-computing-drop-in-hour"><i class="fa fa-check"></i><b>4.4.1</b> Effective Computing Drop In Hour</a></li>
+<li class="chapter" data-level="4.4.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#slack-workflow-manager-channel"><i class="fa fa-check"></i><b>4.4.2</b> Slack Workflow Manager Channel</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html"><i class="fa fa-check"></i><b>2</b> Using Shiny to Manage Workflows</a>
+<li class="chapter" data-level="5" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html"><i class="fa fa-check"></i><b>5</b> Using the <code>fh.wdlR</code> Package</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#login"><i class="fa fa-check"></i><b>2.1</b> Login</a></li>
-<li class="chapter" data-level="2.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-jobs-tab"><i class="fa fa-check"></i><b>2.2</b> Submit Jobs Tab</a>
+<li class="chapter" data-level="5.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#install-from-github"><i class="fa fa-check"></i><b>5.1</b> Install from GitHub</a></li>
+<li class="chapter" data-level="5.2" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#example-workflow-process"><i class="fa fa-check"></i><b>5.2</b> Example workflow process</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#validate-a-workflow"><i class="fa fa-check"></i><b>2.2.1</b> Validate a workflow</a></li>
-<li class="chapter" data-level="2.2.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-a-workflow"><i class="fa fa-check"></i><b>2.2.2</b> Submit a workflow</a></li>
-<li class="chapter" data-level="2.2.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#abort-a-workflow"><i class="fa fa-check"></i><b>2.2.3</b> Abort a workflow</a></li>
-<li class="chapter" data-level="2.2.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-a-workflow"><i class="fa fa-check"></i><b>2.2.4</b> Troubleshoot a workflow</a></li>
+<li class="chapter" data-level="5.2.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#validate-your-workflow-using-womtool"><i class="fa fa-check"></i><b>5.2.1</b> Validate your workflow using Womtool</a></li>
+<li class="chapter" data-level="5.2.2" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#submit-workflows"><i class="fa fa-check"></i><b>5.2.2</b> Submit Workflows</a></li>
+<li class="chapter" data-level="5.2.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#track-workflows"><i class="fa fa-check"></i><b>5.2.3</b> Track Workflows</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>2.3</b> Track Jobs Tab</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#workflows-of-history"><i class="fa fa-check"></i><b>2.3.1</b> Workflows of History</a></li>
-<li class="chapter" data-level="2.3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#diving-into-a-workflow"><i class="fa fa-check"></i><b>2.3.2</b> Diving into a Workflow</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>2.4</b> Run Test Workflows</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html"><i class="fa fa-check"></i><b>3</b> Cromwell at the Fred Hutch</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#standard-runtime-variables"><i class="fa fa-check"></i><b>3.1</b> Standard Runtime Variables</a></li>
-<li class="chapter" data-level="3.2" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#fred-hutch-custom-runtime-variables"><i class="fa fa-check"></i><b>3.2</b> Fred Hutch Custom Runtime Variables</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#software-environments"><i class="fa fa-check"></i><b>3.2.1</b> Software environments</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#guidance-and-support"><i class="fa fa-check"></i><b>3.3</b> Guidance and Support</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#effective-computing-user-group"><i class="fa fa-check"></i><b>3.3.1</b> Effective Computing User Group</a></li>
-<li class="chapter" data-level="3.3.2" data-path="cromwell-at-the-fred-hutch.html"><a href="cromwell-at-the-fred-hutch.html#slack-workflow-managers"><i class="fa fa-check"></i><b>3.3.2</b> Slack Workflow Managers</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html"><i class="fa fa-check"></i><b>4</b> Using the <code>fh.wdlR</code> Package</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#install-from-github"><i class="fa fa-check"></i><b>4.1</b> Install from GitHub</a></li>
-<li class="chapter" data-level="4.2" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#example-workflow-process"><i class="fa fa-check"></i><b>4.2</b> Example workflow process</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#validate-your-workflow-using-womtool"><i class="fa fa-check"></i><b>4.2.1</b> Validate your workflow using Womtool</a></li>
-<li class="chapter" data-level="4.2.2" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#submit-workflows"><i class="fa fa-check"></i><b>4.2.2</b> Submit Workflows</a></li>
-<li class="chapter" data-level="4.2.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#track-workflows"><i class="fa fa-check"></i><b>4.2.3</b> Track Workflows</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#look-under-the-hood"><i class="fa fa-check"></i><b>4.3</b> Look Under the Hood</a></li>
+<li class="chapter" data-level="5.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#look-under-the-hood"><i class="fa fa-check"></i><b>5.3</b> Look Under the Hood</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
-<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
 <li class="divider"></li>
 <p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
 <p style="text-align:center;"> <a href="https://hutchdatascience.org/"> The Fred Hutch Data Science Lab </a></p>
@@ -227,150 +237,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time.
-WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.
-At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired.
-This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.</p>
-<div id="pre-requisites" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Pre-Requisites</h2>
-<div id="rhino-access" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> <code>rhino</code> Access</h3>
-<p>Either you need to have gotten access to use the Fred Hutch SLURM cluster prior OR have taken our “Cluster 101” course. You can find this <strong>free</strong> course <a href="https://leanpub.com/courses/fredhutch/fredhutchcluster101">here</a>.
-To follow this course, you’ll need to know how to get onto the <code>rhino</code> nodes. If this is not something you are familiar with, you also may want to read a bit more about the use of our cluster over at <a href="https://sciwiki.fredhutch.org/">SciWiki</a> in the Scientific Computing section about Access Methods, and Technologies.</p>
-</div>
-<div id="aws-credentials" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> AWS Credentials</h3>
-<p>If you want to run workflows on data stored in AWS S3, you’ll need to have set up your AWS credentials first.<br />
-As of version 1.3 of the diy-cromwell-server configuration, if you have credentials, then the Cromwell server will be configured to allow input files to directly specified using their AWS S3 url.<br />
-However if you do not have AWS credentials or aren’t using data stored in AWS S3, then you don’t have to do anything.</p>
-</div>
-</div>
-<div id="what-is-cromwell" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> What is Cromwell?</h2>
-<p>Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API interface and allows users to manage multiple workflows simultaneously.<br />
-Cromwell isn’t the only WDL “engine” that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.</p>
-</div>
-<div id="getting-started-with-cromwell" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Getting Started with Cromwell</h2>
-<div id="database-setup" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Database Setup</h3>
-<p>One of the strengths of using Cromwell is that it can allow you to keep track of what you’ve already done so you don’t have to re-compute jobs that have already completed successfully even if some of your workflow fails.
-To leverage this feature, called “call caching” and also use our computing resources efficiently, our configuration of Cromwell will help you set up a Cromwell server for 7 days at a time and creates a database that persists forever that the Cromwell servers can communicate with.
-We have found that by using a MySQL database for your Cromwell server to store information in, it will run faster and be better able to handle simultaneous workflows while also making all the metadata available to you during and after the run.</p>
-<p>Thus for each user, we suggest setting up a database which only needs to be done one time per user using these steps:</p>
-<ol style="list-style-type: decimal">
-<li>Go to <a href="https://mydb.fredhutch.org/login">DB4Sci</a> and see the Wiki entry for DB4Sci <a href="https://sciwiki.fredhutch.org/scicomputing/store_databases/#db4sci--previously-mydb">here</a>.<br />
-</li>
-<li>Login using Fred Hutch credentials, choose <code>Create DB Container</code>, and choose the MariaDB option.<br />
-</li>
-<li>The default database container values are typically fine, EXCEPT you likely need either weekly or no backups (no backups preferred) for this database.</li>
-<li>Save the <code>DB/Container Name</code>, <code>DB Username</code> and <code>DB Password</code> as you will need them for the configuration step.</li>
-</ol>
-<p>Once you click submit, a confirmation screen will appear (hopefully), and you’ll need to note which <code>Port</code> is specified. This is a 5 digit number currently.</p>
-<p>Now you have a “container” in which to run a database, but the database itself does not yet exist.<br />
-You need to create an empty database in that container and then Cromwell will do the rest the first time you start up a server.</p>
-<p>To create the database, you’ll need to go to Terminal and connect to <code>rhino</code> then follow these instructions:</p>
-<pre><code>ml MariaDB/10.5.1-foss-2019b
-mysql --host mydb --port &lt;Port&gt; --user &lt;username&gt; --password</code></pre>
-<p>It will then prompt you to enter the DB password you specified during setup. Once you are are a “mysql&gt;” prompt, you can do the following.
-&gt;Note, we suggest you name the database inside the container the same as the container, but you cannot include dashes in your database name. In the future, DB4Sci may also set up the database inside the container for you, in which case you would be provided a database name as well during setup.</p>
-<pre><code>MariaDB [(none)]&gt; create database &lt;DB Name&gt;;
-# It should do its magic
-MariaDB [(none)]&gt; exit</code></pre>
-<p>Now you’re ready to go and never have to set up the database part again and you can use this database to manage all your work over time!</p>
-</div>
-<div id="start-up-a-cromwell-server" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Start up a Cromwell server</h3>
-<div id="customize-your-configuration" class="section level4" number="1.3.2.1">
-<h4><span class="header-section-number">1.3.2.1</span> Customize Your Configuration</h4>
-<p>To start up your first Crowmell server job, you first need to decide where you want to keep your Cromwell configuration files.<br />
-This must be a place where <code>rhino</code> can access them, such as in your <code>Home</code> directory, which is typically the default directory when you connect to the <code>rhinos</code>.<br />
-We suggest you create a <code>cromwell-home</code> folder (or whatever you want to call it) and follow these git instructions to clone it directly.</p>
-<p>Then you will set up the customizations that you’re going to want for your server(s) by making user configuration file(s) in your <code>cromwell-home</code> or wherever you find convenient.</p>
-<p>You can manage mulitple Cromwell profiles this way by just maintaining different files full of credentials and configuration variables that you want.</p>
-<p>To get started, do the following on <code>rhino</code>:</p>
-<pre><code>mkdir -p cromwell-home
-cd cromwell-home
-git clone --branch main https://github.com/FredHutch/diy-cromwell-server.git
-
-
-cp ./diy-cromwell-server/cromUserConfig.txt .
-## When you are first setting up Cromwell, you&#39;ll need to put all of your User Customizations into this `cromUserConfig.txt` which can serve as a template.  
-## After you&#39;ve done this once, you just need to keep the path to the file(s) handy for the future.  </code></pre>
-<p>In <code>cromUserConfig.txt</code> there are some variables that allow users to share a similar configuration file but tailor the particular behavior of their Cromwell server to best suit them.<br />
-The following text is also in this repo but these are the customizations you’ll need to decide on for your server.</p>
-<pre><code>################## WORKING DIRECTORY AND PATH CUSTOMIZATIONS ###################
-## Where do you want the working directory to be for Cromwell (note: this process will create a subdirectory here called &quot;cromwell-executions&quot;)?  
-### Suggestion: /fh/scratch/delete90/pilastname_f/username/
-SCRATCHDIR=/fh/scratch/delete90/...
-
-## Where do you want logs about individual workflows (not jobs) to be written?
-## Note: this is a default for the server and can be overwritten for a given workflow in workflow-options.
-### Suggestion: /fh/fast/pilastname_f/cromwell/workflow-logs
-WORKFLOWLOGDIR=~/cromwell-home/workflow-logs
-
-## Where do you want to save Cromwell server logs for troubleshooting Cromwell itself?
-### Suggestion: ~/home/username/cromwell-home/server-logs
-SERVERLOGDIR=~./cromwell-home/server-logs
-
-################ DATABASE CUSTOMIZATIONS #################
-## DB4Sci MariaDB details (remove &lt; and &gt;, and use unquoted text):
-
-CROMWELLDBPORT=...
-CROMWELLDBNAME=...
-CROMWELLDBUSERNAME=...
-CROMWELLDBPASSWORD=...
-
-## Number of cores for your Cromwell server itself - usually 4 is sufficient.  
-###Increase if you want to run many, complex workflows simultaneously or notice your server is slowing down.
-NCORES=4
-
-## Length of time you want the server to run for.  
-### Note: when servers go down, all jobs they&#39;d sent will continue.  When you start up a server the next time
-### using the same database, the new server will pick up whereever the previous workflows left off.  &quot;7-0&quot; is 7 days, zero hours.
-SERVERTIME=&quot;7-0&quot; </code></pre>
-<blockquote>
-<p>Note: For this server, you will want multiple cores to allow it to multi-task. Memory is less important when you use an external database. If you notice issues, the particular resource request for the server job itself might be a good place to start adjusting, in conjunction with some guidance from SciComp or the Slack <a href="https://fhbig.slack.com/archives/CD3HGJHJT">Question and Answer channel</a> folks.</p>
-</blockquote>
-</div>
-<div id="kick-off-your-cromwell-server" class="section level4" number="1.3.2.2">
-<h4><span class="header-section-number">1.3.2.2</span> Kick off your Cromwell server</h4>
-<p>Now that you’ve configured your future Cromwell servers, you can kick off your first Cromwell server job. Go to <code>rhino</code> to your “cromwell-home” anddo the following:</p>
-<pre><code>## You&#39;ll want to put `cromwell.sh` somewhere handy for future use, we suggest:
-cp ./diy-cromwell-server/cromwell.sh .
-
-## Then you&#39;ll want to make the script &quot;executable&quot;:
-chmod +x cromwell.sh
-
-# Then simply start up Cromwell by executing the script and passing it the path to your configuration file. 
-./cromwell.sh cromUserConfig.txt</code></pre>
-<p>Much like the <code>grabnode</code> command you may have used previously, the script will run and print back to the console instructions once the resources have been provisioned for the server. You should see something like this:</p>
-<pre><code>Your configuration details have been found...
-Getting an updated copy of Cromwell configs from GitHub...
-Setting up all required directories...
-Detecting existence of AWS credentials...
-Credentials found, setting appropriate configuration...
-Requesting resources from SLURM for your server...
-Submitted batch job 50205062
-Your Cromwell server is attempting to start up on **node/port gizmok30:2020**.  If you encounter errors, you may want to check your server logs at /home/username/cromwell-home/server-logs to see if Cromwell was unable to start up.
-Go have fun now.</code></pre>
-<blockquote>
-<p>NOTE: Please write down the node and port it specifies here. This is the only place where you will be able to find the particular node/port for this instance of your Cromwell server, and you’ll need that to be able to send jobs to the Crowmell server. If you forget it, <code>scancel</code> the Cromwell server job and start a new one.</p>
-</blockquote>
-<p>While your server will normally stop after 7 days (the default), at which point if you have jobs still running you can simply restart your server and it will reconnect to existing jobs/workflows. However, if you need to take down your server for whatever reason before that point, you can go to <code>rhino</code> and do:</p>
-<pre><code># Here `username` is your Fred Hutch username
-squeue -u username
-## Or if you want to get fancy:
-squeue -o &#39;%.18i %.9P %j %.8T %.10M %.9l %.6C %R&#39; -u username
-
-## You&#39;ll see a jobname &quot;cromwellServer&quot;.  Next to that will be a JOBID. In this example the JOBID of the server is 50062886.
-
-scancel 50062886
-</code></pre>
-<p>Congrats you’ve started your first Cromwell server!! Now on to how to submit a WDL workflow to it.</p>
-
-</div>
-</div>
+<p>WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.</p>
+<p>At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.</p>
+<div id="what-is-cromwell" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> What is Cromwell?</h2>
+<p>Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API interface and allows users to manage multiple workflows simultaneously. Cromwell isn’t the only WDL “engine” that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.</p>
 </div>
 </div>
 <hr>
@@ -387,7 +258,7 @@ scancel 50062886
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="using-shiny-to-manage-workflows.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="getting-started-with-cromwell.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

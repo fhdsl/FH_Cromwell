@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Using the fh.wdlR Package | WDL 101: Running WDLs using Cromwell</title>
+  <title>Chapter 4 Fred Hutch Customizations | WDL 101: Running WDLs using Cromwell</title>
   <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Using the fh.wdlR Package | WDL 101: Running WDLs using Cromwell" />
+  <meta property="og:title" content="Chapter 4 Fred Hutch Customizations | WDL 101: Running WDLs using Cromwell" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Using the fh.wdlR Package | WDL 101: Running WDLs using Cromwell" />
+  <meta name="twitter:title" content="Chapter 4 Fred Hutch Customizations | WDL 101: Running WDLs using Cromwell" />
   
   <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="fred-hutch-customizations.html"/>
-<link rel="next" href="about-the-authors.html"/>
+<link rel="prev" href="using-shiny-to-manage-workflows.html"/>
+<link rel="next" href="using-the-fh.wdlr-package.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -235,92 +235,85 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/dasl_thin_main_image.png">
 </div>
-<div id="using-the-fh.wdlr-package" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Using the <code>fh.wdlR</code> Package</h1>
-<p>The Shiny app deployed at Fred Hutch to allow users to submit workflows to running Cromwell servers is built using an R package which is freely available in GitHub.</p>
-<p><a href="https://github.com/FredHutch/fh.wdlR" class="uri">https://github.com/FredHutch/fh.wdlR</a></p>
-<p>This R package allows you to use R/RStudio on your local machine (on VPN or on campus) to directly submit workflows to your server from the command line, and lets you track calls and workflow execution status directly.</p>
-<div id="install-from-github" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Install from GitHub</h2>
-<p>You will need the following packages installed first:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="using-the-fh.wdlr-package.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="at">pkgs =</span> <span class="fu">c</span>(<span class="st">&quot;httr&quot;</span>, <span class="st">&quot;jsonlite&quot;</span>, <span class="st">&quot;magrittr&quot;</span>,</span>
-<span id="cb11-2"><a href="using-the-fh.wdlr-package.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;ssh&quot;</span>, <span class="st">&quot;purrr&quot;</span>, <span class="st">&quot;paws&quot;</span>, <span class="st">&quot;tidyr&quot;</span>))</span>
-<span id="cb11-3"><a href="using-the-fh.wdlr-package.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="using-the-fh.wdlr-package.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Not required for the package but certainly handy and used in our demo here:</span></span>
-<span id="cb11-5"><a href="using-the-fh.wdlr-package.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<p>Then you can install the most recent version of <code>fh.wdlR</code> by:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="using-the-fh.wdlr-package.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(remotes)</span>
-<span id="cb12-2"><a href="using-the-fh.wdlr-package.html#cb12-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;FredHutch/fh.wdlR&#39;</span>)</span></code></pre></div>
-<p>Install a specific release version (in this case v2.0.2) by:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="using-the-fh.wdlr-package.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(remotes)</span>
-<span id="cb13-2"><a href="using-the-fh.wdlr-package.html#cb13-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;FredHutch/fh.wdlR@v2.0.2&#39;</span>)</span></code></pre></div>
+<div id="fred-hutch-customizations" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Fred Hutch Customizations</h1>
+<p>Cromwell can help run WDL workflows on a variety of computing resources such as SLURM clusters (like the Fred Hutch cluster), as well as AWS, Google and Azure cloud computing systems. Using WDL workflows allows users to focus on their workflow contents rather than the intricacies of the particular computing platforms they are using.<br />
+However, there are always optimizations of how those workflows run that may be somewhat specific to the various computing tools you may be using.</p>
+<p>We’ll discuss some of the available customizations to help you run WDLs on our cluster in a simple way that still allows those workflows to be portable to other computing platforms.</p>
+<div id="standard-runtime-variables" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Standard Runtime Variables</h2>
+<p>These runtime variables are both the defaults for our Fred Hutch configuration and also standard runtime variables you can use on other computing platforms too.</p>
+<ul>
+<li><code>cpu: 1</code>
+<ul>
+<li>An integer number of cpus you want for the task</li>
+</ul></li>
+<li><code>memory: 2000</code>
+<ul>
+<li>An integer number of MB of memory you want to use for the task</li>
+</ul></li>
+<li><code>docker: "ubuntu:latest"</code>
+<ul>
+<li>A specific Docker container to use for the task. For the custom Hutch configuration, docker containers can be specified and the necessary conversions (to Singularity) will be performed by Cromwell (not the user). Note: when docker is used, soft links cannot be used in our filesystem, so workflows using very large datasets may run slightly slower due to the need for Cromwell to copy files rather than link to them.</li>
+</ul></li>
+</ul>
 </div>
-<div id="example-workflow-process" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Example workflow process</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="using-the-fh.wdlr-package.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load packages</span></span>
-<span id="cb14-2"><a href="using-the-fh.wdlr-package.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fh.wdlR); <span class="fu">library</span>(tidyverse);</span></code></pre></div>
-<p>Tell your R session how to find your Cromwell server (note you’ll need to be on campus or on VPN).</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="using-the-fh.wdlr-package.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Set your Cromwell URL</span></span>
-<span id="cb15-2"><a href="using-the-fh.wdlr-package.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setCromwellURL</span>(<span class="at">nodeAndPort =</span> <span class="st">&quot;gizmoXXX:20202&quot;</span>)</span></code></pre></div>
-<div id="validate-your-workflow-using-womtool" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Validate your workflow using Womtool</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="using-the-fh.wdlr-package.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;*.wdl&quot;</span>)</span>
-<span id="cb16-2"><a href="using-the-fh.wdlr-package.html#cb16-2" aria-hidden="true" tabindex="-1"></a>valid <span class="ot">&lt;-</span> <span class="fu">womtoolValidate</span>(<span class="at">WDL =</span> <span class="st">&quot;myworkflow.wdl&quot;</span>); valid[[<span class="st">&quot;errors&quot;</span>]]</span></code></pre></div>
-<p>Go fix your issues, now send your workflow to Cromwell.</p>
+<div id="fred-hutch-custom-runtime-variables" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Fred Hutch Custom Runtime Variables</h2>
+<p>For the <code>gizmo</code> cluster, the following runtime variables are available that are customized to our configuration.<br />
+What is specified below is the current default as written, you can edit these in the config file if you’d like OR you can specify these variables in your <code>runtime</code> block in each task to change only the variables you want to change from the default for that particular task.</p>
+<ul>
+<li><code>walltime: "18:00:00"</code>
+<ul>
+<li>A string of date/time that specifies how many hours/days you want to request for the task</li>
+</ul></li>
+<li><code>partition:  "campus-new"</code>
+<ul>
+<li>Which partition you want to use, the default is <code>campus-new</code> but whatever is in the runtime block of your WDL will override this. Other options currently include <code>restart</code> or <code>short</code> but check <a href="https://sciwiki.fredhutch.org/scicomputing/">SciWiki</a> for more updated information.</li>
+</ul></li>
+<li><code>modules: ""</code>
+<ul>
+<li>A space-separated list of the environment modules you’d like to have loaded (in that order) prior to running the task.<br />
+</li>
+</ul></li>
+<li><code>dockerSL: "ubuntu:latest"</code>
+<ul>
+<li>This is a custom configuration for the Hutch that allows users to use docker and softlinks only to specific locations in Scratch. It is helpful when working with very large files.</li>
+</ul></li>
+<li><code>account: "paguirigan_a"</code>
+<ul>
+<li>This allows users who run jobs for multiple PI accounts to specify at the level of a task which account to use for a given job to manage cluster allocations.</li>
+</ul></li>
+</ul>
 </div>
-<div id="submit-workflows" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Submit Workflows</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="using-the-fh.wdlr-package.html#cb17-1" aria-hidden="true" tabindex="-1"></a>thisJob <span class="ot">&lt;-</span> <span class="fu">cromwellSubmitBatch</span>(<span class="at">WDL =</span> <span class="st">&quot;myworkflow.wdl&quot;</span>,</span>
-<span id="cb17-2"><a href="using-the-fh.wdlr-package.html#cb17-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Params =</span> <span class="st">&quot;myworkflow-parameters.json&quot;</span>,</span>
-<span id="cb17-3"><a href="using-the-fh.wdlr-package.html#cb17-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Batch =</span> <span class="st">&quot;myworkflow-batch.json&quot;</span>,</span>
-<span id="cb17-4"><a href="using-the-fh.wdlr-package.html#cb17-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Options =</span> <span class="st">&quot;workflow-options.json&quot;</span>)</span>
-<span id="cb17-5"><a href="using-the-fh.wdlr-package.html#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="using-the-fh.wdlr-package.html#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># thisJob$id is now the unique Cromwell ID for your entire workflow - you can use that to request all sorts of metadata!!!</span></span>
-<span id="cb17-7"><a href="using-the-fh.wdlr-package.html#cb17-7" aria-hidden="true" tabindex="-1"></a>thisOne<span class="ot">&lt;-</span> thisJob<span class="sc">$</span>id; thisOne</span></code></pre></div>
-<p>Now get all your metadata and track the workflow!!</p>
+<div id="software-environments" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Software environments</h2>
+<div id="modules" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Modules</h3>
+<p>At Fred Hutch we have huge array of pre-curated software modules installed on our SLURM cluster which you can <a href="https://sciwiki.fredhutch.org/scicomputing/compute_scientificSoftware/">read about in SciWiki</a>.<br />
+The custom configuration of our Cromwell server software here at the Hutch allows users to specify modules (or combinations of modules by simply adding them on in a space separated string) available on the cluster to use for individual tasks in a workflow. The module(s) desired can be used for a task by specifying in the <code>runtime</code> block of your calls the following:</p>
+<pre><code>runtime {
+  modules: &quot;GATK/4.2.6.1-GCCcore-11.2.0 SAMtools/1.16.1-GCC-11.2.0&quot;
+}</code></pre>
+<p>In this example, the GATK module will be loaded first, followed by the SAMtools module. In this example you’ll note the “toolchain” used to build both modules are the same (“GCC-11.2.0”). It is important to ensure when you load modules together for a single task that they are compatible with each other.</p>
 </div>
-<div id="track-workflows" class="section level3" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> Track Workflows</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="using-the-fh.wdlr-package.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns a data frame of all jobs run in the past number of days (uses your database)</span></span>
-<span id="cb18-2"><a href="using-the-fh.wdlr-package.html#cb18-2" aria-hidden="true" tabindex="-1"></a>jobs <span class="ot">&lt;-</span> <span class="fu">cromwellJobs</span>(<span class="at">days =</span> <span class="dv">2</span>)</span>
-<span id="cb18-3"><a href="using-the-fh.wdlr-package.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="using-the-fh.wdlr-package.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns a data frame (one line if you only submit one workflow id) containing workflow level metadata</span></span>
-<span id="cb18-5"><a href="using-the-fh.wdlr-package.html#cb18-5" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">cromwellWorkflow</span>(thisOne)</span>
-<span id="cb18-6"><a href="using-the-fh.wdlr-package.html#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="using-the-fh.wdlr-package.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This is handy to print the current status of the workflow(s) is(are)</span></span>
-<span id="cb18-8"><a href="using-the-fh.wdlr-package.html#cb18-8" aria-hidden="true" tabindex="-1"></a>w<span class="sc">$</span>status</span>
-<span id="cb18-9"><a href="using-the-fh.wdlr-package.html#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="using-the-fh.wdlr-package.html#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns a data frame containing all call level metadata</span></span>
-<span id="cb18-11"><a href="using-the-fh.wdlr-package.html#cb18-11" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">cromwellCall</span>(thisOne)</span>
-<span id="cb18-12"><a href="using-the-fh.wdlr-package.html#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-13"><a href="using-the-fh.wdlr-package.html#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Handy set of dplyr commands to tell you about how the various calls are doing</span></span>
-<span id="cb18-14"><a href="using-the-fh.wdlr-package.html#cb18-14" aria-hidden="true" tabindex="-1"></a>c <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(callName, executionStatus) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">status =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(executionStatus)</span>
-<span id="cb18-15"><a href="using-the-fh.wdlr-package.html#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-16"><a href="using-the-fh.wdlr-package.html#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns a data frame containing call level call caching  metadata</span></span>
-<span id="cb18-17"><a href="using-the-fh.wdlr-package.html#cb18-17" aria-hidden="true" tabindex="-1"></a>ca <span class="ot">&lt;-</span> <span class="fu">cromwellCache</span>(thisOne)</span>
-<span id="cb18-18"><a href="using-the-fh.wdlr-package.html#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-19"><a href="using-the-fh.wdlr-package.html#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Handy set of dplyr commands to tell you about what sort of call caching is happening</span></span>
-<span id="cb18-20"><a href="using-the-fh.wdlr-package.html#cb18-20" aria-hidden="true" tabindex="-1"></a>ca <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(callCaching.hit, callName) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">hits =</span> <span class="fu">n</span>())</span>
-<span id="cb18-21"><a href="using-the-fh.wdlr-package.html#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-22"><a href="using-the-fh.wdlr-package.html#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Opens up a popup in your browser with a timing diagram in it.</span></span>
-<span id="cb18-23"><a href="using-the-fh.wdlr-package.html#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cromwellTiming</span>(thisOne)</span>
-<span id="cb18-24"><a href="using-the-fh.wdlr-package.html#cb18-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-25"><a href="using-the-fh.wdlr-package.html#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns a data frame containing call level failure metadata</span></span>
-<span id="cb18-26"><a href="using-the-fh.wdlr-package.html#cb18-26" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">cromwellFailures</span>(thisOne)</span>
-<span id="cb18-27"><a href="using-the-fh.wdlr-package.html#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-28"><a href="using-the-fh.wdlr-package.html#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Will tell Cromwell to abort the current workflow - note this cannot be undone and it will take a while to stop all the jobs.  </span></span>
-<span id="cb18-29"><a href="using-the-fh.wdlr-package.html#cb18-29" aria-hidden="true" tabindex="-1"></a>abort <span class="ot">&lt;-</span> <span class="fu">cromwellAbort</span>(thisOne)</span>
-<span id="cb18-30"><a href="using-the-fh.wdlr-package.html#cb18-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-31"><a href="using-the-fh.wdlr-package.html#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="co"># When a workflow is done, request information about the workflow outputs.</span></span>
-<span id="cb18-32"><a href="using-the-fh.wdlr-package.html#cb18-32" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">cromwellOutputs</span>(thisOne)</span></code></pre></div>
+<div id="docker" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Docker</h3>
+<p>However, if you want to move your WDL workflow to the cloud in the future, you’ll want to leverage Cromwell’s pre-configured ability to run your tasks on <code>gizmo</code> in Docker containers. This configuration allows users to specify docker containers in their runtime blocks, allows Cromwell to maintain a local cache of previously used containers, and facilitates the pull of Docker containers and conversion for use. This behavior allows us to evade rate-limiting by DockerHub and improves speed of your workflows.</p>
 </div>
 </div>
-<div id="look-under-the-hood" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Look Under the Hood</h2>
-<p>When all else fails, pick through the ugly metadata yourself to see what’s happening.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="using-the-fh.wdlr-package.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ugly list of raw metadata should you need it for workflow troubleshooting</span></span>
-<span id="cb19-2"><a href="using-the-fh.wdlr-package.html#cb19-2" aria-hidden="true" tabindex="-1"></a>WTF <span class="ot">&lt;-</span> <span class="fu">cromwellGlob</span>(thisOne); WTF[[<span class="st">&quot;failures&quot;</span>]]</span></code></pre></div>
+<div id="guidance-and-support" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Guidance and Support</h2>
+<p>There are a variety of resources on campus from the <a href="https://sciwiki.fredhutch.org">SciWiki</a> to SciComp office hours (found in the Research Data Support Teams team) to asking computing related questions in the <a href="https://fhdata.slack.com/archives/CD3HGJHJT">Fred Hutch Data Slack #question-and-answer channel</a> to coming to the <a href="https://fhdata.slack.com/archives/C03T4QPNDA9">Effective Computing Drop in hours held by Fred Hutch DaSL</a>.</p>
+<div id="effective-computing-drop-in-hour" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Effective Computing Drop In Hour</h3>
+<p>This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time. Find current events by checking out the Fred Hutch Data Slack workspace <a href="https://fhdata.slack.com">here</a>.</p>
+</div>
+<div id="slack-workflow-manager-channel" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Slack Workflow Manager Channel</h3>
+<p>In the <a href="https://fhdata.slack.com/">Fred Hutch Data Slack workspace</a> there is a specific channel where you can find help from peers and staff who support Cromwell and WDL here at the Fred Hutch called <a href="https://fhdata.slack.com/archives/CJFP1NYSZ">#workflow-managers</a></p>
 
+</div>
 </div>
 </div>
 <hr>
@@ -336,8 +329,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="fred-hutch-customizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="using-shiny-to-manage-workflows.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="using-the-fh.wdlr-package.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
