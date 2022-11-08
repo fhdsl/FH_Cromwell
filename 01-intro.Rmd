@@ -4,10 +4,24 @@ ottrpal::set_knitr_image_path()
 ```
 
 # Introduction
-WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. 
-WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.
-At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. 
-This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  
+
+WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.
+
+At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  
+
+## What is Cromwell?
+Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API interface and allows users to manage multiple workflows simultaneously.  Cromwell isn't the only WDL "engine" that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.
+
+
+
+# Getting Started with Cromwell
+
+To get set up using Cromwell at the Fred Hutch, there are two setup processes you need to do one time in order to customize how Cromwell runs for you.  
+
+1.  Database Setup
+2.  Cromwell customization
+
+This guide aims to help you get these two steps set up correctly so that in the future you can just run Cromwell directly.  
 
 ## Prerequisites
 ### `rhino` Access
@@ -20,18 +34,13 @@ As of version 1.3 of the diy-cromwell-server configuration, if you have credenti
 However if you do not have AWS credentials or aren't using data stored in AWS S3, then you don't have to do anything.  
 
 
-## What is Cromwell?
-Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API interface and allows users to manage multiple workflows simultaneously.  
-Cromwell isn't the only WDL "engine" that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.
 
 
-## Getting Started with Cromwell
-
-### Database Setup
+## Database Setup
 One of the strengths of using Cromwell is that it can allow you to keep track of what you've already done so you don't have to re-compute jobs that have already completed successfully even if some of your workflow fails.  To leverage this feature, called "call caching" and also use our computing resources efficiently, our configuration of Cromwell will help you set up a Cromwell server for 7 days at a time and creates a database that persists forever that the Cromwell servers can communicate with.  We have found that by using a MySQL database for your Cromwell server to store information in, it will run faster and be better able to handle simultaneous workflows while also making all the metadata available to you during and after the run.  
 
 
-#### Get Your Database Container
+### Get Your Database Container
 Thus for each user, we suggest setting up a database which only needs to be done one time per user using these steps:
 
 1.  Go to [DB4Sci](https://mydb.fredhutch.org/login) and see the Wiki entry for DB4Sci [here](https://sciwiki.fredhutch.org/scicomputing/store_databases/#db4sci--previously-mydb).  
@@ -54,7 +63,7 @@ Thus for each user, we suggest setting up a database which only needs to be done
 
 At this point you should have a sticky note or something handy where you've put the DB Name, DB Username, DB Password and Port ready for the next steps. 
 
-#### Make Your Empty Database
+### Make Your Empty Database
 Now you have a "container" in which to run a database, but the database itself does not yet exist.  
 You need to create an empty database in that container and then Cromwell will do the rest the first time you start up a server. 
 
@@ -79,9 +88,11 @@ MariaDB [(none)]> exit
 
 Now you're ready to go and never have to set up the database part again and you can use this database to manage all your work over time!
 
-### Start up your first Cromwell server
+## Start up your first Cromwell server
 
-#### Customize Your Configuration
+Now that you've set up your database so it's ready for Cromwell to talk to it and save your workflow information to it, you will customize Cromwell to work how you want it to work and you'll be ready to use it!
+
+### Customize Your Configuration
 To start up your first Cromwell server job, you first need to decide where you want to keep your Cromwell configuration files.  This must be a place where `rhino` can access them, such as in your `Home` directory, which is typically the default directory when you connect to the `rhinos`.  We suggest you create a `cromwell-home` folder (or whatever you want to call it) and follow these git instructions to clone it directly.
 
 Then you will set up the customizations that you're going to want for your server(s) by making user configuration file(s) in your `cromwell-home` or wherever you find convenient.  
@@ -147,7 +158,7 @@ SERVERTIME="7-0"
 
 > Note:  For this server, you will want multiple cores to allow it to multi-task.  Memory is less important when you use an external database.  If you notice issues, the particular resource request for the server job itself might be a good place to start adjusting, in conjunction with some guidance from SciComp or the Slack [Question and Answer channel](https://fhbig.slack.com/archives/CD3HGJHJT) folks.
 
-#### Kick off your Cromwell server
+### Kick off your Cromwell server
 
 Now that you've configured your future Cromwell servers, you can kick off your first Cromwell server job.  Go to `rhino` to your "cromwell-home" and do the following:
 ```
@@ -200,9 +211,9 @@ scancel 2733799
 ```
 
 ## Starting up your server in the future
-These instructions are a one time event!  In the future, when you want to start up a Cromwell server to do some computing work, all you'll have to do is:
+Good news! The above instructions are a one time event. In the future, when you want to start up a Cromwell server to do some computing work, all you'll have to do is:
 1. Get onto Rhino in Terminal
-2. Change to the `cromwell-home` directory
+2. Change to the `cromwell-home` directory you made
 3. Enter: `./cromwell.sh cromUserConfig.txt` and you're off to the races!
 
 

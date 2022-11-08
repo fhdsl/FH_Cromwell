@@ -2,11 +2,11 @@
 ```{r, include = FALSE}
 ottrpal::set_knitr_image_path()
 ```
-# Cromwell at the Fred Hutch
+# Fred Hutch Customizations
 
-Cromwell can help run WDL workflows on a variety of computing resources such as SLURM clusters, as well as AWS, Google and Azure cloud computing systems. 
-Using WDL workflows allows users to focus on their workflow contents rather than the intricacies of the particular computing platforms they are using.  
+Cromwell can help run WDL workflows on a variety of computing resources such as SLURM clusters (like the Fred Hutch cluster), as well as AWS, Google and Azure cloud computing systems.  Using WDL workflows allows users to focus on their workflow contents rather than the intricacies of the particular computing platforms they are using.  
 However, there are always optimizations of how those workflows run that may be somewhat specific to the various computing tools you may be using.  
+
 We'll discuss some of the available customizations to help you run WDLs on our cluster in a simple way that still allows those workflows to be portable to other computing platforms.  
 
 
@@ -37,10 +37,10 @@ What is specified below is the current default as written, you can edit these in
 - `account: "paguirigan_a"`
   - This allows users who run jobs for multiple PI accounts to specify at the level of a task which account to use for a given job to manage cluster allocations.  
 
-### Software environments
+## Software environments
 
 
-#### Modules
+### Modules
 At Fred Hutch we have huge array of pre-curated software modules installed on our SLURM cluster which you can [read about in SciWiki](https://sciwiki.fredhutch.org/scicomputing/compute_scientificSoftware/).  
 The custom configuration of our Cromwell server software here at the Hutch allows users to specify modules (or combinations of modules by simply adding them on in a space separated string) available on the cluster to use for individual tasks in a workflow.  The module(s) desired can be used for a task by specifying in the `runtime` block of your calls the following:
 
@@ -52,23 +52,18 @@ runtime {
 
 In this example, the GATK module will be loaded first, followed by the SAMtools module.   In this example you'll note the "toolchain" used to build both modules are the same ("GCC-11.2.0").  It is important to ensure when you load modules together for a single task that they are compatible with each other.  
 
-#### Docker
+### Docker
 However, if you want to move your WDL workflow to the cloud in the future, you'll want to leverage Cromwell's pre-configured ability to run your tasks on `gizmo` in Docker containers.  This configuration allows users to specify docker containers in their runtime blocks, allows Cromwell to maintain a local cache of previously used containers, and facilitates the pull of Docker containers and conversion for use.  This behavior allows us to evade rate-limiting by DockerHub and improves speed of your workflows. 
-
-
-#### Find Support
-If you're unfamiliar with resources for using Docker or to learn more about using modules and software environments see the "Guidance and Support" section of this course. Software management in workflows can be don in many ways so finding what works best for your work is often an iterative process.  
-
 
 
 
 ## Guidance and Support
 
-There are a variety of resources on campus from the [SciWiki](https://sciwiki.fredhutch.org) to SciComp office hours (found in the Research Data Support Teams team) to asking questions in the [FH Data Slack #question-and-answer channel](https://fhdata.slack.com/archives/CD3HGJHJT) to coming to the [Effective Computing Drop in hours held by Fred Hutch DaSL](https://fhdata.slack.com/archives/C03T4QPNDA9).
+There are a variety of resources on campus from the [SciWiki](https://sciwiki.fredhutch.org) to SciComp office hours (found in the Research Data Support Teams team) to asking computing related questions in the [Fred Hutch Data Slack #question-and-answer channel](https://fhdata.slack.com/archives/CD3HGJHJT) to coming to the [Effective Computing Drop in hours held by Fred Hutch DaSL](https://fhdata.slack.com/archives/C03T4QPNDA9).
 
-### Effective Computing User Group
-This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time.  Find current events by checking out the FH Data Slack workspace [here](https://fhdata.slack.com).
+### Effective Computing Drop In Hour
+This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time.  Find current events by checking out the Fred Hutch Data Slack workspace [here](https://fhdata.slack.com).
 
-### Slack Workflow Managers
-In the [FH Data Slack workspace](https://fhdata.slack.com/) there is a specific channel where you can find help from peers and staff who support Cromwell and WDL here at the Hutch called [#workflow-managers](https://fhdata.slack.com/archives/CJFP1NYSZ)
+### Slack Workflow Manager Channel
+In the [Fred Hutch Data Slack workspace](https://fhdata.slack.com/) there is a specific channel where you can find help from peers and staff who support Cromwell and WDL here at the Fred Hutch called [#workflow-managers](https://fhdata.slack.com/archives/CJFP1NYSZ)
 
