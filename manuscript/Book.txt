@@ -1,7 +1,7 @@
 1-Introduction.md
-2-Using-Shiny-to-Manage-Workflows.md
-3-Cromwell-at-the-Fred-Hutch.md
-4-Using-the-fh.wdlR-Package.md
-5-References.md
-About-this-Course.md
+2-Getting-Started-with-Cromwell.md
+3-Using-Shiny-to-Manage-Workflows.md
+4-Fred-Hutch-Customizations.md
+5-Using-the-fh.wdlR-Package.md
+About-this-Guide.md
 About-the-Authors.md
