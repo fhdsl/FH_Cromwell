@@ -2,7 +2,7 @@
 
 # Using the `fh.wdlR` Package
 
-The Shiny app deployed at Fred Hutch to allow users to submit workflows to running Crowmell servers is built using an R package which is freely available in GitHub.  
+The Shiny app deployed at Fred Hutch to allow users to submit workflows to running Cromwell servers is built using an R package which is freely available in GitHub.  
 
 https://github.com/FredHutch/fh.wdlR
 
@@ -58,7 +58,7 @@ list.files(pattern = "*.wdl")
 valid <- womtoolValidate(WDL = "myworkflow.wdl"); valid[["errors"]]
 ```
 
-Go fix your issues, now send your workflow to Crowmell.
+Go fix your issues, now send your workflow to Cromwell.
 
 ### Submit Workflows
 
