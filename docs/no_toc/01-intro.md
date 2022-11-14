@@ -3,12 +3,12 @@
 
 # Introduction
 
-WDL is a open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.
+WDL is an open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.
 
 At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  
 
 ## What is Cromwell?
-Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API interface and allows users to manage multiple workflows simultaneously.  Cromwell isn't the only WDL "engine" that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.
+Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks ob metadata, provides an API interface and allows users to manage multiple workflows simultaneously.  Cromwell isn't the only WDL "engine" that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.
 
 
 
@@ -132,8 +132,8 @@ SCRATCHDIR=/fh/scratch/delete90/...
 WORKFLOWLOGDIR=~/cromwell-home/workflow-logs
 
 ## Where do you want to save Cromwell server logs for troubleshooting Cromwell itself?
-### Suggestion: ~/home/username/cromwell-home/server-logs
-SERVERLOGDIR=~./cromwell-home/server-logs
+### Suggestion: ~/cromwell-home/server-logs
+SERVERLOGDIR=~/cromwell-home/server-logs
 
 ################ DATABASE CUSTOMIZATIONS #################
 ## DB4Sci MariaDB details (remove < and >, and use unquoted text):

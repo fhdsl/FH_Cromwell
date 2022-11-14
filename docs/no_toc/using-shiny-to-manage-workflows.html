@@ -258,8 +258,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="submit-jobs-tab" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Submit Jobs Tab</h2>
 <p>Once you’ve connected your server to the Shiny app, you can start by using the “Submit Jobs” tab on the left.<br />
-<img src="assets/cromwell/cromwell-app.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" /></p>
-<p>Here you’ll see a series of sections that will allow you to do several things.</p>
+<img src="assets/cromwell/submit.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<p>Here you’ll see a series of sections that will allow you to do several things. For this guide there are a number of example workflows you just <a href="https://github.com/FredHutch/diy-cromwell-server/tree/main/testWorkflows">downloaded from GitHub</a> that you can run that have WDL files (the workflow itself), and the JSON formatted input files that you’ll need. There is emerging documentation about the WDL specification itself and likely future sections of this guide will be added to help you design your first workflow. Until then, there is some information in the <a href="https://github.com/openwdl/wdl/blob/main/versions/development/SPEC.md#introduction">openWDL GitHub repo for the specification itself where you can learn more</a>.</p>
 <div id="validate-a-workflow" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Validate a workflow</h3>
 <p>This checks the format of your workflow files to make sure you have a valid file in a known format that Cromwell can interpret. It does not perform a “dry run” or check to see if any of your inputs are actually available, only that it can interpret what you told it.
@@ -267,8 +267,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="submit-a-workflow" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Submit a workflow</h3>
-<p>This will let you upload the files that contain your workflow description (a WDL), and up to two different sets of input lists (in JSON form). You can run a workflow with no input JSON, one input JSON, or two input JSONs (which will be concatenated or the second will overwrite the first if the same variable is declared in both). You can upload a workflow options JSON (which you’ll learn about in future classes), as well as providing text labels of your choosing to workflows if you’d like.<br />
-<img src="assets/cromwell/submit.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<p>This will let you upload the files that contain your workflow description (a WDL), and up to two different sets of input lists (in JSON form). You can run a workflow with no input JSON, one input JSON, or two input JSONs (which will be concatenated or the second will overwrite the first if the same variable is declared in both). You can upload a workflow options JSON, as well as providing text labels of your choosing to workflows if you’d like.<br />
+<img src="assets/cromwell/cromwell-app.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
 </div>
 <div id="abort-a-workflow" class="section level3" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Abort a workflow</h3>
@@ -279,7 +279,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.2.4</span> Troubleshoot a workflow</h3>
 <p>Especially in the beginning if you have catastrophic workflow failures and you can’t even figure out what’s going on, you can come back to this Troubleshoot box to retrieve the entire, unformatted JSON output of all metadata Cromwell has about your workflow here. You probably are better served by the next tab in the app for checking up on how your workflow is going, but if there’s nothing there that’s helpful, then this box is where you’ll want to go.<br />
 &gt; Note: this is not for the faint of heart, but it will give you hints once you get used to understanding what Cromwell is telling you.<br />
-<img src="assets/cromwell/validate.png" title="Troubleshoot a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<img src="assets/cromwell/troubleshoot.png" title="Troubleshoot a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="track-jobs-tab" class="section level2" number="3.3">
