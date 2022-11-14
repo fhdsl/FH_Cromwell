@@ -30,17 +30,19 @@ If so, just wait 1-2 more minutes (if it's the first time you've set up a server
 
 ## Submit Jobs Tab
 Once you've connected your server to the Shiny app, you can start by using the "Submit Jobs" tab on the left.  
-<img src="assets/cromwell/cromwell-app.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" />
+<img src="assets/cromwell/submit.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" />
 
-Here you'll see a series of sections that will allow you to do several things. 
+Here you'll see a series of sections that will allow you to do several things. For this guide there are a number of example workflows you just [downloaded from GitHub](https://github.com/FredHutch/diy-cromwell-server/tree/main/testWorkflows) that you can run that have WDL files (the workflow itself), and the JSON formatted input files that you'll need.  There is emerging documentation about the WDL specification itself and likely future sections of this guide will be added to help you design your first workflow.  Until then, there is some information in the [openWDL GitHub repo for the specification itself where you can learn more](https://github.com/openwdl/wdl/blob/main/versions/development/SPEC.md#introduction). 
+
+
 
 ### Validate a workflow
 This checks the format of your workflow files to make sure you have a valid file in a known format that Cromwell can interpret.  It does not perform a "dry run" or check to see if any of your inputs are actually available, only that it can interpret what you told it. 
 <img src="assets/cromwell/validate.png" title="Validate a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 ### Submit a workflow
-This will let you upload the files that contain your workflow description (a WDL), and up to two different sets of input lists (in JSON form).  You can run a workflow with no input JSON, one input JSON, or two input JSONs (which will be concatenated or the second will overwrite the first if the same variable is declared in both).  You can upload a workflow options JSON (which you'll learn about in future classes), as well as providing text labels of your choosing to workflows if you'd like.  
-<img src="assets/cromwell/submit.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
+This will let you upload the files that contain your workflow description (a WDL), and up to two different sets of input lists (in JSON form).  You can run a workflow with no input JSON, one input JSON, or two input JSONs (which will be concatenated or the second will overwrite the first if the same variable is declared in both).  You can upload a workflow options JSON, as well as providing text labels of your choosing to workflows if you'd like.  
+<img src="assets/cromwell/cromwell-app.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 
 ### Abort a workflow
@@ -50,7 +52,7 @@ Sometimes you realize you might just want to kill a workflow.  Using the workflo
 ### Troubleshoot a workflow
 Especially in the beginning if you have catastrophic workflow failures and you can't even figure out what's going on, you can come back to this Troubleshoot box to retrieve the entire, unformatted JSON output of all metadata Cromwell has about your workflow here.  You probably are better served by the next tab in the app for checking up on how your workflow is going, but if there's nothing there that's helpful, then this box is where you'll want to go.  
 > Note: this is not for the faint of heart, but it will give you hints once you get used to understanding what Cromwell is telling you.  
-<img src="assets/cromwell/validate.png" title="Troubleshoot a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
+<img src="assets/cromwell/troubleshoot.png" title="Troubleshoot a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 
 ## Track Jobs Tab
