@@ -5,12 +5,12 @@ ottrpal::set_knitr_image_path()
 
 # Introduction
 
-WDL is an open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS, Google and Azure.
+WDL is an open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS (Amazon Web Services), Google and Azure.
 
 At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  
 
 ## What is Cromwell?
-Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks ob metadata, provides an API interface and allows users to manage multiple workflows simultaneously.  Cromwell isn't the only WDL "engine" that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.
+Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API interface and allows users to manage multiple workflows simultaneously.  Cromwell isn't the only WDL "engine" that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.
 
 
 
@@ -29,8 +29,8 @@ Either you need to have gotten access to use the Fred Hutch SLURM cluster prior 
 To follow this course, you'll need to know how to get onto the `rhino` nodes.  If this is not something you are familiar with, you also may want to read a bit more about the use of our cluster over at [SciWiki](https://sciwiki.fredhutch.org/) in the Scientific Computing section about Access Methods, and Technologies.
 
 ### (Optional) AWS Credentials
-If you want to run workflows on data stored in AWS S3, you'll need to have set up your AWS credentials first.  
-As of version 1.3 of the diy-cromwell-server configuration, if you have credentials, then the Cromwell server will be configured to allow input files to directly specified using their AWS S3 url.  
+If you want to run workflows on data stored in AWS S3, you'll need to have [set up your AWS credentials](https://sciwiki.fredhutch.org/scicomputing/access_credentials/#amazon-web-services-aws) first.  
+As of version 1.3 of the diy-cromwell-server configuration, if you have credentials, then the Cromwell server will be configured to allow input files to be directly specified using their AWS S3 url.  
 However if you do not have AWS credentials or aren't using data stored in AWS S3, then you don't have to do anything.  
 
 
@@ -41,7 +41,7 @@ One of the strengths of using Cromwell is that it can allow you to keep track of
 
 
 ### Get Your Database Container
-Thus for each user, we suggest setting up a database which only needs to be done one time per user using these steps:
+Thus for each user, we suggest setting up a database using the following steps. This only needs to be done one time per user.
 
 1.  Go to [DB4Sci](https://mydb.fredhutch.org/login) and see the Wiki entry for DB4Sci [here](https://sciwiki.fredhutch.org/scicomputing/store_databases/#db4sci--previously-mydb).  
 1.  Login using your Fred Hutch credentials
@@ -64,7 +64,7 @@ Thus for each user, we suggest setting up a database which only needs to be done
 At this point you should have a sticky note or something handy where you've put the DB Name, DB Username, DB Password and Port ready for the next steps. 
 
 ### Make Your Empty Database
-Now you have a "container" in which to run a database, but the database itself does not yet exist.  
+Now you have a "container" in which to run a database, but the database itself does not yet exist.  Again, this only needs to be done one time per user.
 You need to create an empty database in that container and then Cromwell will do the rest the first time you start up a server. 
 
 To create the database, you'll need to go to Terminal and connect to `rhino` then enter the following (where you replace the entire `<Port>` including the < and > with the text, for example, `34567`).
