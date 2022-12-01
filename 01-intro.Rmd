@@ -184,10 +184,10 @@ Detecting existence of AWS credentials...
 Credentials found, setting appropriate configuration...
 Requesting resources from SLURM for your server...
 Submitted batch job 2733799
-Your Cromwell server is attempting to start up on **node/port gizmok30:****.  If you encounter errors, you may want to check your server logs at /home/username/cromwell-home/server-logs to see if Cromwell was unable to start up.
+Your Cromwell server is attempting to start up on node/port gizmob5:39071.  It can take up to 2 minutes prior to the port being open for use by the shiny app at https://cromwellapp.fredhutch.org or via the R package fh.wdlR. If you encounter errors, you may want to check your server logs at /fh/fast/malik_h/user/jayoung/cromwell-home/server-logs to see if Cromwell was unable to start up.
 Go have fun now.
 ```
-> NOTE:  Please write down the node and port it specifies here.  This is the only place where you will be able to find the particular node/port for this instance of your Cromwell server, and you'll need that to be able to send jobs to the Cromwell server.  If you forget it, `scancel` the Cromwell server job and start a new one.  
+> IMPORTANT NOTE:  Please write down the node and port it specifies here - in this example it's `gizmob5:39071`, but yours will be a different combination.  This is the only place where you will be able to find the particular node/port for this instance of your Cromwell server, and you'll need that to be able to send jobs to the Cromwell server.  If you forget it, `scancel` the Cromwell server job and start a new one.  
 
 
 While your server will normally stop after 7 days (the default), at which point if you have jobs still running you can simply restart your server and it will reconnect to existing jobs/workflows.  However, if you need to take down your server for whatever reason before that point, you can go to `rhino` and do:
