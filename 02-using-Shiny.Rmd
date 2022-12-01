@@ -94,7 +94,7 @@ Then you can use the Job Failures and Call Caching tables to retrieve informatio
 
 
 
-Finally, once a workflow succeeds, Cromwell can tell you (and this Shiny app can help you download) a table showing where to find the workflow outputs (note this is not every file created, only the ones you specify as "results" using the WDL file's 'workkflow output' block).  This lets you find output files and interact with them, archive them, or otherwise copy them to longer term storage for use.  
+Finally, once a workflow succeeds, Cromwell can tell you (and this Shiny app can help you download) a table showing where to find the workflow outputs (note this is not every file created, only the ones you specify as "results" using the WDL file's 'workflow output' block).  This lets you find output files and interact with them, archive them, or otherwise copy them to longer term storage for use.  
 <img src="assets/cromwell/workflow-outputs.png" title="Workflow outputs" alt="Crowmell app" style="display: block; margin: auto;" />
 
 
