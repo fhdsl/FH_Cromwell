@@ -34,7 +34,7 @@ slack-workflow-manager-channel
 using-the-fh.wdlr-package
 install-from-github
 example-workflow-process
-validate-your-workflow-using-womtool
+validate-your-workflow-formatting
 submit-workflows
 track-workflows
 look-under-the-hood
