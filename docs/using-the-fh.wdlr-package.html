@@ -195,7 +195,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#install-from-github"><i class="fa fa-check"></i><b>5.1</b> Install from GitHub</a></li>
 <li class="chapter" data-level="5.2" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#example-workflow-process"><i class="fa fa-check"></i><b>5.2</b> Example workflow process</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#validate-your-workflow-using-womtool"><i class="fa fa-check"></i><b>5.2.1</b> Validate your workflow using Womtool</a></li>
+<li class="chapter" data-level="5.2.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#validate-your-workflow-formatting"><i class="fa fa-check"></i><b>5.2.1</b> Validate your workflow formatting</a></li>
 <li class="chapter" data-level="5.2.2" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#submit-workflows"><i class="fa fa-check"></i><b>5.2.2</b> Submit Workflows</a></li>
 <li class="chapter" data-level="5.2.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#track-workflows"><i class="fa fa-check"></i><b>5.2.3</b> Track Workflows</a></li>
 </ul></li>
@@ -262,10 +262,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Tell your R session how to find your Cromwell server (note you’ll need to be on campus or on VPN).</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="using-the-fh.wdlr-package.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Set your Cromwell URL</span></span>
 <span id="cb15-2"><a href="using-the-fh.wdlr-package.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setCromwellURL</span>(<span class="at">nodeAndPort =</span> <span class="st">&quot;gizmoXXX:20202&quot;</span>)</span></code></pre></div>
-<div id="validate-your-workflow-using-womtool" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Validate your workflow using Womtool</h3>
+<div id="validate-your-workflow-formatting" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Validate your workflow formatting</h3>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="using-the-fh.wdlr-package.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;*.wdl&quot;</span>)</span>
-<span id="cb16-2"><a href="using-the-fh.wdlr-package.html#cb16-2" aria-hidden="true" tabindex="-1"></a>valid <span class="ot">&lt;-</span> <span class="fu">womtoolValidate</span>(<span class="at">WDL =</span> <span class="st">&quot;myworkflow.wdl&quot;</span>); valid[[<span class="st">&quot;errors&quot;</span>]]</span></code></pre></div>
+<span id="cb16-2"><a href="using-the-fh.wdlr-package.html#cb16-2" aria-hidden="true" tabindex="-1"></a>valid <span class="ot">&lt;-</span> <span class="fu">cromwellValidate</span>(<span class="at">WDL =</span> <span class="st">&quot;myworkflow.wdl&quot;</span>); valid[[<span class="st">&quot;errors&quot;</span>]]</span></code></pre></div>
 <p>Go fix your issues, now send your workflow to Cromwell.</p>
 </div>
 <div id="submit-workflows" class="section level3" number="5.2.2">
