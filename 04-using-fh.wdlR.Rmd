@@ -4,7 +4,7 @@ ottrpal::set_knitr_image_path()
 ```
 # Using the `fh.wdlR` Package
 
-Chapter 3 showed you how to use the Hutch Shiny app to submit workflows to running Cromwell servers, and to monitor their progress. The Shiny app is built using an R package (fh.wdlrR) available via GitHub.  
+Chapter 3 showed you how to use the Hutch Shiny app to submit workflows to running Cromwell servers, and to monitor their progress. The Shiny app is built using an R package (fh.wdlR) available via GitHub.  
 
 https://github.com/FredHutch/fh.wdlR
 

@@ -46,8 +46,7 @@ This checks the format of your workflow files to make sure you have a valid file
 This will let you upload the files that contain your workflow description (a WDL), and up to two different sets of input lists (in JSON format).  You can run a workflow with no input JSON, one input JSON, or two input JSONs (which will be concatenated or the second will overwrite the first if the same variable is declared in both).  You can upload a workflow options JSON, as well as providing text labels of your choosing to workflows if you'd like.  
 <img src="assets/cromwell/cromwell-app.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
-When you click that "SubmitWorkflow" button, you'll see confirmation in a new box that appears with the workflow submission ID and status. These IDs are long strings that look something like this: `4e7e244a-d6b1-41db-a324-45229ff34b00` and they're useful if for example you want to abort a workflow, or identify it in the "Track jobs" tab.
-
+When you click that "Submit Workflow" button, you'll see confirmation in a new box that appears with the workflow submission ID and status. These IDs are long strings that look something like this: `4e7e244a-d6b1-41db-a324-45229ff34b00` and they're useful if, for example, you want to abort a workflow, or identify it in the "Track jobs" tab. This workflow id string is unique to an individual workflow run, so if you run the same workflow a second time, you'll get a different string. This means that this unique identifier string can be used to help understand the data source file(s) used to generate each set of results files, helping make your work reproducible.
 
 ### Abort a workflow
 Sometimes you realize you want to kill a workflow.  Using the workflow submission id, you can kill specific workflows using this box.  Note it will take Cromwell some time to coordinate SLURM job cancellations, but it will clean everything up for you. 
@@ -64,7 +63,8 @@ Especially in the beginning if you have catastrophic workflow failures and you c
 Once you've submitted a workflow, you'll want to track how it's going in the Track Jobs tab. 
 
 ### History of workflows
-At the top, you'll see that you can display as many days of workflow history as you'd like, filter that result for workflows with a specific name or with specific status(es) like 'failed', 'succeeded', etc.  This can help if you have submitted a LOT of workflows and the app is slow.
+At the top, you'll see that you can display as many days of workflow history as you'd like, filter that result for workflows with a specific name or with specific status(es) like 'failed', 'succeeded', etc. This can help if you have submitted a LOT of workflows and you don't want to see them all, or if the Cromwell server is still busy working through all of your submissions and recording their status.
+
 
 <img src="assets/cromwell/cromwell-app.png" title="Top of the Track Jobs tab" alt="Crowmell app" style="display: block; margin: auto;" />
 

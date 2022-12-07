@@ -23,8 +23,7 @@ These runtime variables can be used on any computing platform: the values given 
 
 
 ## Fred Hutch Custom Runtime Variables
-For the `gizmo` cluster, the following custom runtime variables are available.  
-Below we show the current defaults. You can change these either by editing the config file, OR by specifying them in the `runtime` block for individual tasks in a WDL file.  Task-level specifications will override the defaults.  
+For the `gizmo` cluster, the following custom runtime variables are available (below we show each variable with its current default value). You can change these variables in the `runtime` block for individual tasks in a WDL file: task-level specifications will override the defaults.  
 
 
 - `walltime: "18:00:00"`
@@ -51,7 +50,7 @@ runtime {
 }
 ```
 
-In this example, we speicyf two modules, separated by a space (with quotes surrounding both). The GATK module will be loaded first, followed by the SAMtools module.   In this example you'll note the "toolchain" used to build each modules is the same ("GCC-11.2.0").  When you load >1 module for a single task it is important to ensure that they are compatible with each other: choose versions built with the same toolchain if you can.  
+In this example, we specify two modules, separated by a space (with quotes surrounding both). The GATK module will be loaded first, followed by the SAMtools module.   In this example you'll note the "toolchain" used to build each modules is the same ("GCC-11.2.0").  When you load >1 module for a single task it is important to ensure that they are compatible with each other: choose versions built with the same toolchain if you can.  
 
 ### Docker
 However, if you want to move your WDL workflow to the cloud in the future, you'll want to leverage Cromwell's ability to run your tasks in Docker containers.  Users can specify docker containers in runtime blocks. Cromwell will maintain a local cache of previously used containers, facilitating the pull of Docker containers and conversion for use.  This behavior allows us to evade rate-limiting by DockerHub and improves speed of your workflows. 
