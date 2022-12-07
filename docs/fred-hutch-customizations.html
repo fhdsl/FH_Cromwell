@@ -170,7 +170,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>3.3</b> Track Jobs Tab</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#workflows-of-history"><i class="fa fa-check"></i><b>3.3.1</b> Workflows of History</a></li>
+<li class="chapter" data-level="3.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#history-of-workflows"><i class="fa fa-check"></i><b>3.3.1</b> History of workflows</a></li>
 <li class="chapter" data-level="3.3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#diving-into-a-workflow"><i class="fa fa-check"></i><b>3.3.2</b> Diving into a Workflow</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>3.4</b> Run Test Workflows</a></li>
@@ -192,7 +192,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html"><i class="fa fa-check"></i><b>5</b> Using the <code>fh.wdlR</code> Package</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#install-from-github"><i class="fa fa-check"></i><b>5.1</b> Install from GitHub</a></li>
+<li class="chapter" data-level="5.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#install-fh.wdlr-from-github"><i class="fa fa-check"></i><b>5.1</b> Install <code>fh.wdlR</code> from GitHub</a></li>
 <li class="chapter" data-level="5.2" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#example-workflow-process"><i class="fa fa-check"></i><b>5.2</b> Example workflow process</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#validate-your-workflow-formatting"><i class="fa fa-check"></i><b>5.2.1</b> Validate your workflow formatting</a></li>
@@ -237,12 +237,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="fred-hutch-customizations" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Fred Hutch Customizations</h1>
-<p>Cromwell can help run WDL workflows on a variety of computing resources such as SLURM clusters (like the Fred Hutch cluster), as well as AWS, Google and Azure cloud computing systems. Using WDL workflows allows users to focus on their workflow contents rather than the intricacies of the particular computing platforms they are using.<br />
-However, there are always optimizations of how those workflows run that may be somewhat specific to the various computing tools you may be using.</p>
-<p>We’ll discuss some of the available customizations to help you run WDLs on our cluster in a simple way that still allows those workflows to be portable to other computing platforms.</p>
+<p>Cromwell can help run WDL workflows on a variety of computing resources such as SLURM clusters (like the Fred Hutch cluster), as well as AWS, Google and Azure cloud computing systems. Using WDL workflows allows users to focus on their workflow contents rather than the intricacies of particular computing platform.<br />
+However, there are optimizations of how those workflows run that may be specific to each computing tool (“task”).</p>
+<p>We’ll discuss some of the available customizations to help you run WDLs on our cluster that still allow those workflows to be portable to other computing platforms.</p>
 <div id="standard-runtime-variables" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Standard Runtime Variables</h2>
-<p>These runtime variables are both the defaults for our Fred Hutch configuration and also standard runtime variables you can use on other computing platforms too.</p>
+<p>These runtime variables can be used on any computing platform: the values given here are the defaults for our Fred Hutch configuration.</p>
 <ul>
 <li><code>cpu: 1</code>
 <ul>
@@ -260,21 +260,19 @@ However, there are always optimizations of how those workflows run that may be s
 </div>
 <div id="fred-hutch-custom-runtime-variables" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Fred Hutch Custom Runtime Variables</h2>
-<p>For the <code>gizmo</code> cluster, the following runtime variables are available that are customized to our configuration.<br />
-What is specified below is the current default as written, you can edit these in the config file if you’d like OR you can specify these variables in your <code>runtime</code> block in each task to change only the variables you want to change from the default for that particular task.</p>
+<p>For the <code>gizmo</code> cluster, the following custom runtime variables are available (below we show each variable with its current default value). You can change these variables in the <code>runtime</code> block for individual tasks in a WDL file: task-level specifications will override the defaults.</p>
 <ul>
 <li><code>walltime: "18:00:00"</code>
 <ul>
-<li>A string of date/time that specifies how many hours/days you want to request for the task</li>
+<li>A string (“HH:MM:SS”) that specifies how much time you want to request for the task. Can also specify &gt;1 day, e.g. “1-12:00:00” is 1 day+12 hours.</li>
 </ul></li>
 <li><code>partition:  "campus-new"</code>
 <ul>
-<li>Which partition you want to use, the default is <code>campus-new</code> but whatever is in the runtime block of your WDL will override this. Other options currently include <code>restart</code> or <code>short</code> but check <a href="https://sciwiki.fredhutch.org/scicomputing/">SciWiki</a> for more updated information.</li>
+<li>Which cluster partition to use. The default is <code>campus-new</code>: other options currently include <code>restart</code> or <code>short</code> but check <a href="https://sciwiki.fredhutch.org/scicomputing/">SciWiki</a> for updated information.</li>
 </ul></li>
 <li><code>modules: ""</code>
 <ul>
-<li>A space-separated list of the environment modules you’d like to have loaded (in that order) prior to running the task.<br />
-</li>
+<li>A space-separated list of the environment modules you’d like to load (in that order) prior to running the task. See below for more.</li>
 </ul></li>
 <li><code>dockerSL: "ubuntu:latest"</code>
 <ul>
@@ -282,7 +280,7 @@ What is specified below is the current default as written, you can edit these in
 </ul></li>
 <li><code>account: "paguirigan_a"</code>
 <ul>
-<li>This allows users who run jobs for multiple PI accounts to specify at the level of a task which account to use for a given job to manage cluster allocations.</li>
+<li>This allows users who run jobs for multiple PI accounts to specify which account to use for each task, to manage cluster allocations.</li>
 </ul></li>
 </ul>
 </div>
@@ -291,15 +289,15 @@ What is specified below is the current default as written, you can edit these in
 <div id="modules" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Modules</h3>
 <p>At Fred Hutch we have huge array of pre-curated software modules installed on our SLURM cluster which you can <a href="https://sciwiki.fredhutch.org/scicomputing/compute_scientificSoftware/">read about in SciWiki</a>.<br />
-The custom configuration of our Cromwell server software here at the Hutch allows users to specify modules (or combinations of modules by simply adding them on in a space separated string) available on the cluster to use for individual tasks in a workflow. The module(s) desired can be used for a task by specifying in the <code>runtime</code> block of your calls the following:</p>
+The custom configuration of our Cromwell server allows users to specify one or more modules to use for individual tasks in a workflow. The desired module(s) can be requested for a task in the <code>runtime</code> block of your calls like this:</p>
 <pre><code>runtime {
   modules: &quot;GATK/4.2.6.1-GCCcore-11.2.0 SAMtools/1.16.1-GCC-11.2.0&quot;
 }</code></pre>
-<p>In this example, the GATK module will be loaded first, followed by the SAMtools module. In this example you’ll note the “toolchain” used to build both modules are the same (“GCC-11.2.0”). It is important to ensure when you load modules together for a single task that they are compatible with each other.</p>
+<p>In this example, we specify two modules, separated by a space (with quotes surrounding both). The GATK module will be loaded first, followed by the SAMtools module. In this example you’ll note the “toolchain” used to build each modules is the same (“GCC-11.2.0”). When you load &gt;1 module for a single task it is important to ensure that they are compatible with each other: choose versions built with the same toolchain if you can.</p>
 </div>
 <div id="docker" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Docker</h3>
-<p>However, if you want to move your WDL workflow to the cloud in the future, you’ll want to leverage Cromwell’s pre-configured ability to run your tasks on <code>gizmo</code> in Docker containers. This configuration allows users to specify docker containers in their runtime blocks, allows Cromwell to maintain a local cache of previously used containers, and facilitates the pull of Docker containers and conversion for use. This behavior allows us to evade rate-limiting by DockerHub and improves speed of your workflows.</p>
+<p>However, if you want to move your WDL workflow to the cloud in the future, you’ll want to leverage Cromwell’s ability to run your tasks in Docker containers. Users can specify docker containers in runtime blocks. Cromwell will maintain a local cache of previously used containers, facilitating the pull of Docker containers and conversion for use. This behavior allows us to evade rate-limiting by DockerHub and improves speed of your workflows.</p>
 </div>
 </div>
 <div id="guidance-and-support" class="section level2" number="4.4">
@@ -311,7 +309,7 @@ The custom configuration of our Cromwell server software here at the Hutch allow
 </div>
 <div id="slack-workflow-manager-channel" class="section level3" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Slack Workflow Manager Channel</h3>
-<p>In the <a href="https://fhdata.slack.com/">Fred Hutch Data Slack workspace</a> there is a specific channel where you can find help from peers and staff who support Cromwell and WDL here at the Fred Hutch called <a href="https://fhdata.slack.com/archives/CJFP1NYSZ">#workflow-managers</a></p>
+<p>In the <a href="https://fhdata.slack.com/">Fred Hutch Data Slack workspace</a> the <a href="https://fhdata.slack.com/archives/CJFP1NYSZ">#workflow-managers</a> channel is a good place to find help from Hutch peers and staff who support Cromwell and WDL</p>
 
 </div>
 </div>
