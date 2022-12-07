@@ -19,7 +19,7 @@ submit-a-workflow
 abort-a-workflow
 troubleshoot-a-workflow
 track-jobs-tab
-workflows-of-history
+history-of-workflows
 diving-into-a-workflow
 run-test-workflows
 fred-hutch-customizations
@@ -32,7 +32,7 @@ guidance-and-support
 effective-computing-drop-in-hour
 slack-workflow-manager-channel
 using-the-fh.wdlr-package
-install-from-github
+install-fh.wdlr-from-github
 example-workflow-process
 validate-your-workflow-formatting
 submit-workflows
