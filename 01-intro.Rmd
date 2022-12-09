@@ -106,10 +106,6 @@ cd cromwell-home
 git clone --branch main https://github.com/FredHutch/diy-cromwell-server.git
 ```
 
-This will look like this:
-<img src="assets/cromwell/mk-cromwell-home.png" title="Cloning scripts from GitHub" alt="cloneFromGithub" style="display: block; margin: auto;" />
-
-
 
 Next you'll want to move the cromUserConfig.txt template file you just downloaded into your main `cromwell-home` directory for customization and keeping in the future. 
 
