@@ -41,7 +41,17 @@ Once you've connected your server to the Shiny app, you can start by using the "
 
 
 ### Validate a workflow
-This checks the format of your workflow files to make sure you have a valid file in a known format that Cromwell can interpret.  This is called a "dry run" to ensure that your tasks are wired up correctly, but Cromwell does not try to see if any of your inputs are actually available, only that it can interpret what you told it. One of the reasons this is is that since Cromwell can pull files from local filesystems, AWS S3, Google buckets and Azure blobs, the process to test it's ability to actually get your inputs will happen while you run the workflow the first time.  Luckily, Cromwell will only get file inputs it needs at that moment, and if it can't it won't do that specific task (but can continue with the other tasks it can do!).  
+
+This checks your workflow files (wdl / jsons) to test:
+
+- are they in a known format that Cromwell can interpret?
+- are they formatted properly?
+- are the tasks wired up correctly?
+This is called a "dry run".
+
+Note that this does NOT test whether your input files are actually available, partly because Cromwell can pull files from local filesystems, AWS S3, Google buckets and Azure blobs. The process of testing input availability will only happen when you run the workflow for the first time. If some input files are missing, Cromwell will run tasks for the input files that ARE available, skipping tasks where inputs can't be found.
+
+
 <img src="assets/cromwell/validate.png" title="Validate a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 ### Submit a workflow
