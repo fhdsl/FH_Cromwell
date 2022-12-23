@@ -16,12 +16,7 @@ Cromwell is a workflow engine (sometimes called a workflow manager) software dev
 
 # Getting Started with Cromwell
 
-To get set up using Cromwell at the Fred Hutch, there are two setup processes you need to do one time in order to customize how Cromwell runs for you.  
-
-1.  Database Setup
-2.  Cromwell customization
-
-This guide aims to help you get these two steps set up correctly so that in the future you can just run Cromwell directly.  
+To get set up using Cromwell at the Fred Hutch, there is a setup process you need to do only one time in order to customize how Cromwell runs for you.  This guide aims to help you get these two steps set up correctly so that in the future you can just run Cromwell directly.  
 
 ## Prerequisites
 ### `rhino` Access
