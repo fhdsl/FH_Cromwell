@@ -22,10 +22,17 @@ The openWDL group has a [new documentation site](https://wdl-docs.readthedocs.io
 
 
 ### Cromwell Documentation
-https://cromwell.readthedocs.io/en/stable/wf_options/Overview/
+There is a documentation site that can be useful if you're considering reconfiguring Cromwell or using it on Google or other computing infrastructure outside of the Fred Hutch.  The [Cromwell docs site](https://cromwell.readthedocs.io/en/stable/wf_options/Overview/) can provide a bit more Cromwell-specific information, though any configuration changes you do will not be supported by IT and help for this will need to come from the Cromwell community.  
+
 
 ### Workflow Content
-Broad warp repo, others? 
+Because WDL is an open specification, there are a number of resources around the web where various groups have shared examples of their finished WDL workflows.  
+- [Fred Hutch WDL repos](https://github.com/fredhutch?q=wdl&type=all&language=&sort=)
+- [The Dockstore](https://dockstore.org/search?descriptorType=WDL&entryType=workflows&searchMode=files)
+- [Broad Warp repo](https://github.com/broadinstitute/warp)
+- [Chan Zuckerberg Initiative](https://github.com/chanzuckerberg?q=wdl&type=all&language=&sort=) (note CZI has also developed it's own WDL engine called miniWDL)
+- [BioWDL](https://biowdl.github.io/)
+
 
 
 

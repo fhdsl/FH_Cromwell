@@ -206,8 +206,12 @@ scancel 2733799
 
 ## Starting up your server in the future
 Good news! The above instructions are a one time event. In the future, when you want to start up a Cromwell server to do some computing work, all you'll have to do is:
+
 1. Get onto Rhino in Terminal
+
 2. Change to the `cromwell-home` directory you made
+
 3. Enter: `./cromwell.sh cromUserConfig.txt` and you're off to the races!
+
 
 Congrats you've started your first Cromwell server!!  
