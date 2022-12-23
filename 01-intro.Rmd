@@ -120,13 +120,13 @@ In `cromUserConfig.txt` there are some variables that allow users to share a sim
 The following text is also in this repo but these are the customizations you'll need to decide on for your server.
 ```
 ################## WORKING DIRECTORY AND PATH CUSTOMIZATIONS ###################
-## Where do you want the working directory to be for Cromwell (note: this process will create a subdirectory here called "cromwell-executions")?  
+## Where do you want the working directory to be for Cromwell (note: this process will create a subdirectory here called "cromwell-executions")?   Note, please include the leading and trailing slashes!!! 
 ### Suggestion: /fh/scratch/delete90/pilastname_f/username/
 SCRATCHDIR=/fh/scratch/delete90/...
 
 ## Where do you want logs about individual workflows (not jobs) to be written?
 ## Note: this is a default for the server and can be overwritten for a given workflow in workflow-options.
-### Suggestion: /fh/fast/pilastname_f/cromwell/workflow-logs
+### Suggestion: ~/cromwell-home/workflow-logs
 WORKFLOWLOGDIR=~/cromwell-home/workflow-logs
 
 ## Where do you want to save Cromwell server logs for troubleshooting Cromwell itself?
