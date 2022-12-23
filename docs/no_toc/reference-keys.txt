@@ -12,6 +12,7 @@ customize-your-configuration
 kick-off-your-cromwell-server
 starting-up-your-server-in-the-future
 using-shiny-to-manage-workflows
+get-test-workflows
 login
 submit-jobs-tab
 validate-a-workflow
