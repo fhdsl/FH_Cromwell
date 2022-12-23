@@ -16,12 +16,7 @@ Cromwell is a workflow engine (sometimes called a workflow manager) software dev
 
 # Getting Started with Cromwell
 
-To get set up using Cromwell at the Fred Hutch, there are two setup processes you need to do one time in order to customize how Cromwell runs for you.  
-
-1.  Database Setup
-2.  Cromwell customization
-
-This guide aims to help you get these two steps set up correctly so that in the future you can just run Cromwell directly.  
+To get set up using Cromwell at the Fred Hutch, there is a setup process you need to do only one time in order to customize how Cromwell runs for you.  This guide aims to help you get these two steps set up correctly so that in the future you can just run Cromwell directly.  
 
 ## Prerequisites
 ### `rhino` Access
@@ -106,10 +101,6 @@ cd cromwell-home
 git clone --branch main https://github.com/FredHutch/diy-cromwell-server.git
 ```
 
-This will look like this:
-<img src="assets/cromwell/mk-cromwell-home.png" title="Cloning scripts from GitHub" alt="cloneFromGithub" style="display: block; margin: auto;" />
-
-
 
 Next you'll want to move the cromUserConfig.txt template file you just downloaded into your main `cromwell-home` directory for customization and keeping in the future. 
 
@@ -124,13 +115,13 @@ In `cromUserConfig.txt` there are some variables that allow users to share a sim
 The following text is also in this repo but these are the customizations you'll need to decide on for your server.
 ```
 ################## WORKING DIRECTORY AND PATH CUSTOMIZATIONS ###################
-## Where do you want the working directory to be for Cromwell (note: this process will create a subdirectory here called "cromwell-executions")?  
+## Where do you want the working directory to be for Cromwell (note: this process will create a subdirectory here called "cromwell-executions")?   Note, please include the leading and trailing slashes!!! 
 ### Suggestion: /fh/scratch/delete90/pilastname_f/username/
 SCRATCHDIR=/fh/scratch/delete90/...
 
 ## Where do you want logs about individual workflows (not jobs) to be written?
 ## Note: this is a default for the server and can be overwritten for a given workflow in workflow-options.
-### Suggestion: /fh/fast/pilastname_f/cromwell/workflow-logs
+### Suggestion: ~/cromwell-home/workflow-logs
 WORKFLOWLOGDIR=~/cromwell-home/workflow-logs
 
 ## Where do you want to save Cromwell server logs for troubleshooting Cromwell itself?
