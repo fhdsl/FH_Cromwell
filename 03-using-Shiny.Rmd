@@ -60,14 +60,7 @@ This will let you upload the files that contain your workflow description (a WDL
 
 When you click that "Submit Workflow" button, you'll see confirmation in a new box that appears with the workflow submission ID and status. These IDs are long strings that look something like this: `4e7e244a-d6b1-41db-a324-45229ff34b00` and they're useful if, for example, you want to abort a workflow, or identify it in the "Track jobs" tab. This workflow id string is unique to an individual workflow run, so if you run the same workflow a second time, you'll get a different string. This means that this unique identifier string can be used to help understand the data source file(s) used to generate each set of results files, helping make your work reproducible.
 
-### Abort a workflow
-Sometimes you realize you want to kill a workflow.  Using the workflow submission id, you can kill specific workflows using this box.  Note it will take Cromwell some time to coordinate SLURM job cancellations, but it will clean everything up for you. 
-<img src="assets/cromwell/abort.png" title="Abort a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
-### Troubleshoot a workflow
-Especially in the beginning if you have catastrophic workflow failures and you can't even figure out what's going on, you can come back to this Troubleshoot box to retrieve the entire, unformatted JSON output of all metadata Cromwell has about your workflow.  You probably are better served by the "Track Jobs" tab for checking how your workflow is going, but if there's nothing there that's helpful, then this box is where you'll want to go.  
-> Note: this output is not for the faint of heart, but it will give you hints once you get used to understanding what Cromwell is telling you.  
-<img src="assets/cromwell/troubleshoot.png" title="Troubleshoot a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 
 ## Track Jobs Tab
@@ -82,41 +75,54 @@ At the top, you'll see that you can display as many days of workflow history as 
 
 Once you click "Update View", the revelant workflows will be returned and you'll see various information on those workflows.  
 
-First, there's a "Workflows Run" plot, showing how long each workflow ran for, and status for each. 
+First, there's a "Workflow Timing" plot, showing how long each workflow ran for, and status for each. 
 <img src="assets/cromwell/workflows-run.png" title="Workflow plot" alt="Crowmell app" style="display: block; margin: auto;" />
 
-Underneath, you'll see a "Cromwell Overview" table showing metadata for each workflow.  Click on the workflow you're interested in to populate the rest of the tables (below). 
+Underneath, you'll see a "Workflows Run" table showing metadata for each workflow.  Click on the workflow you're interested in to populate the rest of the tables (below). 
 <img src="assets/cromwell/cromwell-overview.png" title="Workflow table" alt="Crowmell app" style="display: block; margin: auto;" />
 
 ### Diving into a Workflow
 Once you've selected a workflow row, you'll see some summary information about that workflow.
-<img src="assets/cromwell/workflow-overview.png" title="Workflow overview summary" alt="Crowmell app" style="display: block; margin: auto;" />
+<img src="assets/cromwell/workflow-overview.png" title="Workflow overview summary" alt="overview table for a workflow" style="display: block; margin: auto;" />
 
 You can see a plot of the timing and outcomes of all the calls in that workflow.
-<img src="assets/cromwell/workflow-calls.png" title="Workflow calls" alt="Crowmell app" style="display: block; margin: auto;" />
+<img src="assets/cromwell/workflow-calls.png" title="Workflow calls" alt="workflow calls table" style="display: block; margin: auto;" />
 
 
 Then there is a table of each call containing useful information such as the directory where the job is working (callRoot), its SLURM job ID, what computing resources or software environment were used, and the job's status.  
-<img src="assets/cromwell/job-list.png" title="Job list" alt="Crowmell app" style="display: block; margin: auto;" />
+<img src="assets/cromwell/job-list.png" title="Job list" alt="job list" style="display: block; margin: auto;" />
 
 
 
-Then you can use the Job Failures and Call Caching tables to retrieve information relevant to those processes by clicking the "Get/Refresh ... Metadata" buttons (sometimes these can be quite large, and thus they do not load until you want them).   
-<img src="assets/cromwell/failures-caching.png" title="Job failures and call caching" alt="Crowmell app" style="display: block; margin: auto;" />
+Then you can use the Job Failures and Call Caching tables to retrieve information relevant to those processes by clicking the "Get/Refresh ... Metadata" buttons (sometimes for complex workflows these can be quite large, and thus they do not load until you want them).   
+
+<img src="assets/cromwell/failures.png" title="Job failures" alt="call caching" style="display: block; margin: auto;" />
+
+<img src="assets/cromwell/caching.png" title="Job call caching" alt="call caching" style="display: block; margin: auto;" />
 
 
 
-Finally, once a workflow succeeds, Cromwell can tell you (and this Shiny app can help you download) a table showing where to find the workflow outputs (note this is not every file created, only the ones you specify as "results" using the WDL file's 'workflow output' block).  This lets you find output files and interact with them, archive them, or otherwise copy them to longer term storage for use.  
-<img src="assets/cromwell/workflow-outputs.png" title="Workflow outputs" alt="Crowmell app" style="display: block; margin: auto;" />
+Finally, once a workflow's outputs have all been created successfully, Cromwell can tell you (and this Shiny app can help you download) a table showing where to find the workflow outputs (note this is not every file created, only the ones you specify as "results" using the WDL file's "workflow output" block).  This lets you find output files and interact with them, archive them, or otherwise copy them to longer term storage for use.  
+<img src="assets/cromwell/workflow-outputs.png" title="Workflow outputs" alt="outputs" style="display: block; margin: auto;" />
 
 
+## Troubleshoot Tab
+Finally, there is the Troubleshoot tab.  Here you can do things like Abort running workflows or get a complete metadata output for the entire workflow to parse yourself to try to find what's happening with your workflow.  
+<img src="assets/cromwell/abort-troubleshoot.png" title="The troubleshoot jobs tab." alt="Troubleshoot" style="display: block; margin: auto;" />
 
+### Abort a workflow
+Sometimes you realize you want to kill a workflow.  Using the workflow submission id, you can kill specific workflows using this box.  Note it will take Cromwell some time to coordinate SLURM job cancellations particularly for complex workflows, but it will clean everything up for you. 
+
+
+### Troubleshoot a workflow
+Especially in the beginning if you have catastrophic workflow failures and you can't even figure out what's going on, you can come back to this Troubleshoot box to retrieve the entire, unformatted JSON output of all metadata Cromwell has about your workflow.  You probably are better served by the "Track Jobs" tab for checking how your workflow is going, but if there's nothing there that's helpful, then this box is where you'll want to go.  
+> Note: this output is not for the faint of heart, but it will give you hints once you get used to understanding what Cromwell is telling you.  
 
 
 ## Run Test Workflows
 Now that you know how to use the app, it's time to run a test workflow.  
 
-We have curated some basic workflows that you can use to test whether your Cromwell server is set up correctly and to let you to play with Cromwell. Once your server is up, run through the examples in our [Test Workflow folder](https://github.com/FredHutch/diy-cromwell-server/tree/main/testWorkflows). 
+We have curated some basic workflows that you can use to test whether your Cromwell server is set up correctly and to let you to play with Cromwell. Once your server is up, run through the examples in our [Test Workflow Repo](https://github.com/FredHutch/wdl-test-workflows). 
 
 
 > Note: For test workflows that use Docker containers, the first time you run them you may notice that jobs aren't being sent very quickly.  That is because for our cluster, we need to convert those Docker containers to something that can be run by Singularity.  The first time a Docker container is used, it must be converted, but in the future Cromwell will used the cached version of the Docker container and jobs will be submitted more quickly. 
