@@ -36,7 +36,7 @@ If so, just wait 1-2 more minutes (if it's the first time you've set up a server
 
 ## Submit Jobs Tab
 Once you've connected your server to the Shiny app, you can start by using the "Submit Jobs" tab on the left.  
-<img src="assets/cromwell/submit.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" />
+<img src="assets/cromwell/submit-tab.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" />
 
 
 
@@ -56,7 +56,7 @@ Note that this does NOT test whether your input files are actually available, pa
 
 ### Submit a workflow
 This will let you upload the files that contain your workflow description (a WDL), and up to two different sets of input lists (in JSON format).  You can run a workflow with no input JSON, one input JSON, or two input JSONs (which will be concatenated or the second will overwrite the first if the same variable is declared in both).  You can upload a workflow options JSON, as well as providing text labels of your choosing to workflows if you'd like.  
-<img src="assets/cromwell/cromwell-app.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
+<img src="assets/cromwell/submit.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" />
 
 When you click that "Submit Workflow" button, you'll see confirmation in a new box that appears with the workflow submission ID and status. These IDs are long strings that look something like this: `4e7e244a-d6b1-41db-a324-45229ff34b00` and they're useful if, for example, you want to abort a workflow, or identify it in the "Track jobs" tab. This workflow id string is unique to an individual workflow run, so if you run the same workflow a second time, you'll get a different string. This means that this unique identifier string can be used to help understand the data source file(s) used to generate each set of results files, helping make your work reproducible.
 
@@ -89,6 +89,7 @@ You can see a plot of the timing and outcomes of all the calls in that workflow.
 <img src="assets/cromwell/workflow-calls.png" title="Workflow calls" alt="workflow calls table" style="display: block; margin: auto;" />
 
 
+### Call Level Information
 Then there is a table of each call containing useful information such as the directory where the job is working (callRoot), its SLURM job ID, what computing resources or software environment were used, and the job's status.  
 <img src="assets/cromwell/job-list.png" title="Job list" alt="job list" style="display: block; margin: auto;" />
 
