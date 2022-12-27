@@ -4,20 +4,13 @@
 
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template).
 
-You can see the rendered course material here: {Link to rendered bookdown and/or to the Leanpub.}
+You can see the rendered course material here: [WDL 101](https://hutchdatascience.org/FH_WDL101_Cromwell/)
 
 If you would like to contribute to this course material, take a look at the [getting started GitHub wiki pages](https://github.com/jhudsl/OTTR_Template/wiki).
 
 ## About this course
 
 This course introduces using Cromwell to run WDL workflows using the Fred Hutch HPC cluster.  
-
-## Learning Objectives
-
-This course will teach learners to:  
-
-- {You can use https://www.bobpikegroup.com/trainer-blog/5-steps-to-writing-clear-and-measurable-learning-objectives to define some learning objectives here}
-- {More learning objectives}
 
 ## Encountering problems?
 
