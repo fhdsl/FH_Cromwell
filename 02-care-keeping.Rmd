@@ -3,7 +3,7 @@
 ottrpal::set_knitr_image_path()
 ```
 # Using Cromwell at Fred Hutch
-Good news! Once you've worked through the Getting Started section, you won't have to do that again! Ongoing use of Cromwell at the Hutch will look a bit more straightfoward and we'll discuss the steps to using Cromwell in an ongoing way, the Fred Hutch specific configuration details, and provide some test workflows you can use to test out some of the interfaces we have at the Hutch to Cromwell.  
+Good news! Once you've worked through the Getting Started section, you won't have to do that again! Ongoing use of Cromwell at the Hutch will look a bit more straightforward and we'll discuss the steps to using Cromwell in an ongoing way, the Fred Hutch specific configuration details, and provide some test workflows you can use to test out some of the interfaces we have at the Hutch to Cromwell.  
 
 ## Everyday Usage
 To get started using Cromwell, you'll first do these steps:
@@ -13,7 +13,7 @@ To get started using Cromwell, you'll first do these steps:
 3.  Kick off a server job using the command: `./cromwell.sh cromUserConfig.txt`
 3.  Wait for a successful response and the node:port information for your server!
 
-That's it!  Now your Cromwell server will run for a week by default (unless you have set a different server length in `cromUserConfig.txt`).  It will be accessible to submit workflows to and execute them whenever you want through mulitple mechanisms that we'll describe in the next chapters.  Next week you can simply repeat the above to restart your server and it'll be ready again!  
+That's it!  Now your Cromwell server will run for a week by default (unless you have set a different server length in `cromUserConfig.txt`).  It will be accessible to submit workflows to and execute them whenever you want through multiple mechanisms that we'll describe in the next chapters.  Next week you can simply repeat the above to restart your server and it'll be ready again!  
 
 Don't worry, if you have a workflow that is running at the end of the week and your server job ends, when you start a new server job it will automatically check for the current status of any previously running workflows, then pickup and finish anything that might be left to do.  While you can adjust the configuration of your Cromwell server in your configuration file to run for more than 7 days, we've found that the servers tend to run much faster when they are occasionally "rebooted" like this, and also it is more polite to your lab members to not always have a server running that is not busy coordinating a workflow.  
 

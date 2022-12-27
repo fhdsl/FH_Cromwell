@@ -7,7 +7,7 @@ Now that you've configured your first Cromwell sever, let's submit some test wor
 
 >Note: Especially the first time you set up a Cromwell server, it will be busy for a few minutes setting up the database and doing all the work behind the scenes for you.  Once it's "ready" to listen for workflows it will start "listening" for instructions via the Shiny app (or other methods we'll discuss later in the course).   It may take 2-3 minutes before you can follow the rest of these instructions the first time. The time it takes is much shorter in the future (more like ~1 minute).
 
-You can find our Fred Hutch Shiny app here:  https://cromwellapp.fredhutch.org/
+You can find our Fred Hutch Shiny app here:  https://cromwellapp.fredhutch.org
 
 <img src="assets/cromwell/app-front.png" title="The App looks like this." alt="Crowmell app" style="display: block; margin: auto;" />
 
@@ -73,7 +73,7 @@ At the top, you'll see that you can display as many days of workflow history as 
 
 <img src="assets/cromwell/cromwell-app.png" title="Top of the Track Jobs tab" alt="Crowmell app" style="display: block; margin: auto;" />
 
-Once you click "Update View", the revelant workflows will be returned and you'll see various information on those workflows.  
+Once you click "Update View", the relevant workflows will be returned and you'll see various information on those workflows.  
 
 First, there's a "Workflow Timing" plot, showing how long each workflow ran for, and status for each. 
 <img src="assets/cromwell/workflows-run.png" title="Workflow plot" alt="Crowmell app" style="display: block; margin: auto;" />

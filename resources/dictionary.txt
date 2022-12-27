@@ -75,4 +75,14 @@ Json
 DevTools
 womtool
 ContinueWhilePossible
-
+openWDL
+pilastname
+BioWDL
+CZI
+Dockstore
+fh
+jsons
+miniWDL
+reconfiguring
+wdlR
+Zuckerberg
