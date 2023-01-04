@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Fred Hutch Customizations | WDL 101: Running WDLs using Cromwell</title>
+  <title>Chapter 6 Summary and Next Steps | WDL 101: Running WDLs using Cromwell</title>
   <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Fred Hutch Customizations | WDL 101: Running WDLs using Cromwell" />
+  <meta property="og:title" content="Chapter 6 Summary and Next Steps | WDL 101: Running WDLs using Cromwell" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Fred Hutch Customizations | WDL 101: Running WDLs using Cromwell" />
+  <meta name="twitter:title" content="Chapter 6 Summary and Next Steps | WDL 101: Running WDLs using Cromwell" />
   
   <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="using-shiny-to-manage-workflows.html"/>
-<link rel="next" href="using-the-fh.wdlr-package.html"/>
+<link rel="prev" href="using-the-fh.wdlr-package.html"/>
+<link rel="next" href="about-the-authors.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -137,7 +137,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Guide</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-cromwell"><i class="fa fa-check"></i><b>1.1</b> What is Cromwell?</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-wdl"><i class="fa fa-check"></i><b>1.1</b> What is WDL?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-cromwell"><i class="fa fa-check"></i><b>1.2</b> What is Cromwell?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#using-cromwell"><i class="fa fa-check"></i><b>1.3</b> Using Cromwell</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html"><i class="fa fa-check"></i><b>2</b> Getting Started with Cromwell</a>
 <ul>
@@ -158,38 +160,42 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#starting-up-your-server-in-the-future"><i class="fa fa-check"></i><b>2.4</b> Starting up your server in the future</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html"><i class="fa fa-check"></i><b>3</b> Using Shiny to Manage Workflows</a>
+<li class="chapter" data-level="3" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html"><i class="fa fa-check"></i><b>3</b> Using Cromwell at Fred Hutch</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#get-test-workflows"><i class="fa fa-check"></i><b>3.1</b> Get Test Workflows</a></li>
-<li class="chapter" data-level="3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#login"><i class="fa fa-check"></i><b>3.2</b> Login</a></li>
-<li class="chapter" data-level="3.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-jobs-tab"><i class="fa fa-check"></i><b>3.3</b> Submit Jobs Tab</a>
+<li class="chapter" data-level="3.1" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#everyday-usage"><i class="fa fa-check"></i><b>3.1</b> Everyday Usage</a></li>
+<li class="chapter" data-level="3.2" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#test-workflows"><i class="fa fa-check"></i><b>3.2</b> Test Workflows</a></li>
+<li class="chapter" data-level="3.3" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#runtime-variables"><i class="fa fa-check"></i><b>3.3</b> Runtime Variables</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#validate-a-workflow"><i class="fa fa-check"></i><b>3.3.1</b> Validate a workflow</a></li>
-<li class="chapter" data-level="3.3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-a-workflow"><i class="fa fa-check"></i><b>3.3.2</b> Submit a workflow</a></li>
-<li class="chapter" data-level="3.3.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#abort-a-workflow"><i class="fa fa-check"></i><b>3.3.3</b> Abort a workflow</a></li>
-<li class="chapter" data-level="3.3.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-a-workflow"><i class="fa fa-check"></i><b>3.3.4</b> Troubleshoot a workflow</a></li>
+<li class="chapter" data-level="3.3.1" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#standard-runtime-variables"><i class="fa fa-check"></i><b>3.3.1</b> Standard Runtime Variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#fred-hutch-custom-runtime-variables"><i class="fa fa-check"></i><b>3.3.2</b> Fred Hutch Custom Runtime Variables</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>3.4</b> Track Jobs Tab</a>
+<li class="chapter" data-level="3.4" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#managing-software-environments"><i class="fa fa-check"></i><b>3.4</b> Managing Software Environments</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#history-of-workflows"><i class="fa fa-check"></i><b>3.4.1</b> History of workflows</a></li>
-<li class="chapter" data-level="3.4.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#diving-into-a-workflow"><i class="fa fa-check"></i><b>3.4.2</b> Diving into a Workflow</a></li>
+<li class="chapter" data-level="3.4.1" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#modules"><i class="fa fa-check"></i><b>3.4.1</b> Modules</a></li>
+<li class="chapter" data-level="3.4.2" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#docker"><i class="fa fa-check"></i><b>3.4.2</b> Docker</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>3.5</b> Run Test Workflows</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html"><i class="fa fa-check"></i><b>4</b> Fred Hutch Customizations</a>
+<li class="chapter" data-level="4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html"><i class="fa fa-check"></i><b>4</b> Using Shiny to Manage Workflows</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#standard-runtime-variables"><i class="fa fa-check"></i><b>4.1</b> Standard Runtime Variables</a></li>
-<li class="chapter" data-level="4.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#fred-hutch-custom-runtime-variables"><i class="fa fa-check"></i><b>4.2</b> Fred Hutch Custom Runtime Variables</a></li>
-<li class="chapter" data-level="4.3" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#software-environments"><i class="fa fa-check"></i><b>4.3</b> Software environments</a>
+<li class="chapter" data-level="4.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#get-test-workflows"><i class="fa fa-check"></i><b>4.1</b> Get Test Workflows</a></li>
+<li class="chapter" data-level="4.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#login"><i class="fa fa-check"></i><b>4.2</b> Login</a></li>
+<li class="chapter" data-level="4.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-jobs-tab"><i class="fa fa-check"></i><b>4.3</b> Submit Jobs Tab</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#modules"><i class="fa fa-check"></i><b>4.3.1</b> Modules</a></li>
-<li class="chapter" data-level="4.3.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#docker"><i class="fa fa-check"></i><b>4.3.2</b> Docker</a></li>
+<li class="chapter" data-level="4.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#validate-a-workflow"><i class="fa fa-check"></i><b>4.3.1</b> Validate a workflow</a></li>
+<li class="chapter" data-level="4.3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-a-workflow"><i class="fa fa-check"></i><b>4.3.2</b> Submit a workflow</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#guidance-and-support"><i class="fa fa-check"></i><b>4.4</b> Guidance and Support</a>
+<li class="chapter" data-level="4.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>4.4</b> Track Jobs Tab</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#effective-computing-drop-in-hour"><i class="fa fa-check"></i><b>4.4.1</b> Effective Computing Drop In Hour</a></li>
-<li class="chapter" data-level="4.4.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#slack-workflow-manager-channel"><i class="fa fa-check"></i><b>4.4.2</b> Slack Workflow Manager Channel</a></li>
+<li class="chapter" data-level="4.4.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#history-of-workflows"><i class="fa fa-check"></i><b>4.4.1</b> History of workflows</a></li>
+<li class="chapter" data-level="4.4.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#diving-into-a-workflow"><i class="fa fa-check"></i><b>4.4.2</b> Diving into a Workflow</a></li>
+<li class="chapter" data-level="4.4.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#call-level-information"><i class="fa fa-check"></i><b>4.4.3</b> Call Level Information</a></li>
 </ul></li>
+<li class="chapter" data-level="4.5" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-tab"><i class="fa fa-check"></i><b>4.5</b> Troubleshoot Tab</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#abort-a-workflow"><i class="fa fa-check"></i><b>4.5.1</b> Abort a workflow</a></li>
+<li class="chapter" data-level="4.5.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-a-workflow"><i class="fa fa-check"></i><b>4.5.2</b> Troubleshoot a workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>4.6</b> Run Test Workflows</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html"><i class="fa fa-check"></i><b>5</b> Using the <code>fh.wdlR</code> Package</a>
 <ul>
@@ -201,6 +207,22 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#track-workflows"><i class="fa fa-check"></i><b>5.2.3</b> Track Workflows</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#look-under-the-hood"><i class="fa fa-check"></i><b>5.3</b> Look Under the Hood</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html"><i class="fa fa-check"></i><b>6</b> Summary and Next Steps</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#fred-hutch-wdl-102"><i class="fa fa-check"></i><b>6.1</b> Fred Hutch WDL 102</a></li>
+<li class="chapter" data-level="6.2" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#documentation-in-the-wild"><i class="fa fa-check"></i><b>6.2</b> Documentation in the Wild</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#openwdl-specification"><i class="fa fa-check"></i><b>6.2.1</b> openWDL specification</a></li>
+<li class="chapter" data-level="6.2.2" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#openwdl-documentation"><i class="fa fa-check"></i><b>6.2.2</b> openWDL Documentation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#cromwell-documentation"><i class="fa fa-check"></i><b>6.2.3</b> Cromwell Documentation</a></li>
+<li class="chapter" data-level="6.2.4" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#workflow-content"><i class="fa fa-check"></i><b>6.2.4</b> Workflow Content</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#fred-hutch-guidance-and-support"><i class="fa fa-check"></i><b>6.3</b> Fred Hutch Guidance and Support</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#effective-computing-drop-in-hour"><i class="fa fa-check"></i><b>6.3.1</b> Effective Computing Drop In Hour</a></li>
+<li class="chapter" data-level="6.3.2" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#slack-workflow-manager-channel"><i class="fa fa-check"></i><b>6.3.2</b> Slack Workflow Manager Channel</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
 <li class="divider"></li>
@@ -237,80 +259,47 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/dasl_thin_main_image.png">
 </div>
-<div id="fred-hutch-customizations" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Fred Hutch Customizations</h1>
-<p>Cromwell can help run WDL workflows on a variety of computing resources such as SLURM clusters (like the Fred Hutch cluster), as well as AWS, Google and Azure cloud computing systems. Using WDL workflows allows users to focus on their workflow contents rather than the intricacies of particular computing platform.<br />
-However, there are optimizations of how those workflows run that may be specific to each computing tool (“task”).</p>
-<p>We’ll discuss some of the available customizations to help you run WDLs on our cluster that still allow those workflows to be portable to other computing platforms.</p>
-<div id="standard-runtime-variables" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Standard Runtime Variables</h2>
-<p>These runtime variables can be used on any computing platform, and the values given here are the defaults for our Fred Hutch configuration if there is a default set.</p>
-<ul>
-<li><code>cpu: 1</code>
-<ul>
-<li>An integer number of cpus you want for the task.</li>
-</ul></li>
-<li><code>memory: 2000</code>
-<ul>
-<li>An integer number of MB of memory you want to use for the task</li>
-</ul></li>
-<li><code>docker:</code>
-<ul>
-<li>A specific Docker container to use for the task. An example of the value for this variable is: <code>"ubuntu:latest"</code>. No default container is specified in our configuration and this runtime variable should only be used if/when a task should be run inside a docker container, in which case you’ll want to specify both the container name and specific version. If left unset or left out of the runtime block of a task completely, the Fred Hutch configuration will run the task as a regular job and not use docker containers at all. For the custom Hutch configuration, docker containers can be specified and the necessary conversions (to Singularity) will be performed by Cromwell (not the user). Note: when docker is used, soft links cannot be used in our filesystem, so workflows using very large datasets may run slightly slower due to the need for Cromwell to copy files rather than link to them.</li>
-</ul></li>
-</ul>
+<div id="summary-and-next-steps" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Summary and Next Steps</h1>
+<p>For additional learning there are a few different sources for references about WDL, Cromwell and designing workflows.</p>
+<div id="fred-hutch-wdl-102" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Fred Hutch WDL 102</h2>
+<p>Fred Hutch DaSL is working on a <a href="https://hutchdatascience.org/FH_WDL102_Workflows/">WDL 102 course</a> that will delve into how to get started designing, testing and optimizing your own WDL workflows.</p>
 </div>
-<div id="fred-hutch-custom-runtime-variables" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Fred Hutch Custom Runtime Variables</h2>
-<p>For the <code>gizmo</code> cluster, the following custom runtime variables are available (below we show each variable with its current default value). You can change these variables in the <code>runtime</code> block for individual tasks in a WDL file: task-level specifications will override the defaults.</p>
-<ul>
-<li><code>walltime: "18:00:00"</code>
-<ul>
-<li>A string (“HH:MM:SS”) that specifies how much time you want to request for the task. Can also specify &gt;1 day, e.g. “1-12:00:00” is 1 day+12 hours.</li>
-</ul></li>
-<li><code>partition:  "campus-new"</code>
-<ul>
-<li>Which cluster partition to use. The default is <code>campus-new</code>: other options currently include <code>restart</code> or <code>short</code> but check <a href="https://sciwiki.fredhutch.org/scicomputing/">SciWiki</a> for updated information.</li>
-</ul></li>
-<li><code>modules: ""</code>
-<ul>
-<li>A space-separated list of the environment modules you’d like to load (in that order) prior to running the task. See below for more about software modules.</li>
-</ul></li>
-<li><code>dockerSL:</code>
-<ul>
-<li>This is a custom configuration for the Hutch that allows users to use docker and softlinks only to specific locations in Scratch. It is helpful when working with very large files. An example of the value for this variable is: <code>"ubuntu:latest"</code>. Just like the <code>docker:</code> runtime variable, only specify this if you want the task to run in a container (otherwise the default will be a non-containerized job).</li>
-</ul></li>
-<li><code>account:</code>
-<ul>
-<li>This allows users who run jobs for multiple PI accounts to specify which account to use for each task, to manage cluster allocations. An example of the value for this variable is <code>"paguirigan_a"</code>, following the pilastname_f pattern.</li>
-</ul></li>
-</ul>
+<div id="documentation-in-the-wild" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Documentation in the Wild</h2>
+<p>One of the major reasons to adopt WDL to describe your workflows is that there are many people in the wider world who also work with WDL and thus there are materials, documentation, example workflows and engine documentation available.</p>
+<div id="openwdl-specification" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> openWDL specification</h3>
+<p>There is some useful, though very detailed, information in the <a href="https://github.com/openwdl/wdl/blob/main/versions/development/SPEC.md#introduction">openWDL GitHub repo for the specification itself where you can learn more</a>.</p>
 </div>
-<div id="software-environments" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Software environments</h2>
-<div id="modules" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Modules</h3>
-<p>At Fred Hutch we have huge array of pre-curated software modules installed on our SLURM cluster which you can <a href="https://sciwiki.fredhutch.org/scicomputing/compute_scientificSoftware/">read about in SciWiki</a>.<br />
-The custom configuration of our Cromwell server allows users to specify one or more modules to use for individual tasks in a workflow. The desired module(s) can be requested for a task in the <code>runtime</code> block of your calls like this:</p>
-<pre><code>runtime {
-  modules: &quot;GATK/4.2.6.1-GCCcore-11.2.0 SAMtools/1.16.1-GCC-11.2.0&quot;
-}</code></pre>
-<p>In this example, we specify two modules, separated by a space (with quotes surrounding both). The GATK module will be loaded first, followed by the SAMtools module. In this example you’ll note the “toolchain” used to build each modules is the same (“GCC-11.2.0”). When you load &gt;1 module for a single task it is important to ensure that they are compatible with each other: choose versions built with the same toolchain if you can.</p>
+<div id="openwdl-documentation" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> openWDL Documentation</h3>
+<p>The openWDL group has a <a href="https://wdl-docs.readthedocs.io/en/stable/">new documentation site</a>. These documents are more of a “getting started guide” to the WDL specification than the above detailed description of the spec itself. This effort is a newly emerging effort as well, so if you notice issues or have ideas for new content, you can file a <a href="https://github.com/openwdl/wdl-docs">GitHub Issue on the docs repo.</a></p>
 </div>
-<div id="docker" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Docker</h3>
-<p>However, if you want to move your WDL workflow to the cloud in the future, you’ll want to leverage Cromwell’s ability to run your tasks in Docker containers. Users can specify docker containers in runtime blocks. Cromwell will maintain a local cache of previously used containers, facilitating the pull of Docker containers and conversion for use. This behavior allows us to evade rate-limiting by DockerHub and improves speed of your workflows.</p>
+<div id="cromwell-documentation" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Cromwell Documentation</h3>
+<p>There is a documentation site that can be useful if you’re considering reconfiguring Cromwell or using it on Google or other computing infrastructure outside of the Fred Hutch. The <a href="https://cromwell.readthedocs.io/en/stable/wf_options/Overview/">Cromwell docs site</a> can provide a bit more Cromwell-specific information, though any configuration changes you do will not be supported by IT and help for this will need to come from the Cromwell community.</p>
+</div>
+<div id="workflow-content" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Workflow Content</h3>
+<p>Because WDL is an open specification, there are a number of resources around the web where various groups have shared examples of their finished WDL workflows.<br />
+- <a href="https://github.com/fredhutch?q=wdl&amp;type=all&amp;language=&amp;sort=">Fred Hutch WDL repos</a>
+- <a href="https://dockstore.org/search?descriptorType=WDL&amp;entryType=workflows&amp;searchMode=files">The Dockstore</a>
+- <a href="https://github.com/broadinstitute/warp">Broad Warp repo</a>
+- <a href="https://github.com/chanzuckerberg?q=wdl&amp;type=all&amp;language=&amp;sort=">Chan Zuckerberg Initiative</a> (note CZI has also developed it’s own WDL engine called miniWDL)
+- <a href="https://biowdl.github.io/">BioWDL</a></p>
 </div>
 </div>
-<div id="guidance-and-support" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Guidance and Support</h2>
+<div id="fred-hutch-guidance-and-support" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Fred Hutch Guidance and Support</h2>
 <p>There are a variety of resources on campus from the <a href="https://sciwiki.fredhutch.org">SciWiki</a> to SciComp office hours (found in the Research Data Support Teams team) to asking computing related questions in the <a href="https://fhdata.slack.com/archives/CD3HGJHJT">Fred Hutch Data Slack #question-and-answer channel</a> to coming to the <a href="https://fhdata.slack.com/archives/C03T4QPNDA9">Effective Computing Drop in hours held by Fred Hutch DaSL</a>.</p>
-<div id="effective-computing-drop-in-hour" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Effective Computing Drop In Hour</h3>
+<div id="effective-computing-drop-in-hour" class="section level3" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Effective Computing Drop In Hour</h3>
 <p>This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time. Find current events by checking out the Fred Hutch Data Slack workspace <a href="https://fhdata.slack.com">here</a>.</p>
 </div>
-<div id="slack-workflow-manager-channel" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Slack Workflow Manager Channel</h3>
+<div id="slack-workflow-manager-channel" class="section level3" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Slack Workflow Manager Channel</h3>
 <p>In the <a href="https://fhdata.slack.com/">Fred Hutch Data Slack workspace</a> the <a href="https://fhdata.slack.com/archives/CJFP1NYSZ">#workflow-managers</a> channel is a good place to find help from Hutch peers and staff who support Cromwell and WDL</p>
 
 </div>
@@ -329,8 +318,8 @@ The custom configuration of our Cromwell server allows users to specify one or m
           </div>
         </div>
       </div>
-<a href="using-shiny-to-manage-workflows.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="using-the-fh.wdlr-package.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="using-the-fh.wdlr-package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

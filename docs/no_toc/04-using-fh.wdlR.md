@@ -14,7 +14,7 @@ You will need the following packages installed first:
 
 ```r
 install.packages(pkgs = c("httr", "jsonlite", "magrittr",
-                "dplyr", "ssh", "purrr", "paws", "tidyr"))
+                "dplyr", "purrr", "paws", "tidyr"))
 
 # Not required for the package but certainly handy and used in our demo here:
 install.packages("tidyverse")
