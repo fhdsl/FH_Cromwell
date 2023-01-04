@@ -15,7 +15,7 @@ You can also use this R package through R/RStudio on your local machine (on VPN 
 You will need the following packages installed first:
 ```{r, eval = FALSE}
 install.packages(pkgs = c("httr", "jsonlite", "magrittr",
-                "dplyr", "ssh", "purrr", "paws", "tidyr"))
+                "dplyr", "purrr", "paws", "tidyr"))
 
 # Not required for the package but certainly handy and used in our demo here:
 install.packages("tidyverse")

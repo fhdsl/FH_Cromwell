@@ -4,13 +4,27 @@ ottrpal::set_knitr_image_path()
 ```
 
 # Introduction
+At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  This guide is intended to be a hands on introduction to getting started with using Cromwell at the Hutch to run WDL workflows.  Once you know how you can run WDLs at the Fred Hutch, we hope you'll be able to start designing your own WDLs and converting existing processes and analyses over into the specification in order to more effectively run them.  
 
-WDL is an open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS (Amazon Web Services), Google and Azure.
+## What is WDL?
 
-At the Fred Hutch we have configured a software from the Broad called Cromwell to allow us to run WDLs on our local cluster that then can be easily ported to other cloud based compute infrastructure when desired. This allows us to simplify our workflow testing and design, leverage WDL for smaller scale work that does not need the cloud, and can let users of all kinds manage their workflow work over time via this tool.  
+[WDL](https://wdl-docs.readthedocs.io/en/1.0.0/) is an open specification for a workflow description language that originated at the Broad but has grown to a much wider audience over time. WDL workflows can be run using an engine, which is software that interprets and runs your WDL on various high performance computing resources, such as SLURM (the Fred Hutch local cluster), AWS (Amazon Web Services), Google and Azure.  While this guide won't go into the details of what the WDL syntax is, there are resources linked to in our Summary section and we we actively developing additional courses on the topic.  
+
+
 
 ## What is Cromwell?
 Cromwell is a workflow engine (sometimes called a workflow manager) software developed by the Broad which manages the individual tasks involved in multi-step workflows, tracks job metadata, provides an API interface and allows users to manage multiple workflows simultaneously.  Cromwell isn't the only WDL "engine" that exists, but it is a tool that has been configured for use on the Fred Hutch gizmo cluster in order to make running workflows here very simple.
+
+
+## Using Cromwell
+In general, Cromwell works best when run in server mode, which means that users run a Cromwell server as a job on our local SLURM cluster that can connect to a database specifically for Cromwell workflow tracking.  This Cromwell server job then behaves as the workflow coordinator for that user, allowing a user to send workflow instructions for multiple workflows running simultaneously.  The Cromwell server will then parse these workflow instructions, find and copy the relevant input files, send the tasks to either `Gizmo` to be processed, coordinate the results of those tasks and record all of the metadata about what is happening in its database.  
+
+This means that individual users can:
+- run multiple independent workflows at the same time using one Cromwell server,
+- use cached results when identical to the current task,
+- track the status of workflows and tasks via multiple methods while they are running,
+- customize the locations of input data, intermediate data, and workflow outputs to data storage resources appropriate to the data type (re: cost, backup and accessibility),
+- query the Cromwell database for information about workflows run in the past, including where their workflow outputs were saved or a variety of other workflow and task level metadata.  
 
 
 
@@ -115,21 +129,23 @@ In `cromUserConfig.txt` there are some variables that allow users to share a sim
 The following text is also in this repo but these are the customizations you'll need to decide on for your server.
 ```
 ################## WORKING DIRECTORY AND PATH CUSTOMIZATIONS ###################
-## Where do you want the working directory to be for Cromwell (note: this process will create a subdirectory here called "cromwell-executions")?   Note, please include the leading and trailing slashes!!! 
+## Where do you want the working directory to be for Cromwell
+## Note: startng the server will create a subdirectory in the directory you specify here called "cromwell-executions"). Please include the leading and trailing slashes!!! You likely will want to include your username in the path just in case others in your lab are ALSO using Cromwell to reduce confusion.
 ### Suggestion: /fh/scratch/delete90/pilastname_f/username/
 SCRATCHDIR=/fh/scratch/delete90/...
 
 ## Where do you want logs about individual workflows (not jobs) to be written?
-## Note: this is a default for the server and can be overwritten for a given workflow in workflow-options.
+## Note: this is a default for the server and can be overwritten for a given workflow in workflow-options.  Most of the time workflow troubleshooting occurs without having to refer to these logs, but the ability to make them can be useful if you like them. 
 ### Suggestion: ~/cromwell-home/workflow-logs
 WORKFLOWLOGDIR=~/cromwell-home/workflow-logs
 
 ## Where do you want to save Cromwell server logs for troubleshooting Cromwell itself?
+## You'll want this handy in the beginning as when Cromwell cannot start up, this is where you'll go to do all of your troubleshooting.  
 ### Suggestion: ~/cromwell-home/server-logs
 SERVERLOGDIR=~/cromwell-home/server-logs
 
 ################ DATABASE CUSTOMIZATIONS #################
-## DB4Sci MariaDB details (remove < and >, and use unquoted text):
+## DB4Sci MariaDB details (remove any `...`'s and use unquoted text):
 
 CROMWELLDBPORT=...
 CROMWELLDBNAME=...
@@ -137,17 +153,16 @@ CROMWELLDBUSERNAME=...
 CROMWELLDBPASSWORD=...
 
 ## Number of cores for your Cromwell server itself - usually 4 is sufficient.  
-###Increase if you want to run many, complex workflows simultaneously or notice your server is slowing down.
+## Increase if you want to run many, complex workflows simultaneously or notice your server is slowing down. Keep in mind these cpu's do count toward your lab's allocations, so you want to keep it fairly minimal. 
 NCORES=4
 
 ## Length of time you want the server to run for.  
-### Note: when servers go down, all jobs they'd sent will continue.  When you start up a server the next time
-### using the same database, the new server will pick up whereever the previous workflows left off.  "7-0" is 7 days, zero hours.
+## Note: when servers go down, all jobs they'd sent will continue.  When you start up a server the next time using the same database, the new server will pick up whereever the previous workflows left off.  "7-0" is 7 days, zero hours.
 SERVERTIME="7-0" 
 ```
 
 
-> Note:  For this server, you will want multiple cores to allow it to multi-task.  Memory is less important when you use an external database.  If you notice issues, the particular resource request for the server job itself might be a good place to start adjusting, in conjunction with some guidance from SciComp or the Slack [Question and Answer channel](https://fhbig.slack.com/archives/CD3HGJHJT) folks.
+> Note:  For this server, you will want multiple cores to allow it to multi-task.  If you notice issues, the particular resource request for the server job itself might be a good place to start adjusting, in conjunction with some guidance from SciComp or the Slack [Question and Answer channel](https://fhbig.slack.com/archives/CD3HGJHJT) folks.
 
 ### Kick off your Cromwell server
 
@@ -203,11 +218,12 @@ scancel 2733799
 
 ## Starting up your server in the future
 Good news! The above instructions are a one time event. In the future, when you want to start up a Cromwell server to do some computing work, all you'll have to do is:
+
 1. Get onto Rhino in Terminal
+
 2. Change to the `cromwell-home` directory you made
+
 3. Enter: `./cromwell.sh cromUserConfig.txt` and you're off to the races!
 
 
-
-
-Congrats you've started your first Cromwell server!!  Now on to how to submit a WDL workflow to it.
+Congrats you've started your first Cromwell server!!  
