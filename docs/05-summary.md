@@ -1,0 +1,46 @@
+
+
+# Summary and Next Steps
+
+
+For additional learning there are a few different sources for references about WDL, Cromwell and designing workflows.  
+
+## Fred Hutch WDL 102
+Fred Hutch DaSL is working on a [WDL 102 course](https://hutchdatascience.org/FH_WDL102_Workflows/) that will delve into how to get started designing, testing and optimizing your own WDL workflows.  
+
+
+## Documentation in the Wild
+One of the major reasons to adopt WDL to describe your workflows is that there are many people in the wider world who also work with WDL and thus there are materials, documentation, example workflows and engine documentation available.  
+
+### openWDL specification
+There is some useful, though very detailed, information in the [openWDL GitHub repo for the specification itself where you can learn more](https://github.com/openwdl/wdl/blob/main/versions/development/SPEC.md#introduction). 
+
+### openWDL Documentation
+The openWDL group has a [new documentation site](https://wdl-docs.readthedocs.io/en/stable/).  These documents are more of a "getting started guide" to the WDL specification than the above detailed description of the spec itself.  This effort is a newly emerging effort as well, so if you notice issues or have ideas for new content, you can file a [GitHub Issue on the docs repo.](https://github.com/openwdl/wdl-docs)
+
+
+### Cromwell Documentation
+There is a documentation site that can be useful if you're considering reconfiguring Cromwell or using it on Google or other computing infrastructure outside of the Fred Hutch.  The [Cromwell docs site](https://cromwell.readthedocs.io/en/stable/wf_options/Overview/) can provide a bit more Cromwell-specific information, though any configuration changes you do will not be supported by IT and help for this will need to come from the Cromwell community.  
+
+
+### Workflow Content
+Because WDL is an open specification, there are a number of resources around the web where various groups have shared examples of their finished WDL workflows.  
+- [Fred Hutch WDL repos](https://github.com/fredhutch?q=wdl&type=all&language=&sort=)
+- [The Dockstore](https://dockstore.org/search?descriptorType=WDL&entryType=workflows&searchMode=files)
+- [Broad Warp repo](https://github.com/broadinstitute/warp)
+- [Chan Zuckerberg Initiative](https://github.com/chanzuckerberg?q=wdl&type=all&language=&sort=) (note CZI has also developed it's own WDL engine called miniWDL)
+- [BioWDL](https://biowdl.github.io/)
+
+
+
+
+## Fred Hutch Guidance and Support
+
+There are a variety of resources on campus from the [SciWiki](https://sciwiki.fredhutch.org) to SciComp office hours (found in the Research Data Support Teams team) to asking computing related questions in the [Fred Hutch Data Slack #question-and-answer channel](https://fhdata.slack.com/archives/CD3HGJHJT) to coming to the [Effective Computing Drop in hours held by Fred Hutch DaSL](https://fhdata.slack.com/archives/C03T4QPNDA9).
+
+### Effective Computing Drop In Hour
+This is a drop-in style biweekly meeting that provides resources for folks to talk about their computational work and improve over time.  Find current events by checking out the Fred Hutch Data Slack workspace [here](https://fhdata.slack.com).
+
+### Slack Workflow Manager Channel
+In the [Fred Hutch Data Slack workspace](https://fhdata.slack.com/) the [#workflow-managers](https://fhdata.slack.com/archives/CJFP1NYSZ) channel is a good place to find help from Hutch peers and staff who support Cromwell and WDL
+
