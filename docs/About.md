@@ -10,7 +10,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 |-------|-----|
 |**Pedagogy**||
 |Lead Content Instructor(s)|Amy Paguirigan|
-|Content Editor(s)/Reviewer(s) | Checked your content|
+|Content Editor(s)/Reviewer(s) | Janet Young, Amanda Gunn|
 |**Technical**||
 |Template Publishing Engineers|[Candace Savonen], [Carrie Wright]|
 |Publishing Maintenance Engineer|[Candace Savonen]|
@@ -31,7 +31,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       Etc/UTC                     
-##  date     2022-12-28                  
+##  date     2023-01-04                  
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version    date       lib source                            
@@ -79,7 +79,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 
 <!-- Author information -->
 
-[FirstName LastName]: link to personal website
+[Amy Paguirigan]: link to personal website
 [John Muschelli]: https://johnmuschelli.com/
 [Candace Savonen]: https://www.cansavvy.com/
 [Carrie Wright]: https://carriewright11.github.io/
@@ -87,12 +87,3 @@ These credits are based on our [course contributors table guidelines](https://ww
 <!-- Links -->
 
 [ottrpal]: https://github.com/jhudsl/ottrpal
-
-<!-- Fill out this table using these instructions: https://github.com/jhudsl/OTTR_Template/wiki/How-to-give-credits
-
-For JHU courses, You will need to add Ira as a credit:
-
-|Content Publisher|[Ira Gooding]|
-...
-[Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding
--->

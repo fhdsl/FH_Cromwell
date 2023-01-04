@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Using Shiny to Manage Workflows | WDL 101: Running WDLs using Cromwell</title>
+  <title>Chapter 4 Using Shiny to Manage Workflows | WDL 101: Running WDLs using Cromwell</title>
   <meta name="description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Using Shiny to Manage Workflows | WDL 101: Running WDLs using Cromwell" />
+  <meta property="og:title" content="Chapter 4 Using Shiny to Manage Workflows | WDL 101: Running WDLs using Cromwell" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Using Shiny to Manage Workflows | WDL 101: Running WDLs using Cromwell" />
+  <meta name="twitter:title" content="Chapter 4 Using Shiny to Manage Workflows | WDL 101: Running WDLs using Cromwell" />
   
   <meta name="twitter:description" content="An introduction to using the workflow manager software Cromwell to run WDL workflows on the Fred Hutch computing cluster." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="getting-started-with-cromwell.html"/>
-<link rel="next" href="fred-hutch-customizations.html"/>
+<link rel="prev" href="using-cromwell-at-fred-hutch.html"/>
+<link rel="next" href="using-the-fh.wdlr-package.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -137,7 +137,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Guide</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-cromwell"><i class="fa fa-check"></i><b>1.1</b> What is Cromwell?</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-wdl"><i class="fa fa-check"></i><b>1.1</b> What is WDL?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-cromwell"><i class="fa fa-check"></i><b>1.2</b> What is Cromwell?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#using-cromwell"><i class="fa fa-check"></i><b>1.3</b> Using Cromwell</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html"><i class="fa fa-check"></i><b>2</b> Getting Started with Cromwell</a>
 <ul>
@@ -158,38 +160,42 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="getting-started-with-cromwell.html"><a href="getting-started-with-cromwell.html#starting-up-your-server-in-the-future"><i class="fa fa-check"></i><b>2.4</b> Starting up your server in the future</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html"><i class="fa fa-check"></i><b>3</b> Using Shiny to Manage Workflows</a>
+<li class="chapter" data-level="3" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html"><i class="fa fa-check"></i><b>3</b> Using Cromwell at Fred Hutch</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#get-test-workflows"><i class="fa fa-check"></i><b>3.1</b> Get Test Workflows</a></li>
-<li class="chapter" data-level="3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#login"><i class="fa fa-check"></i><b>3.2</b> Login</a></li>
-<li class="chapter" data-level="3.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-jobs-tab"><i class="fa fa-check"></i><b>3.3</b> Submit Jobs Tab</a>
+<li class="chapter" data-level="3.1" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#everyday-usage"><i class="fa fa-check"></i><b>3.1</b> Everyday Usage</a></li>
+<li class="chapter" data-level="3.2" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#test-workflows"><i class="fa fa-check"></i><b>3.2</b> Test Workflows</a></li>
+<li class="chapter" data-level="3.3" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#runtime-variables"><i class="fa fa-check"></i><b>3.3</b> Runtime Variables</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#validate-a-workflow"><i class="fa fa-check"></i><b>3.3.1</b> Validate a workflow</a></li>
-<li class="chapter" data-level="3.3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-a-workflow"><i class="fa fa-check"></i><b>3.3.2</b> Submit a workflow</a></li>
-<li class="chapter" data-level="3.3.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#abort-a-workflow"><i class="fa fa-check"></i><b>3.3.3</b> Abort a workflow</a></li>
-<li class="chapter" data-level="3.3.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-a-workflow"><i class="fa fa-check"></i><b>3.3.4</b> Troubleshoot a workflow</a></li>
+<li class="chapter" data-level="3.3.1" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#standard-runtime-variables"><i class="fa fa-check"></i><b>3.3.1</b> Standard Runtime Variables</a></li>
+<li class="chapter" data-level="3.3.2" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#fred-hutch-custom-runtime-variables"><i class="fa fa-check"></i><b>3.3.2</b> Fred Hutch Custom Runtime Variables</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>3.4</b> Track Jobs Tab</a>
+<li class="chapter" data-level="3.4" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#managing-software-environments"><i class="fa fa-check"></i><b>3.4</b> Managing Software Environments</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#history-of-workflows"><i class="fa fa-check"></i><b>3.4.1</b> History of workflows</a></li>
-<li class="chapter" data-level="3.4.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#diving-into-a-workflow"><i class="fa fa-check"></i><b>3.4.2</b> Diving into a Workflow</a></li>
+<li class="chapter" data-level="3.4.1" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#modules"><i class="fa fa-check"></i><b>3.4.1</b> Modules</a></li>
+<li class="chapter" data-level="3.4.2" data-path="using-cromwell-at-fred-hutch.html"><a href="using-cromwell-at-fred-hutch.html#docker"><i class="fa fa-check"></i><b>3.4.2</b> Docker</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>3.5</b> Run Test Workflows</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html"><i class="fa fa-check"></i><b>4</b> Fred Hutch Customizations</a>
+<li class="chapter" data-level="4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html"><i class="fa fa-check"></i><b>4</b> Using Shiny to Manage Workflows</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#standard-runtime-variables"><i class="fa fa-check"></i><b>4.1</b> Standard Runtime Variables</a></li>
-<li class="chapter" data-level="4.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#fred-hutch-custom-runtime-variables"><i class="fa fa-check"></i><b>4.2</b> Fred Hutch Custom Runtime Variables</a></li>
-<li class="chapter" data-level="4.3" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#software-environments"><i class="fa fa-check"></i><b>4.3</b> Software environments</a>
+<li class="chapter" data-level="4.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#get-test-workflows"><i class="fa fa-check"></i><b>4.1</b> Get Test Workflows</a></li>
+<li class="chapter" data-level="4.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#login"><i class="fa fa-check"></i><b>4.2</b> Login</a></li>
+<li class="chapter" data-level="4.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-jobs-tab"><i class="fa fa-check"></i><b>4.3</b> Submit Jobs Tab</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#modules"><i class="fa fa-check"></i><b>4.3.1</b> Modules</a></li>
-<li class="chapter" data-level="4.3.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#docker"><i class="fa fa-check"></i><b>4.3.2</b> Docker</a></li>
+<li class="chapter" data-level="4.3.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#validate-a-workflow"><i class="fa fa-check"></i><b>4.3.1</b> Validate a workflow</a></li>
+<li class="chapter" data-level="4.3.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#submit-a-workflow"><i class="fa fa-check"></i><b>4.3.2</b> Submit a workflow</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#guidance-and-support"><i class="fa fa-check"></i><b>4.4</b> Guidance and Support</a>
+<li class="chapter" data-level="4.4" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#track-jobs-tab"><i class="fa fa-check"></i><b>4.4</b> Track Jobs Tab</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#effective-computing-drop-in-hour"><i class="fa fa-check"></i><b>4.4.1</b> Effective Computing Drop In Hour</a></li>
-<li class="chapter" data-level="4.4.2" data-path="fred-hutch-customizations.html"><a href="fred-hutch-customizations.html#slack-workflow-manager-channel"><i class="fa fa-check"></i><b>4.4.2</b> Slack Workflow Manager Channel</a></li>
+<li class="chapter" data-level="4.4.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#history-of-workflows"><i class="fa fa-check"></i><b>4.4.1</b> History of workflows</a></li>
+<li class="chapter" data-level="4.4.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#diving-into-a-workflow"><i class="fa fa-check"></i><b>4.4.2</b> Diving into a Workflow</a></li>
+<li class="chapter" data-level="4.4.3" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#call-level-information"><i class="fa fa-check"></i><b>4.4.3</b> Call Level Information</a></li>
 </ul></li>
+<li class="chapter" data-level="4.5" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-tab"><i class="fa fa-check"></i><b>4.5</b> Troubleshoot Tab</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#abort-a-workflow"><i class="fa fa-check"></i><b>4.5.1</b> Abort a workflow</a></li>
+<li class="chapter" data-level="4.5.2" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#troubleshoot-a-workflow"><i class="fa fa-check"></i><b>4.5.2</b> Troubleshoot a workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="using-shiny-to-manage-workflows.html"><a href="using-shiny-to-manage-workflows.html#run-test-workflows"><i class="fa fa-check"></i><b>4.6</b> Run Test Workflows</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html"><i class="fa fa-check"></i><b>5</b> Using the <code>fh.wdlR</code> Package</a>
 <ul>
@@ -201,6 +207,22 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#track-workflows"><i class="fa fa-check"></i><b>5.2.3</b> Track Workflows</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="using-the-fh.wdlr-package.html"><a href="using-the-fh.wdlr-package.html#look-under-the-hood"><i class="fa fa-check"></i><b>5.3</b> Look Under the Hood</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html"><i class="fa fa-check"></i><b>6</b> Summary and Next Steps</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#fred-hutch-wdl-102"><i class="fa fa-check"></i><b>6.1</b> Fred Hutch WDL 102</a></li>
+<li class="chapter" data-level="6.2" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#documentation-in-the-wild"><i class="fa fa-check"></i><b>6.2</b> Documentation in the Wild</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#openwdl-specification"><i class="fa fa-check"></i><b>6.2.1</b> openWDL specification</a></li>
+<li class="chapter" data-level="6.2.2" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#openwdl-documentation"><i class="fa fa-check"></i><b>6.2.2</b> openWDL Documentation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#cromwell-documentation"><i class="fa fa-check"></i><b>6.2.3</b> Cromwell Documentation</a></li>
+<li class="chapter" data-level="6.2.4" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#workflow-content"><i class="fa fa-check"></i><b>6.2.4</b> Workflow Content</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#fred-hutch-guidance-and-support"><i class="fa fa-check"></i><b>6.3</b> Fred Hutch Guidance and Support</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#effective-computing-drop-in-hour"><i class="fa fa-check"></i><b>6.3.1</b> Effective Computing Drop In Hour</a></li>
+<li class="chapter" data-level="6.3.2" data-path="summary-and-next-steps.html"><a href="summary-and-next-steps.html#slack-workflow-manager-channel"><i class="fa fa-check"></i><b>6.3.2</b> Slack Workflow Manager Channel</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
 <li class="divider"></li>
@@ -237,22 +259,22 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/dasl_thin_main_image.png">
 </div>
-<div id="using-shiny-to-manage-workflows" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Using Shiny to Manage Workflows</h1>
+<div id="using-shiny-to-manage-workflows" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Using Shiny to Manage Workflows</h1>
 <p>Now that you’ve configured your first Cromwell sever, let’s submit some test workflows to it using the Fred Hutch Shiny app!</p>
 <blockquote>
 <p>Note: Especially the first time you set up a Cromwell server, it will be busy for a few minutes setting up the database and doing all the work behind the scenes for you. Once it’s “ready” to listen for workflows it will start “listening” for instructions via the Shiny app (or other methods we’ll discuss later in the course). It may take 2-3 minutes before you can follow the rest of these instructions the first time. The time it takes is much shorter in the future (more like ~1 minute).</p>
 </blockquote>
-<p>You can find our Fred Hutch Shiny app here: <a href="https://cromwellapp.fredhutch.org/" class="uri">https://cromwellapp.fredhutch.org/</a></p>
+<p>You can find our Fred Hutch Shiny app here: <a href="https://cromwellapp.fredhutch.org" class="uri">https://cromwellapp.fredhutch.org</a></p>
 <p><img src="assets/cromwell/app-front.png" title="The App looks like this." alt="Crowmell app" style="display: block; margin: auto;" /></p>
 <p>This shiny app will let you use a graphic interface to submit and manage workflows you’ve written in WDL.</p>
-<div id="get-test-workflows" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Get Test Workflows</h2>
-<p>Here you’ll see a series of sections that will allow you to do several things. In this guide we’ll use a number of example workflows found in the <code>dl-test-workflows</code> GitHub repository that can be viewed and cloned from <a href="https://github.com/FredHutch/wdl-test-workflows">GitHub</a>.</p>
+<div id="get-test-workflows" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Get Test Workflows</h2>
+<p>Here you’ll see a series of sections that will allow you to do several things. In this guide we’ll use a number of example workflows found in the <code>wdl-test-workflows</code> GitHub repository that can be viewed and cloned from <a href="https://github.com/FredHutch/wdl-test-workflows">GitHub</a>.</p>
 <p>Each of these example workflows is in a folder containing a WDL file (specifying the workflow itself), and any input files that you’ll need (in JSON format). There is <a href="https://wdl-docs.readthedocs.io/en/1.0.0/">emerging documentation about the WDL specification itself being generated by the openWDL community here</a>. Also, there is some useful, though very detailed, information in the <a href="https://github.com/openwdl/wdl/blob/main/versions/development/SPEC.md#introduction">openWDL GitHub repo for the specification itself where you can learn more</a>.</p>
 </div>
-<div id="login" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Login</h2>
+<div id="login" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Login</h2>
 <p>While this Shiny app runs all the time, in order for it to know where to look for your particular information, you’ll need to to “login” by clicking the “Connect to Server” button on the left.
 <img src="assets/cromwell/connect-to-server.png" title="The App looks like this." alt="Crowmell app" style="display: block; margin: auto;" /></p>
 <p>When you click “Connect to Server”, a box will appear where you will input the node:port combination you were assigned when you <a href="https://hutchdatascience.org/FH_WDL101_Cromwell/getting-started-with-cromwell.html#kick-off-your-cromwell-server">started up your Cromwell server</a> (it will look something like this: <code>gizmob5:39071</code>).
@@ -262,64 +284,78 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>If so, just wait 1-2 more minutes (if it’s the first time you’ve set up a server, or less if it’s a future instance) and try again. Once the Shiny app can talk to your sever, you’ll see this result screen:
 <img src="assets/cromwell/valid-server.png" title="The App can talk to your server!" alt="Crowmell app" style="display: block; margin: auto;" /></p>
 </div>
-<div id="submit-jobs-tab" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Submit Jobs Tab</h2>
+<div id="submit-jobs-tab" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Submit Jobs Tab</h2>
 <p>Once you’ve connected your server to the Shiny app, you can start by using the “Submit Jobs” tab on the left.<br />
-<img src="assets/cromwell/submit.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" /></p>
-<div id="validate-a-workflow" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Validate a workflow</h3>
-<p>This checks the format of your workflow files to make sure you have a valid file in a known format that Cromwell can interpret. This is called a “dry run” to ensure that your tasks are wired up correctly, but Cromwell does not try to see if any of your inputs are actually available, only that it can interpret what you told it. One of the reasons this is is that since Cromwell can pull files from local filesystems, AWS S3, Google buckets and Azure blobs, the process to test it’s ability to actually get your inputs will happen while you run the workflow the first time. Luckily, Cromwell will only get file inputs it needs at that moment, and if it can’t it won’t do that specific task (but can continue with the other tasks it can do!).<br />
-<img src="assets/cromwell/validate.png" title="Validate a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<img src="assets/cromwell/submit-tab.png" title="The submit jobs tab." alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<div id="validate-a-workflow" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Validate a workflow</h3>
+<p>This checks your workflow files (wdl / jsons) to test:</p>
+<ul>
+<li>are they in a known format that Cromwell can interpret?</li>
+<li>are they formatted properly?</li>
+<li>are the tasks wired up correctly?
+This is called a “dry run”.</li>
+</ul>
+<p>Note that this does NOT test whether your input files are actually available, partly because Cromwell can pull files from local filesystems, AWS S3, Google buckets and Azure blobs. The process of testing input availability will only happen when you run the workflow for the first time. If some input files are missing, Cromwell will run tasks for the input files that ARE available, skipping tasks where inputs can’t be found.</p>
+<p><img src="assets/cromwell/validate.png" title="Validate a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
 </div>
-<div id="submit-a-workflow" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Submit a workflow</h3>
+<div id="submit-a-workflow" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Submit a workflow</h3>
 <p>This will let you upload the files that contain your workflow description (a WDL), and up to two different sets of input lists (in JSON format). You can run a workflow with no input JSON, one input JSON, or two input JSONs (which will be concatenated or the second will overwrite the first if the same variable is declared in both). You can upload a workflow options JSON, as well as providing text labels of your choosing to workflows if you’d like.<br />
-<img src="assets/cromwell/cromwell-app.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<img src="assets/cromwell/submit.png" title="Submit a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
 <p>When you click that “Submit Workflow” button, you’ll see confirmation in a new box that appears with the workflow submission ID and status. These IDs are long strings that look something like this: <code>4e7e244a-d6b1-41db-a324-45229ff34b00</code> and they’re useful if, for example, you want to abort a workflow, or identify it in the “Track jobs” tab. This workflow id string is unique to an individual workflow run, so if you run the same workflow a second time, you’ll get a different string. This means that this unique identifier string can be used to help understand the data source file(s) used to generate each set of results files, helping make your work reproducible.</p>
 </div>
-<div id="abort-a-workflow" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Abort a workflow</h3>
-<p>Sometimes you realize you want to kill a workflow. Using the workflow submission id, you can kill specific workflows using this box. Note it will take Cromwell some time to coordinate SLURM job cancellations, but it will clean everything up for you.
-<img src="assets/cromwell/abort.png" title="Abort a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
 </div>
-<div id="troubleshoot-a-workflow" class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Troubleshoot a workflow</h3>
-<p>Especially in the beginning if you have catastrophic workflow failures and you can’t even figure out what’s going on, you can come back to this Troubleshoot box to retrieve the entire, unformatted JSON output of all metadata Cromwell has about your workflow. You probably are better served by the “Track Jobs” tab for checking how your workflow is going, but if there’s nothing there that’s helpful, then this box is where you’ll want to go.<br />
-&gt; Note: this output is not for the faint of heart, but it will give you hints once you get used to understanding what Cromwell is telling you.<br />
-<img src="assets/cromwell/troubleshoot.png" title="Troubleshoot a workflow" alt="Crowmell app" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-<div id="track-jobs-tab" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Track Jobs Tab</h2>
+<div id="track-jobs-tab" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Track Jobs Tab</h2>
 <p>Once you’ve submitted a workflow, you’ll want to track how it’s going in the Track Jobs tab.</p>
-<div id="history-of-workflows" class="section level3" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> History of workflows</h3>
+<div id="history-of-workflows" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> History of workflows</h3>
 <p>At the top, you’ll see that you can display as many days of workflow history as you’d like, filter that result for workflows with a specific name or with specific status(es) like ‘failed’, ‘succeeded’, etc. This can help if you have submitted a LOT of workflows and you don’t want to see them all, or if the Cromwell server is still busy working through all of your submissions and recording their status.</p>
 <p><img src="assets/cromwell/cromwell-app.png" title="Top of the Track Jobs tab" alt="Crowmell app" style="display: block; margin: auto;" /></p>
-<p>Once you click “Update View”, the revelant workflows will be returned and you’ll see various information on those workflows.</p>
-<p>First, there’s a “Workflows Run” plot, showing how long each workflow ran for, and status for each.
+<p>Once you click “Update View”, the relevant workflows will be returned and you’ll see various information on those workflows.</p>
+<p>First, there’s a “Workflow Timing” plot, showing how long each workflow ran for, and status for each.
 <img src="assets/cromwell/workflows-run.png" title="Workflow plot" alt="Crowmell app" style="display: block; margin: auto;" /></p>
-<p>Underneath, you’ll see a “Cromwell Overview” table showing metadata for each workflow. Click on the workflow you’re interested in to populate the rest of the tables (below).
+<p>Underneath, you’ll see a “Workflows Run” table showing metadata for each workflow. Click on the workflow you’re interested in to populate the rest of the tables (below).
 <img src="assets/cromwell/cromwell-overview.png" title="Workflow table" alt="Crowmell app" style="display: block; margin: auto;" /></p>
 </div>
-<div id="diving-into-a-workflow" class="section level3" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> Diving into a Workflow</h3>
+<div id="diving-into-a-workflow" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Diving into a Workflow</h3>
 <p>Once you’ve selected a workflow row, you’ll see some summary information about that workflow.
-<img src="assets/cromwell/workflow-overview.png" title="Workflow overview summary" alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<img src="assets/cromwell/workflow-overview.png" title="Workflow overview summary" alt="overview table for a workflow" style="display: block; margin: auto;" /></p>
 <p>You can see a plot of the timing and outcomes of all the calls in that workflow.
-<img src="assets/cromwell/workflow-calls.png" title="Workflow calls" alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<img src="assets/cromwell/workflow-calls.png" title="Workflow calls" alt="workflow calls table" style="display: block; margin: auto;" /></p>
+</div>
+<div id="call-level-information" class="section level3" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Call Level Information</h3>
 <p>Then there is a table of each call containing useful information such as the directory where the job is working (callRoot), its SLURM job ID, what computing resources or software environment were used, and the job’s status.<br />
-<img src="assets/cromwell/job-list.png" title="Job list" alt="Crowmell app" style="display: block; margin: auto;" /></p>
-<p>Then you can use the Job Failures and Call Caching tables to retrieve information relevant to those processes by clicking the “Get/Refresh … Metadata” buttons (sometimes these can be quite large, and thus they do not load until you want them).<br />
-<img src="assets/cromwell/failures-caching.png" title="Job failures and call caching" alt="Crowmell app" style="display: block; margin: auto;" /></p>
-<p>Finally, once a workflow succeeds, Cromwell can tell you (and this Shiny app can help you download) a table showing where to find the workflow outputs (note this is not every file created, only the ones you specify as “results” using the WDL file’s ‘workflow output’ block). This lets you find output files and interact with them, archive them, or otherwise copy them to longer term storage for use.<br />
-<img src="assets/cromwell/workflow-outputs.png" title="Workflow outputs" alt="Crowmell app" style="display: block; margin: auto;" /></p>
+<img src="assets/cromwell/job-list.png" title="Job list" alt="job list" style="display: block; margin: auto;" /></p>
+<p>Then you can use the Job Failures and Call Caching tables to retrieve information relevant to those processes by clicking the “Get/Refresh … Metadata” buttons (sometimes for complex workflows these can be quite large, and thus they do not load until you want them).</p>
+<p><img src="assets/cromwell/failures.png" title="Job failures" alt="call caching" style="display: block; margin: auto;" /></p>
+<p><img src="assets/cromwell/caching.png" title="Job call caching" alt="call caching" style="display: block; margin: auto;" /></p>
+<p>Finally, once a workflow’s outputs have all been created successfully, Cromwell can tell you (and this Shiny app can help you download) a table showing where to find the workflow outputs (note this is not every file created, only the ones you specify as “results” using the WDL file’s “workflow output” block). This lets you find output files and interact with them, archive them, or otherwise copy them to longer term storage for use.<br />
+<img src="assets/cromwell/workflow-outputs.png" title="Workflow outputs" alt="outputs" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="run-test-workflows" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Run Test Workflows</h2>
+<div id="troubleshoot-tab" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Troubleshoot Tab</h2>
+<p>Finally, there is the Troubleshoot tab. Here you can do things like Abort running workflows or get a complete metadata output for the entire workflow to parse yourself to try to find what’s happening with your workflow.<br />
+<img src="assets/cromwell/abort-troubleshoot.png" title="The troubleshoot jobs tab." alt="Troubleshoot" style="display: block; margin: auto;" /></p>
+<div id="abort-a-workflow" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Abort a workflow</h3>
+<p>Sometimes you realize you want to kill a workflow. Using the workflow submission id, you can kill specific workflows using this box. Note it will take Cromwell some time to coordinate SLURM job cancellations particularly for complex workflows, but it will clean everything up for you.</p>
+</div>
+<div id="troubleshoot-a-workflow" class="section level3" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Troubleshoot a workflow</h3>
+<p>Especially in the beginning if you have catastrophic workflow failures and you can’t even figure out what’s going on, you can come back to this Troubleshoot box to retrieve the entire, unformatted JSON output of all metadata Cromwell has about your workflow. You probably are better served by the “Track Jobs” tab for checking how your workflow is going, but if there’s nothing there that’s helpful, then this box is where you’ll want to go.<br />
+&gt; Note: this output is not for the faint of heart, but it will give you hints once you get used to understanding what Cromwell is telling you.</p>
+</div>
+</div>
+<div id="run-test-workflows" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Run Test Workflows</h2>
 <p>Now that you know how to use the app, it’s time to run a test workflow.</p>
-<p>We have curated some basic workflows that you can use to test whether your Cromwell server is set up correctly and to let you to play with Cromwell. Once your server is up, run through the examples in our <a href="https://github.com/FredHutch/diy-cromwell-server/tree/main/testWorkflows">Test Workflow folder</a>.</p>
+<p>We have curated some basic workflows that you can use to test whether your Cromwell server is set up correctly and to let you to play with Cromwell. Once your server is up, run through the examples in our <a href="https://github.com/FredHutch/wdl-test-workflows">Test Workflow Repo</a>.</p>
 <blockquote>
 <p>Note: For test workflows that use Docker containers, the first time you run them you may notice that jobs aren’t being sent very quickly. That is because for our cluster, we need to convert those Docker containers to something that can be run by Singularity. The first time a Docker container is used, it must be converted, but in the future Cromwell will used the cached version of the Docker container and jobs will be submitted more quickly.</p>
 </blockquote>
@@ -339,8 +375,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="getting-started-with-cromwell.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="fred-hutch-customizations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="using-cromwell-at-fred-hutch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="using-the-fh.wdlr-package.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
